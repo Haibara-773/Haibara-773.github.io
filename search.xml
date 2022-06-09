@@ -1,29 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>【Windows】AdGuard 的破解</title>
-    <url>/2022/06/08/%E3%80%90Windows%E3%80%91AdGuard%E7%9A%84%E7%A0%B4%E8%A7%A3/</url>
-    <content><![CDATA[<h2 id="什么是AdGuard？"><a href="#什么是AdGuard？" class="headerlink" title="什么是AdGuard？"></a>什么是 AdGuard？</h2><p>AdGuard 是一款强大的广告拦截工具，主打广告拦截、上网安全和隐私保护等功能，对于我们而已，最主要的就是它的广告拦截功能。AdGuard 有多个版本，支持多平台，分别为浏览器扩展版，桌面版，和移动版，桌面版支持 Windows 和 Mac 系统，移动版则是支持 Android 和 iOS。AdGuard 可以去除绝大部分的网页的烦人广告，给我们一个良好舒适的上网冲浪环境。</p>
-<h2 id="使用AdGuard的前后对比"><a href="#使用AdGuard的前后对比" class="headerlink" title="使用AdGuard的前后对比"></a>使用 AdGuard 的前后对比</h2><h3 id="使用前"><a href="#使用前" class="headerlink" title="使用前"></a>使用前</h3><p><img src="https://s2.loli.net/2022/03/29/bCwY96c7EAKXiFa.png" alt="AdGuard的破解"></p>
-<h3 id="使用后"><a href="#使用后" class="headerlink" title="使用后"></a>使用后</h3><p><img src="https://s2.loli.net/2022/03/29/qCjYHItAPK9UB2v.png" alt="AdGuard的破解"></p>
-<p>可以通过使用的前后对比图发现，头部广告和页脚广告都被轻松的清理掉了（对不起了扩展迷！）</p>
-<h2 id="浏览器扩展不是免费嘛？为什么要安装应用？"><a href="#浏览器扩展不是免费嘛？为什么要安装应用？" class="headerlink" title="浏览器扩展不是免费嘛？为什么要安装应用？"></a>浏览器扩展不是免费嘛？为什么要安装应用？</h2><p>萝卜青菜各有所爱，安装一个应用，其他的应用和浏览器都可以实现广告拦截，所以还是安装个应用更香啦</p>
-<h2 id="怎么破解？"><a href="#怎么破解？" class="headerlink" title="怎么破解？"></a>怎么破解？</h2><p>首先，安装官方的应用，官方应用有试用期的，试用期可以享受全部的功能，到了试用期结束就需要付费了。</p>
-<p><img src="https://s2.loli.net/2022/03/29/8Wyr5cYLESUijte.png" alt="AdGuard的破解"></p>
-<p>此时，我们可以看到试用期是到 4 月 1 日就到期了的，而我们可以通过时间大法来实现破解</p>
-<p><img src="https://s2.loli.net/2022/03/29/N2MX5smRyZvl61W.png" alt="AdGuard的破解"></p>
-<p><img src="https://s2.loli.net/2022/03/29/WGMkfIAKq6dmZ1n.png" alt="AdGuard的破解"></p>
-<p>此时再输入一个邮箱即可实现延期 180 天的操作，如果 180 天都试用过了，就需要使用本次的工具了</p>
-<p><img src="https://s2.loli.net/2022/03/29/7IQHBeaOi5Vhw2R.png" alt="AdGuard的破解"></p>
-<p>它可以让 AdGuard 恢复到最开始的状态，已实现在此试用 180 天的效果</p>
-<p>链接：</p>
-<p><a href="https://asuna773.lanzoul.com/iZsmG028ei9c">https://asuna773.lanzoul.com/iZsmG028ei9c</a></p>
-]]></content>
+    <title>【Java】int 数组的排序和倒叙以及 toString</title>
+    <url>/2022/06/09/%E3%80%90Java%E3%80%91int%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F%E5%92%8C%E5%80%92%E5%8F%99%E4%BB%A5%E5%8F%8AtoString/</url>
+    <content><![CDATA[<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>顺序排序使用的是冒泡排序来实现的，而倒叙排序则是在排序前通过顺序排序将数组的顺序排好，在此基础上对数组进行元素调换来实现倒叙。</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArraySort</span> {</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 正序使用冒泡排序完成</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] sort(<span class="type">int</span>[] arr){</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; arr.length; i++) {</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length - i; j++) {</span><br><span class="line">                <span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>]){</span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[j];</span><br><span class="line">                    arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                    arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 倒叙排序直接将元素交换</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] reverse(<span class="type">int</span>[] arr){</span><br><span class="line">        arr = sort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">0</span>,e=arr.length-<span class="number">1</span>; s &lt; e; s++,e--){</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[s];</span><br><span class="line">            arr[s] = arr[e];</span><br><span class="line">            arr[e] = temp;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toString</span><span class="params">(<span class="type">int</span>[] arr)</span>{</span><br><span class="line">        <span class="keyword">if</span> (arr == <span class="literal">null</span>){</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"null"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="type">int</span> <span class="variable">iMax</span> <span class="operator">=</span> arr.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (iMax == -<span class="number">1</span>){</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"[]"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">buffer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        buffer.append(<span class="string">"["</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; ; i++) {</span><br><span class="line">            buffer.append(arr[i]);</span><br><span class="line">            <span class="keyword">if</span> (i==iMax){</span><br><span class="line">                <span class="keyword">return</span> buffer.append(<span class="string">']'</span>).toString();</span><br><span class="line">            }</span><br><span class="line">            buffer.append(<span class="string">","</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>]]></content>
       <categories>
-        <category>软件</category>
+        <category>编程</category>
       </categories>
       <tags>
-        <tag>破解软件</tag>
+        <tag>软件推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -81,6 +67,32 @@
       </categories>
       <tags>
         <tag>软件推荐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【Windows】AdGuard 的破解</title>
+    <url>/2022/06/08/%E3%80%90Windows%E3%80%91AdGuard%E7%9A%84%E7%A0%B4%E8%A7%A3/</url>
+    <content><![CDATA[<h2 id="什么是AdGuard？"><a href="#什么是AdGuard？" class="headerlink" title="什么是AdGuard？"></a>什么是 AdGuard？</h2><p>AdGuard 是一款强大的广告拦截工具，主打广告拦截、上网安全和隐私保护等功能，对于我们而已，最主要的就是它的广告拦截功能。AdGuard 有多个版本，支持多平台，分别为浏览器扩展版，桌面版，和移动版，桌面版支持 Windows 和 Mac 系统，移动版则是支持 Android 和 iOS。AdGuard 可以去除绝大部分的网页的烦人广告，给我们一个良好舒适的上网冲浪环境。</p>
+<h2 id="使用AdGuard的前后对比"><a href="#使用AdGuard的前后对比" class="headerlink" title="使用AdGuard的前后对比"></a>使用 AdGuard 的前后对比</h2><h3 id="使用前"><a href="#使用前" class="headerlink" title="使用前"></a>使用前</h3><p><img src="https://s2.loli.net/2022/03/29/bCwY96c7EAKXiFa.png" alt="AdGuard的破解"></p>
+<h3 id="使用后"><a href="#使用后" class="headerlink" title="使用后"></a>使用后</h3><p><img src="https://s2.loli.net/2022/03/29/qCjYHItAPK9UB2v.png" alt="AdGuard的破解"></p>
+<p>可以通过使用的前后对比图发现，头部广告和页脚广告都被轻松的清理掉了（对不起了扩展迷！）</p>
+<h2 id="浏览器扩展不是免费嘛？为什么要安装应用？"><a href="#浏览器扩展不是免费嘛？为什么要安装应用？" class="headerlink" title="浏览器扩展不是免费嘛？为什么要安装应用？"></a>浏览器扩展不是免费嘛？为什么要安装应用？</h2><p>萝卜青菜各有所爱，安装一个应用，其他的应用和浏览器都可以实现广告拦截，所以还是安装个应用更香啦</p>
+<h2 id="怎么破解？"><a href="#怎么破解？" class="headerlink" title="怎么破解？"></a>怎么破解？</h2><p>首先，安装官方的应用，官方应用有试用期的，试用期可以享受全部的功能，到了试用期结束就需要付费了。</p>
+<p><img src="https://s2.loli.net/2022/03/29/8Wyr5cYLESUijte.png" alt="AdGuard的破解"></p>
+<p>此时，我们可以看到试用期是到 4 月 1 日就到期了的，而我们可以通过时间大法来实现破解</p>
+<p><img src="https://s2.loli.net/2022/03/29/N2MX5smRyZvl61W.png" alt="AdGuard的破解"></p>
+<p><img src="https://s2.loli.net/2022/03/29/WGMkfIAKq6dmZ1n.png" alt="AdGuard的破解"></p>
+<p>此时再输入一个邮箱即可实现延期 180 天的操作，如果 180 天都试用过了，就需要使用本次的工具了</p>
+<p><img src="https://s2.loli.net/2022/03/29/7IQHBeaOi5Vhw2R.png" alt="AdGuard的破解"></p>
+<p>它可以让 AdGuard 恢复到最开始的状态，已实现在此试用 180 天的效果</p>
+<p>链接：</p>
+<p><a href="https://asuna773.lanzoul.com/iZsmG028ei9c">https://asuna773.lanzoul.com/iZsmG028ei9c</a></p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>破解软件</tag>
       </tags>
   </entry>
 </search>

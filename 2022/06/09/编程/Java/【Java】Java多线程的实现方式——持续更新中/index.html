@@ -23,7 +23,7 @@
     <meta name="description" content="继承 Thread 类基础 Thread 类的方法需要从四部去执行  基础 Thread 类 重写 Thread 类的 run 方法 创建 Thread 类的子类对象 通过子类对象执行 start 方法 12345678910111213141516public class ThreadLearn_Ex_Thread extends Thread{    @Override    public v">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Java】Java 多线程的实现方式 —— 持续更新中">
-<meta property="og:url" content="http://example.com/2022/06/09/Java/%E3%80%90Java%E3%80%91Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/index.html">
+<meta property="og:url" content="http://example.com/2022/06/09/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/index.html">
 <meta property="og:site_name" content="清风明月的小破站">
 <meta property="og:description" content="继承 Thread 类基础 Thread 类的方法需要从四部去执行  基础 Thread 类 重写 Thread 类的 run 方法 创建 Thread 类的子类对象 通过子类对象执行 start 方法 12345678910111213141516public class ThreadLearn_Ex_Thread extends Thread{    @Override    public v">
 <meta property="og:locale" content="zh_CN">
@@ -33,11 +33,11 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2022/06/09/Java/%E3%80%90Java%E3%80%91Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/">
+<link rel="canonical" href="http://example.com/2022/06/09/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/06/09/Java/%E3%80%90Java%E3%80%91Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/","path":"2022/06/09/Java/【Java】Java多线程的实现方式——持续更新中/","title":"【Java】Java 多线程的实现方式 —— 持续更新中"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/06/09/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/","path":"2022/06/09/编程/Java/【Java】Java多线程的实现方式——持续更新中/","title":"【Java】Java 多线程的实现方式 —— 持续更新中"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>【Java】Java 多线程的实现方式 —— 持续更新中 | 清风明月的小破站</title>
@@ -219,7 +219,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/09/Java/%E3%80%90Java%E3%80%91Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/09/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/06/09/bCBxUlXrFGT93he.png">
@@ -324,7 +324,7 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/06/09/Java/%E3%80%90Java%E3%80%91int%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F%E5%92%8C%E5%80%92%E5%8F%99%E4%BB%A5%E5%8F%8AtoString/" rel="prev" title="【Java】int 数组的排序和倒叙以及 toString">
+                <a href="/2022/06/09/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91int%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F%E5%92%8C%E5%80%92%E5%8F%99%E4%BB%A5%E5%8F%8AtoString/" rel="prev" title="【Java】int 数组的排序和倒叙以及 toString">
                   <i class="fa fa-chevron-left"></i> 【Java】int 数组的排序和倒叙以及 toString
                 </a>
             </div>

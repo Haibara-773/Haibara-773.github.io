@@ -64,6 +64,32 @@
       </categories>
   </entry>
   <entry>
+    <title>【Windows】Jetbrains 系列软件的破解补丁</title>
+    <url>/2022/06/08/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Windows/%E3%80%90Windows%E3%80%91Jetbrains%E7%B3%BB%E5%88%97%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E8%A1%A5%E4%B8%81/</url>
+    <content><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Jetbrains 系列的的软件是真的好用，但是也是真的贵，对于一个学生党来说确实是支持不起这个费用啊。当然，官方也有基础的免费版本，可是专业版的对于学习来说太方便了，所以上个 “学习版” 是有必要的。当然，有财力的还是建议支持正版，毕竟只有收费才可以让开发的公司有动力持续地更新产品，我们才能用到更好的产品。废话不多说，妹子图开局。</p>
+<p><img src="https://s2.loli.net/2022/06/09/sbyJzeRjhXad32Z.png"></p>
+<h3 id="IDE-Eval-Reset插件（已停更）"><a href="#IDE-Eval-Reset插件（已停更）" class="headerlink" title="IDE Eval Reset插件（已停更）"></a><code>IDE Eval Reset</code> 插件（已停更）</h3><p>这是一款用起来比较简单的插件，可以通过重置 30 天试用来实现破解，但这个只可以在 2021.3 之前的版本可用，但比较稳定，相对于一些用老版本或者激活码我更倾向于使用这个插件。</p>
+<h3 id="如何下载2021-3之前的版本？"><a href="#如何下载2021-3之前的版本？" class="headerlink" title="如何下载2021.3之前的版本？"></a>如何下载 2021.3 之前的版本？</h3><p>此处我已 PyCharm 为例，我们访问官方的下载页面，选择其他版本，就可以挑选老版本了</p>
+<p><img src="https://s2.loli.net/2022/06/09/aoXJbPOQ59legwH.png"></p>
+<p><img src="https://s2.loli.net/2022/06/09/fp7xDwrXoiBZ5Vu.png"></p>
+<p>当然，可能过段时间官方会下线这些版本，所以我就给我备份了 PyCharm 和 IDEA 以及 WebStorm 的 2021.2 的安装包，说不定什么时候需要到呢？大概率是用不上得啦。</p>
+<p>软件链接：<a href="https://pan.baidu.com/s/1S7lrn9mQ5aXU-Hcpi_eaWg">https://pan.baidu.com/s/1S7lrn9mQ5aXU-Hcpi_eaWg</a> 提取码: qxja </p>
+<p>补丁链接：<a href="https://pan.baidu.com/s/1UQpHQKAmcgeE-dO-xBummg">https://pan.baidu.com/s/1UQpHQKAmcgeE-dO-xBummg</a> 提取码: 6ngd </p>
+<p>补丁作者的博客：<a href="https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html">Jetbrains 系列产品重置试用方法 | 知了 (zhile.io)</a></p>
+<h3 id="如何使用？"><a href="#如何使用？" class="headerlink" title="如何使用？"></a>如何使用？</h3><p>其实很简单，保证自己可以打开相关的软件，如果进入需要激活的情况建议使用下面说到的激活码激活一次后再进行安装插件。</p>
+<p>如果是第一次安装，那就点击使用 30 天（2021.3 后需要登录，貌似这个插件也不支持后面的版本激活）即可进入软件。</p>
+<p>在打开软件后随便创建一个项目，然后把补丁直接拖动到这里</p>
+<p><img src="https://s2.loli.net/2022/06/09/D8XzCtnGxBPueIc.png"></p>
+<p>点击 Help，然后选择这个</p>
+<p><img src="https://s2.loli.net/2022/06/09/pdqOJeG1r2yiP78.png"></p>
+<p>这般设置一下便可</p>
+<p><img src="https://s2.loli.net/2022/06/09/gotUsxLAXWYD4rd.png"></p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【Android】QDM—— 一款强大的音乐下载软件</title>
     <url>/2022/06/09/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Android/%E3%80%90Android%E3%80%91QDM%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6/</url>
     <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>QMD 是一款简洁、实用的<strong>音乐下载</strong> APP。</p>
@@ -145,31 +171,5 @@
       <tags>
         <tag>破解软件</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>【Windows】Jetbrains 系列软件的破解补丁</title>
-    <url>/2022/06/08/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Windows/%E3%80%90Windows%E3%80%91Jetbrains%E7%B3%BB%E5%88%97%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E8%A1%A5%E4%B8%81/</url>
-    <content><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Jetbrains 系列的的软件是真的好用，但是也是真的贵，对于一个学生党来说确实是支持不起这个费用啊。当然，官方也有基础的免费版本，可是专业版的对于学习来说太方便了，所以上个 “学习版” 是有必要的。当然，有财力的还是建议支持正版，毕竟只有收费才可以让开发的公司有动力持续地更新产品，我们才能用到更好的产品。废话不多说，妹子图开局。</p>
-<p><img src="https://s2.loli.net/2022/06/09/sbyJzeRjhXad32Z.png"></p>
-<h3 id="IDE-Eval-Reset插件（已停更）"><a href="#IDE-Eval-Reset插件（已停更）" class="headerlink" title="IDE Eval Reset插件（已停更）"></a><code>IDE Eval Reset</code> 插件（已停更）</h3><p>这是一款用起来比较简单的插件，可以通过重置 30 天试用来实现破解，但这个只可以在 2021.3 之前的版本可用，但比较稳定，相对于一些用老版本或者激活码我更倾向于使用这个插件。</p>
-<h3 id="如何下载2021-3之前的版本？"><a href="#如何下载2021-3之前的版本？" class="headerlink" title="如何下载2021.3之前的版本？"></a>如何下载 2021.3 之前的版本？</h3><p>此处我已 PyCharm 为例，我们访问官方的下载页面，选择其他版本，就可以挑选老版本了</p>
-<p><img src="https://s2.loli.net/2022/06/09/aoXJbPOQ59legwH.png"></p>
-<p><img src="https://s2.loli.net/2022/06/09/fp7xDwrXoiBZ5Vu.png"></p>
-<p>当然，可能过段时间官方会下线这些版本，所以我就给我备份了 PyCharm 和 IDEA 以及 WebStorm 的 2021.2 的安装包，说不定什么时候需要到呢？大概率是用不上得啦。</p>
-<p>软件链接：<a href="https://pan.baidu.com/s/1S7lrn9mQ5aXU-Hcpi_eaWg">https://pan.baidu.com/s/1S7lrn9mQ5aXU-Hcpi_eaWg</a> 提取码: qxja </p>
-<p>补丁链接：<a href="https://pan.baidu.com/s/1UQpHQKAmcgeE-dO-xBummg">https://pan.baidu.com/s/1UQpHQKAmcgeE-dO-xBummg</a> 提取码: 6ngd </p>
-<p>补丁作者的博客：<a href="https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html">Jetbrains 系列产品重置试用方法 | 知了 (zhile.io)</a></p>
-<h3 id="如何使用？"><a href="#如何使用？" class="headerlink" title="如何使用？"></a>如何使用？</h3><p>其实很简单，保证自己可以打开相关的软件，如果进入需要激活的情况建议使用下面说到的激活码激活一次后再进行安装插件。</p>
-<p>如果是第一次安装，那就点击使用 30 天（2021.3 后需要登录，貌似这个插件也不支持后面的版本激活）即可进入软件。</p>
-<p>在打开软件后随便创建一个项目，然后把补丁直接拖动到这里</p>
-<p><img src="https://s2.loli.net/2022/06/09/D8XzCtnGxBPueIc.png"></p>
-<p>点击 Help，然后选择这个</p>
-<p><img src="https://s2.loli.net/2022/06/09/pdqOJeG1r2yiP78.png"></p>
-<p>这般设置一下便可</p>
-<p><img src="https://s2.loli.net/2022/06/09/gotUsxLAXWYD4rd.png"></p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
   </entry>
 </search>

@@ -23,21 +23,21 @@
     <meta name="description" content=".el-header, .el-footer {             background-color: #B3C0D1;             color: #333;             text-align: center;             line-height: 60px;         }">
 <meta property="og:type" content="website">
 <meta property="og:title" content="清风明月的小破站">
-<meta property="og:url" content="http://example.com/tools/%E5%AF%B9%E6%AF%94%E6%96%87%E5%AD%97.html">
+<meta property="og:url" content="http://example.com/tools/%E6%96%87%E5%AD%97%E5%AF%B9%E6%AF%94.html">
 <meta property="og:site_name" content="清风明月的小破站">
 <meta property="og:description" content=".el-header, .el-footer {             background-color: #B3C0D1;             color: #333;             text-align: center;             line-height: 60px;         }">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-12T15:12:16.574Z">
-<meta property="article:modified_time" content="2022-06-12T15:11:23.442Z">
+<meta property="article:published_time" content="2022-06-12T15:26:01.775Z">
+<meta property="article:modified_time" content="2022-06-12T15:26:01.775Z">
 <meta property="article:author" content="清风明月">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/tools/%E5%AF%B9%E6%AF%94%E6%96%87%E5%AD%97">
+<link rel="canonical" href="http://example.com/tools/%E6%96%87%E5%AD%97%E5%AF%B9%E6%AF%94">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://example.com/tools/%E5%AF%B9%E6%AF%94%E6%96%87%E5%AD%97.html","path":"tools/对比文字.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://example.com/tools/%E6%96%87%E5%AD%97%E5%AF%B9%E6%AF%94.html","path":"tools/文字对比.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title> | 清风明月的小破站
@@ -47,7 +47,7 @@
 
 
 
-<script src="https://fastly.jsdelivr.net/npm/exif-js@2/exif.min.js"></script><script src="/lib/fireworks.js"></script>
+<script src="/lib/fireworks.js"></script><script src="https://fastly.jsdelivr.net/npm/exif-js@2/exif.min.js"></script>
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -277,39 +277,40 @@
         },
         methods:{
 
-            eq: function(){
-                let one = this.text_one;
-                let two = this.text_two;
-                if(one===two){
-                    this.open("完全相等");
-                }else {
-                    let longer = -1;
-                    one.length>two.length?longer=1:longer=2;
-                    if (longer===-1){
-                        this.open("数据长度为空");
-                    }else if (longer===1){
-                        for (let i = 0; i < one.length; i++) {
-                            if (one[i]!==two[i]){
-                                this.open("第"+(i+1)+"个字处的字符不一致");
-                                break;
-                            }
-                        }
-                    }else {
-                        for (let i = 0; i < two.length; i++) {
-                            if (two[i]!==one[i]){
-                                this.open("第"+(i+1)+"个字处的字符不一致");
-                                break;
-                            }
-                        }
-                    }
-                }
-            },
-            open(text) {
-                this.$message(text.toString());
-            },
-        }
-    })
-</script>
+<pre><code>        eq: function()&#123;
+            let one = this.text_one;
+            let two = this.text_two;
+            if(one===two)&#123;
+                this.open(&quot;完全相等&quot;);
+            &#125;else &#123;
+                let longer = -1;
+                one.length&gt;two.length?longer=1:longer=2;
+                if (longer===-1)&#123;
+                    this.open(&quot;数据长度为空&quot;);
+                &#125;else if (longer===1)&#123;
+                    for (let i = 0; i &lt; one.length; i++) &#123;
+                        if (one[i]!==two[i])&#123;
+                            this.open(&quot;第&quot;+(i+1)+&quot;个字处的字符不一致&quot;);
+                            break;
+                        &#125;
+                    &#125;
+                &#125;else &#123;
+                    for (let i = 0; i &lt; two.length; i++) &#123;
+                        if (two[i]!==one[i])&#123;
+                            this.open(&quot;第&quot;+(i+1)+&quot;个字处的字符不一致&quot;);
+                            break;
+                        &#125;
+                    &#125;
+                &#125;
+            &#125;
+        &#125;,
+        open(text) &#123;
+            this.$message(text.toString());
+        &#125;,
+    &#125;
+&#125;)
+</code></pre>
+<p></script><p></p>
 
       </div>
       

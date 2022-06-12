@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        .el-header, .el-footer {
+            background-color: #B3C0D1;
+            color: #333;
+            text-align: center;
+            line-height: 60px;
+        }
+        .el-main {
+            background-color: #E9EEF3;
+            color: #333;
+            text-align: center;
+            line-height: 160px;
+            width: 900px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <el-container>
+        <el-header>对比两个段文字一致性</el-header>
+        <el-main>
+            <el-input
+                type="textarea"
+                :rows="10"
+                placeholder="请输入内容"
+                v-model="text_one"
+                id="one">
+            </el-input>
+            <el-input
+                type="textarea"
+                :rows="10"
+                placeholder="请输入内容"
+                v-model="text_two"
+                id = "two">
+            </el-input>
+            <el-button @click="eq">普通校验</el-button>
+        </el-main>
+    </el-container>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            text_one:"",
+            text_two:""
+        },
+        methods:{
+
+            eq: function(){
+                let one = this.text_one;
+                let two = this.text_two;
+                if(one===two){
+                    this.open("完全相等");
+                }else {
+                    let longer = -1;
+                    one.length>two.length?longer=1:longer=2;
+                    if (longer===-1){
+                        this.open("数据长度为空");
+                    }else if (longer===1){
+                        for (let i = 0; i < one.length; i++) {
+                            if (one[i]!==two[i]){
+                                this.open("第"+(i+1)+"个字处的字符不一致");
+                                break;
+                            }
+                        }
+                    }else {
+                        for (let i = 0; i < two.length; i++) {
+                            if (two[i]!==one[i]){
+                                this.open("第"+(i+1)+"个字处的字符不一致");
+                                break;
+                            }
+                        }
+                    }
+                }
+            },
+            open(text) {
+                this.$message(text.toString());
+            },
+        }
+    })
+</script>
+</html>

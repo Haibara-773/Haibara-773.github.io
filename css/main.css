@@ -2731,6 +2731,12 @@ mark.search-keyword {
     margin-bottom: 10px;
   }
 }
+.fireworks {
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+}
 .exif-container {
   position: relative;
 }
@@ -2745,10 +2751,4 @@ mark.search-keyword {
   color: #fff;
   font-style: italic;
   margin: 0 1em;
-}
-.fireworks {
-  left: 0;
-  pointer-events: none;
-  position: fixed;
-  top: 0;
 }

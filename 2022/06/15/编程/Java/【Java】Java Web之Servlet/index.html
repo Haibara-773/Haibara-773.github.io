@@ -20,23 +20,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="清风明月的小破站">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="什么是 Servlet Servlet 是 JavaEE 规范之一。规范就是接口  Servlet 就是 Java Web 三大组件之一 三大组件：  Servlet 程序  Fulter 过滤器  Listener 监听器    Servlet 是运行在服务器上的一个 Java 小程序，可以接收客户端发送过来的请求，并且响应数据   第一个 Servlet 程序1、因为 Servlet 是一个接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Java】Java Web 之 Servlet">
+<meta property="og:url" content="http://example.com/2022/06/15/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%20Web%E4%B9%8BServlet/index.html">
 <meta property="og:site_name" content="清风明月的小破站">
+<meta property="og:description" content="什么是 Servlet Servlet 是 JavaEE 规范之一。规范就是接口  Servlet 就是 Java Web 三大组件之一 三大组件：  Servlet 程序  Fulter 过滤器  Listener 监听器    Servlet 是运行在服务器上的一个 Java 小程序，可以接收客户端发送过来的请求，并且响应数据   第一个 Servlet 程序1、因为 Servlet 是一个接">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/06/16/8cjJwQZ3Hf7GIqx.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/16/jPUZd3ru4aNYSAG.png">
+<meta property="article:published_time" content="2022-06-15T15:27:01.000Z">
+<meta property="article:modified_time" content="2022-06-16T07:54:10.727Z">
 <meta property="article:author" content="清风明月">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/06/16/8cjJwQZ3Hf7GIqx.png">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2022/06/15/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%20Web%E4%B9%8BServlet/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/06/15/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%20Web%E4%B9%8BServlet/","path":"2022/06/15/编程/Java/【Java】Java Web之Servlet/","title":"【Java】Java Web 之 Servlet"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>清风明月的小破站</title>
+<title>【Java】Java Web 之 Servlet | 清风明月的小破站</title>
   
 
 
@@ -66,7 +73,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">清风明月的小破站</h1>
+      <p class="site-title">清风明月的小破站</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -125,7 +132,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -138,6 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFServlet"><span class="nav-number">1.</span> <span class="nav-text">什么是 Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAServlet%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.1.</span> <span class="nav-text">第一个 Servlet 程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL%E5%A6%82%E4%BD%95%E5%AE%9A%E4%BD%8DServlet%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.2.</span> <span class="nav-text">URL 如何定位 Servlet 程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.3.</span> <span class="nav-text">Servlet 生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Servlet%E7%9A%84%E8%AF%B7%E6%B1%82%E7%9A%84%E5%88%86%E5%8F%91%E5%A4%84%E7%90%86"><span class="nav-number">1.4.</span> <span class="nav-text">Servlet 的请求的分发处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%A7%E6%89%BFHttpServlet%E7%B1%BB%E5%AE%9E%E7%8E%B0Servlet%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.5.</span> <span class="nav-text">继承 HttpServlet 类实现 Servlet 程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Servlet%E6%95%B4%E4%B8%AA%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF%E4%BD%93%E7%B3%BB"><span class="nav-number">1.6.</span> <span class="nav-text">Servlet 整个类的继承体系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletConfig"><span class="nav-number">2.</span> <span class="nav-text">ServletConfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletContext"><span class="nav-number">3.</span> <span class="nav-text">ServletContext</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFServletContext"><span class="nav-number">3.1.</span> <span class="nav-text">什么是 ServletContext</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ServletContext%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.2.</span> <span class="nav-text">ServletContext 的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%9F%9F"><span class="nav-number">3.3.</span> <span class="nav-text">操作域</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServletRequest"><span class="nav-number">4.</span> <span class="nav-text">HttpServletRequest</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPServletRequest%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">4.1.</span> <span class="nav-text">HTTPServletRequest 的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPServletRequest%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">HTTPServletRequest 的常用方法</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -203,16 +211,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/15/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%20Web%E4%B9%8BServlet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -226,13 +235,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 清风明月的小破站">
+      <meta itemprop="name" content="【Java】Java Web 之 Servlet | 清风明月的小破站">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/15/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%20Web%E4%B9%8BServlet/" class="post-title-link" itemprop="url">【Java】Java Web 之 Servlet</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          【Java】Java Web 之 Servlet
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -286,7 +295,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="什么是Servlet"><a href="#什么是Servlet" class="headerlink" title="什么是Servlet"></a>什么是 Servlet</h3><ol>
+        <h3 id="什么是Servlet"><a href="#什么是Servlet" class="headerlink" title="什么是Servlet"></a>什么是 Servlet</h3><ol>
 <li><p>Servlet 是 JavaEE 规范之一。规范就是接口</p>
 </li>
 <li><p>Servlet 就是 Java Web 三大组件之一</p>
@@ -379,7 +388,6 @@
 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/servlet/RequestTest</span><br><span class="line">http://localhost:8080/servlet/RequestTest</span><br><span class="line">0:0:0:0:0:0:0:1</span><br><span class="line">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36</span><br><span class="line">POST</span><br><span class="line">我是用户名</span><br><span class="line">[cpp, java, python, js, c]</span><br><span class="line">域设置前null</span><br><span class="line">域设置后这是在设置域</span><br></pre></td></tr></tbody></table></figure>
 
 
-      
     </div>
 
     
@@ -387,8 +395,18 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/06/09/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/" rel="prev" title="【Java】Java 多线程的实现方式 —— 持续更新中">
+                  <i class="fa fa-chevron-left"></i> 【Java】Java 多线程的实现方式 —— 持续更新中
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -396,474 +414,7 @@
 
 
 
-    
 
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/09/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s2.loli.net/2022/06/09/bCBxUlXrFGT93he.png">
-      <meta itemprop="name" content="清风明月">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="清风明月的小破站">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 清风明月的小破站">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/09/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/" class="post-title-link" itemprop="url">【Java】Java 多线程的实现方式 —— 持续更新中</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-06-09 16:13:19 / 修改时间：16:48:31" itemprop="dateCreated datePublished" datetime="2022-06-09T16:13:19+08:00">2022-06-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承 Thread 类</h1><p>基础 Thread 类的方法需要从四部去执行</p>
-<ol>
-<li>基础 Thread 类</li>
-<li>重写 Thread 类的 run 方法</li>
-<li>创建 Thread 类的子类对象</li>
-<li>通过子类对象执行 start 方法 </li>
-</ol>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadLearn_Ex_Thread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"我多线程看书的第"</span>+i+<span class="string">"分钟"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">ThreadLearn_Ex_Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadLearn_Ex_Thread</span>();</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"我主线程打游戏的第"</span>+i+<span class="string">"分钟"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Thread的常用方法</span></span><br><span class="line"><span class="comment"> * start()执行当前线程</span></span><br><span class="line"><span class="comment"> * run()重新Thread的run方法，在此方法中写需要线程执行的内容</span></span><br><span class="line"><span class="comment"> * currentThread()，静态方法，返回当前线程</span></span><br><span class="line"><span class="comment"> * getName()获取线程名称</span></span><br><span class="line"><span class="comment"> * setName()设置线程名称</span></span><br><span class="line"><span class="comment"> * yield释放当前CPU执行权</span></span><br><span class="line"><span class="comment"> * join()线程进入阻塞状态，需要等其他线程执行完才继续执行</span></span><br><span class="line"><span class="comment"> * sleep()线程休眠，单位毫秒</span></span><br><span class="line"><span class="comment"> * isAlive()判断线程是否存活</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadMethodTest</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            <span class="keyword">try</span> {</span><br><span class="line">                sleep(<span class="number">50</span>);</span><br><span class="line">            } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            }</span><br><span class="line">            System.out.println(<span class="string">"线程"</span>+currentThread().getName()+<span class="string">"第"</span>+i+<span class="string">"次调用"</span>);</span><br><span class="line">            <span class="keyword">if</span> (i==<span class="number">80</span>){</span><br><span class="line">                Thread.yield();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">ThreadMethodTest</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadMethodTest</span>();</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="type">ThreadMethodTest</span> <span class="variable">test</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadMethodTest</span>();</span><br><span class="line">        test.start();</span><br><span class="line">        Thread.currentThread().setName(<span class="string">"主线程"</span>);</span><br><span class="line">        System.out.println(test.isAlive());</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"线程"</span>+currentThread().getName()+<span class="string">"第"</span>+i+<span class="string">"次调用"</span>);</span><br><span class="line">            <span class="keyword">if</span> (i==<span class="number">50</span>){</span><br><span class="line">                <span class="keyword">try</span> {</span><br><span class="line">                    thread.join();</span><br><span class="line">                } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        System.out.println(test.isAlive());</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>Thread 的常用方法</li>
-<li> start () 执行当前线程</li>
-<li> run () 重新 Thread 的 run 方法，在此方法中写需要线程执行的内容</li>
-<li> currentThread ()，静态方法，返回当前线程</li>
-<li> getName () 获取线程名称</li>
-<li> setName () 设置线程名称</li>
-<li> yield 释放当前 CPU 执行权</li>
-<li> join () 线程进入阻塞状态，需要等其他线程执行完才继续执行</li>
-<li> sleep () 线程休眠，单位毫秒</li>
-<li> isAlive () 判断线程是否存活<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2></li>
-</ul>
-<ol>
-<li>不能在主线程调用 run 方法启动，必须调用 start 方法，否则无法实现多线程</li>
-<li>不能在已 start 的线程再次 start</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/09/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91int%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F%E5%92%8C%E5%80%92%E5%8F%99%E4%BB%A5%E5%8F%8AtoString/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s2.loli.net/2022/06/09/bCBxUlXrFGT93he.png">
-      <meta itemprop="name" content="清风明月">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="清风明月的小破站">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 清风明月的小破站">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/09/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91int%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F%E5%92%8C%E5%80%92%E5%8F%99%E4%BB%A5%E5%8F%8AtoString/" class="post-title-link" itemprop="url">【Java】int 数组的排序和倒叙以及 toString</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-06-09 16:04:19 / 修改时间：16:14:14" itemprop="dateCreated datePublished" datetime="2022-06-09T16:04:19+08:00">2022-06-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>顺序排序使用的是冒泡排序来实现的，而倒叙排序则是在排序前通过顺序排序将数组的顺序排好，在此基础上对数组进行元素调换来实现倒叙。</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArraySort</span> {</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 正序使用冒泡排序完成</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] sort(<span class="type">int</span>[] arr){</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; arr.length; i++) {</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length - i; j++) {</span><br><span class="line">                <span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>]){</span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[j];</span><br><span class="line">                    arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                    arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 倒叙排序直接将元素交换</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] reverse(<span class="type">int</span>[] arr){</span><br><span class="line">        arr = sort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">0</span>,e=arr.length-<span class="number">1</span>; s &lt; e; s++,e--){</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[s];</span><br><span class="line">            arr[s] = arr[e];</span><br><span class="line">            arr[e] = temp;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toString</span><span class="params">(<span class="type">int</span>[] arr)</span>{</span><br><span class="line">        <span class="keyword">if</span> (arr == <span class="literal">null</span>){</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"null"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="type">int</span> <span class="variable">iMax</span> <span class="operator">=</span> arr.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (iMax == -<span class="number">1</span>){</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"[]"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">buffer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        buffer.append(<span class="string">"["</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; ; i++) {</span><br><span class="line">            buffer.append(arr[i]);</span><br><span class="line">            <span class="keyword">if</span> (i==iMax){</span><br><span class="line">                <span class="keyword">return</span> buffer.append(<span class="string">']'</span>).toString();</span><br><span class="line">            }</span><br><span class="line">            buffer.append(<span class="string">","</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/09/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Android/%E3%80%90Android%E3%80%91QDM%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s2.loli.net/2022/06/09/bCBxUlXrFGT93he.png">
-      <meta itemprop="name" content="清风明月">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="清风明月的小破站">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 清风明月的小破站">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/09/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Android/%E3%80%90Android%E3%80%91QDM%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6/" class="post-title-link" itemprop="url">【Android】QDM—— 一款强大的音乐下载软件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-06-09 13:50:19 / 修改时间：14:09:06" itemprop="dateCreated datePublished" datetime="2022-06-09T13:50:19+08:00">2022-06-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>919</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>QMD 是一款简洁、实用的<strong>音乐下载</strong> APP。</p>
-<p>支持系统版本：Android 5.0 及以上</p>
-<h2 id="QMD-1-7-1-更新内容："><a href="#QMD-1-7-1-更新内容：" class="headerlink" title="QMD 1.7.1 更新内容："></a>QMD 1.7.1 更新内容：</h2><p><strong>1. 修复部分闪退和已知问题</strong></p>
-<p>数都数不清，修也修不完。</p>
-<p><strong>2. 重构歌单数据库</strong></p>
-<p>所有歌单会被清空，但其他数据不影响。最近已经把所有数据库都重构了一遍，以后不会再出现收藏歌曲或者歌单被清空的情况了。</p>
-<p><strong>3. 添加歌曲页面为空时的缺省页</strong></p>
-<p><img src="https://s2.loli.net/2022/06/09/fWARs53SyTdiNIp.png" alt="图片"></p>
-<p><strong>4. 修复收藏页面多选取消收藏的卡顿 bug</strong></p>
-<p><strong>！！！特别事项！！！</strong></p>
-<p>此版为重构版，数据无法与旧版 QMD（1.6.0 及以前的版本）兼容，如果你之前已经安装过 QMD，安装完这个版本之后你的手机会出现两个 QMD。</p>
-<hr>
-<p><strong>其他事项：</strong></p>
-<ol>
-<li><p>网络问题可能会导致资源获取失败。</p>
-</li>
-<li><p>播放不了可以尝试切换网络，或者降低试听音质。</p>
-</li>
-<li><p>QQ 音乐无版权的歌和数字专辑无法下载和试听！</p>
-</li>
-<li><p>1.5.4 及以下的版本由于服务器到期已经全部失效，不再维护。</p>
-</li>
-</ol>
-<p>\5. 下载链接在后面。</p>
-<p>\7. 也许根本不会有人看这段话。</p>
-<ol start="6">
-<li>也不会有多少人仔细看更新内容。</li>
-</ol>
-<p>\8. 更不会有人注意序号错了。</p>
-<ol start="9">
-<li>竟然被你发现了 Σ(っ °Д °;) っ</li>
-</ol>
-<p><strong>QMD 常见问题</strong></p>
-<p><strong>1. 找不到音乐文件。</strong><br>音乐文件默认在手机目录下 Music 文件夹。可以直接用音乐 app 扫描。在 QMD 已下载页面长按歌曲，点击歌曲信息也能查看歌曲位置。</p>
-<p><strong>2. 添加歌单里面提示 QQ 没有音乐。</strong><br>打开 QQ 音乐 APP，打开个人主页设置，在访问设置里面确保个人主页和歌单的访问权限已开启。</p>
-<p>如果你添加的是歌单码，请确保”qmd:/“这串文字也要添加进去。</p>
-<p><strong>3. 获取资源失败。</strong><br>获取资源失败请尝试下载安装最新版。数字专辑（付费歌曲）以及 QQ 音乐无版权的歌无法下载和试听！<br>一般的歌曲不能下载，那就是接口失效了，耐心等待修复。</p>
-<p><strong>4. 如何导入网易云或者其他音乐平台的歌单。</strong><br>在 QQ 音乐里面有导入外部歌单功能，可以将其他音乐平台的歌单转换到 QQ 音乐，再从 QMD 导入歌单。</p>
-<p><strong>5. 提示内部错误。</strong><br>打开设置页面，重置下载器。或者请尝试卸载重装或者清除数据。</p>
-<p><strong>6. 字体空白。</strong></p>
-<p>通常 MIUI 上使用第三方主题会出现这个问题，换个手机主题就能解决。</p>
-<p><strong>7. QMD 有没有 IOS 或者 PC 版？</strong></p>
-<p><strong>不会有 IOS 版。</strong>但 PC 版的话之前有过想法，但是暂时没有计划开发。</p>
-<hr>
-<p><strong>下载地址：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.kzwr.com/kzwrfs?fid=5f1ed494dc52n5eum5.apk">直接下载</a>				<a href="**https://c.ddot.top/api/v3/file/get/15/QMD%201.7.1.apk?sign=kJuU0zF7zoiJAaPU8jboGKHU1f9yWz7PnCaAFWRK0aY=:0**">直接下载</a>				<a target="_blank" rel="noopener" href="https://jzen.lanzoum.com/iAaNe018qw4h">蓝奏云</a>					<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1z2xDSlQ9zn9DElXf34i54g">百度网盘 提取码: <strong>uqwj</strong></a>				<pangu> </pangu><a target="_blank" rel="noopener" href="https://share.weiyun.com/ZFAqXo8T">微云</a>				<pangu> </pangu><a target="_blank" rel="noopener" href="https://github.com/OJZen/QMD_Android/releases/download/1.7.1/QMD.1.7.1.apk">GitHub</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/29/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Windows/%E3%80%90Windows%E3%80%91AdGuard%E7%9A%84%E7%A0%B4%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s2.loli.net/2022/06/09/bCBxUlXrFGT93he.png">
-      <meta itemprop="name" content="清风明月">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="清风明月的小破站">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 清风明月的小破站">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/29/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Windows/%E3%80%90Windows%E3%80%91AdGuard%E7%9A%84%E7%A0%B4%E8%A7%A3/" class="post-title-link" itemprop="url">【Windows】AdGuard 的破解</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-03-29 12:12:44" itemprop="dateCreated datePublished" datetime="2022-03-29T12:12:44+08:00">2022-03-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-09 18:06:17" itemprop="dateModified" datetime="2022-06-09T18:06:17+08:00">2022-06-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>538</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="什么是AdGuard？"><a href="#什么是AdGuard？" class="headerlink" title="什么是AdGuard？"></a>什么是 AdGuard？</h2><p>AdGuard 是一款强大的广告拦截工具，主打广告拦截、上网安全和隐私保护等功能，对于我们而已，最主要的就是它的广告拦截功能。AdGuard 有多个版本，支持多平台，分别为浏览器扩展版，桌面版，和移动版，桌面版支持 Windows 和 Mac 系统，移动版则是支持 Android 和 iOS。AdGuard 可以去除绝大部分的网页的烦人广告，给我们一个良好舒适的上网冲浪环境。</p>
-<h2 id="使用AdGuard的前后对比"><a href="#使用AdGuard的前后对比" class="headerlink" title="使用AdGuard的前后对比"></a>使用 AdGuard 的前后对比</h2><h3 id="使用前"><a href="#使用前" class="headerlink" title="使用前"></a>使用前</h3><p><img src="https://s2.loli.net/2022/03/29/bCwY96c7EAKXiFa.png" alt="AdGuard的破解"></p>
-<h3 id="使用后"><a href="#使用后" class="headerlink" title="使用后"></a>使用后</h3><p><img src="https://s2.loli.net/2022/03/29/qCjYHItAPK9UB2v.png" alt="AdGuard的破解"></p>
-<p>可以通过使用的前后对比图发现，头部广告和页脚广告都被轻松的清理掉了（对不起了扩展迷！）</p>
-<h2 id="浏览器扩展不是免费嘛？为什么要安装应用？"><a href="#浏览器扩展不是免费嘛？为什么要安装应用？" class="headerlink" title="浏览器扩展不是免费嘛？为什么要安装应用？"></a>浏览器扩展不是免费嘛？为什么要安装应用？</h2><p>萝卜青菜各有所爱，安装一个应用，其他的应用和浏览器都可以实现广告拦截，所以还是安装个应用更香啦</p>
-<h2 id="怎么破解？"><a href="#怎么破解？" class="headerlink" title="怎么破解？"></a>怎么破解？</h2><p>首先，安装官方的应用，官方应用有试用期的，试用期可以享受全部的功能，到了试用期结束就需要付费了。</p>
-<p><img src="https://s2.loli.net/2022/03/29/8Wyr5cYLESUijte.png" alt="AdGuard的破解"></p>
-<p>此时，我们可以看到试用期是到 4 月 1 日就到期了的，而我们可以通过时间大法来实现破解</p>
-<p><img src="https://s2.loli.net/2022/03/29/N2MX5smRyZvl61W.png" alt="AdGuard的破解"></p>
-<p><img src="https://s2.loli.net/2022/03/29/WGMkfIAKq6dmZ1n.png" alt="AdGuard的破解"></p>
-<p>此时再输入一个邮箱即可实现延期 180 天的操作，如果 180 天都试用过了，就需要使用本次的工具了</p>
-<p><img src="https://s2.loli.net/2022/03/29/7IQHBeaOi5Vhw2R.png" alt="AdGuard的破解"></p>
-<p>它可以让 AdGuard 恢复到最开始的状态，已实现在此试用 180 天的效果</p>
-<p>链接：</p>
-<p><a target="_blank" rel="noopener" href="https://asuna773.lanzoul.com/iZsmG028ei9c">https://asuna773.lanzoul.com/iZsmG028ei9c</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 </div>
   </main>

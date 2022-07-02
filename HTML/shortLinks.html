@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>短连接生成</title>
+    <!-- 导入样式 -->
+    <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css"/>
+    <style>
+        .el-header, .el-footer {
+            background-color: #B3C0D1;
+            color: #333;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .el-main {
+            background-color: #E9EEF3;
+            color: #333;
+            text-align: center;
+            line-height: 160px;
+            width: 900px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <template>
+        <el-container>
+            <el-header>短链接生成</el-header>
+            <el-main>
+                <el-input
+                        type="textarea"
+                        :rows="10"
+                        placeholder="请输入长链接"
+                        v-model="longLinks"
+                        id="one">
+                </el-input>
+                <el-input
+                        type="textarea"
+                        :rows="10"
+                        placeholder="等待生成短连接"
+                        v-model="shorLinks"
+                        id="one" style="margin-top: 20px">
+                </el-input>
+                <el-button @click="getShortLinks">生成短连接</el-button>
+
+            </el-main>
+        </el-container>
+    </template>
+
+</div>
+<!-- import Vue before Element -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            longLinks: "",
+            shorLinks: ""
+        },
+        methods: {
+            getShortLinks: function () {
+                axios.get("https://cloud.kuaizhan.com/api/v1/km/genShortLink?appKey=geESiXue0ril&link=" + this.longLinks)
+                    .then(res=>{
+                        this.shorLinks = res["data"]
+                        }
+                    )
+            }
+        }
+    })
+</script>
+</body>
+</html>

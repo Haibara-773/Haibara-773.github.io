@@ -2765,12 +2765,6 @@ mark.search-keyword {
     margin-bottom: 10px;
   }
 }
-.fireworks {
-  left: 0;
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-}
 .exif-container {
   position: relative;
 }
@@ -2785,6 +2779,12 @@ mark.search-keyword {
   color: #fff;
   font-style: italic;
   margin: 0 1em;
+}
+.fireworks {
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
 }
 body {
   background: url("https://v.api.aa1.cn/api/api-gqsh/index.php?wpon=s3s398eu7y6dt7e24");

@@ -2787,7 +2787,7 @@ mark.search-keyword {
   top: 0;
 }
 body {
-  background: url("https://w.wallhaven.cc/full/yj/wallhaven-yjeljk.png");
+  background: url("https://w.wallhaven.cc/full/nm/wallhaven-nmzpgk.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -2796,8 +2796,8 @@ body {
 }
 .sidebar {
   background-color: transparent;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .header-inner {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.8);
 }

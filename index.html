@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -204,6 +204,659 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/12/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%E5%B8%B8%E7%94%A8%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/06/09/bCBxUlXrFGT93he.png">
+      <meta itemprop="name" content="清风明月">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清风明月的小破站">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 清风明月的小破站">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/12/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91Java%E5%B8%B8%E7%94%A8%E7%B1%BB/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-12 13:48:03" itemprop="dateCreated datePublished" datetime="2022-07-12T13:48:03+08:00">2022-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-13 15:02:13" itemprop="dateModified" datetime="2022-07-13T15:02:13+08:00">2022-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>8.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>8 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><h3 id="Object类的介绍"><a href="#Object类的介绍" class="headerlink" title="Object类的介绍"></a>Object 类的介绍</h3><p>Object 类是所有的类的父类，所有的 Java 类都继承了 Object</p>
+<h4 id="隐式继承"><a href="#隐式继承" class="headerlink" title="隐式继承"></a>隐式继承</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo01</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="显式继承"><a href="#显式继承" class="headerlink" title="显式继承"></a>显式继承</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo02</span> <span class="keyword">extends</span> <span class="title class_">Object</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th align="left">构造方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> 1</td>
+<td align="left">Object()</td>
+<td> 构造一个新的对象</td>
+</tr>
+</tbody></table>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> 01</td>
+<td>hashCode()</td>
+<td> 获取对象的 hash 值</td>
+</tr>
+<tr>
+<td> 02</td>
+<td>getClass()</td>
+<td> 获取对象的运行时对象的类</td>
+</tr>
+<tr>
+<td> 03</td>
+<td>toString()</td>
+<td> 返回对象的字符串表示形式</td>
+</tr>
+<tr>
+<td> 04</td>
+<td>equals()</td>
+<td> 比较两个对象是否相等 </td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Object</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">System.out.println(s.hashCode());</span><br><span class="line">System.out.println(s.getClass());</span><br><span class="line">System.out.println(s.toString());</span><br><span class="line">System.out.println(s.equals(s));</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1078694789</span><br><span class="line">class java.lang.Object</span><br><span class="line">java.lang.Object@404b9385</span><br><span class="line">true</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>在 Object 的 equals 方法中的源码如下</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object obj)</span> {</span><br><span class="line">    <span class="keyword">return</span> (<span class="built_in">this</span> == obj);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>可以看出在方法中比较的是对象的地址，所以无意义，通常会对方法进行重写</p>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><h3 id="String的介绍"><a href="#String的介绍" class="headerlink" title="String的介绍"></a>String 的介绍</h3><p>在 Java 中字符串属于对象，Java 提供了 String 类来创建和操作字符串</p>
+<h3 id="创建字符串"><a href="#创建字符串" class="headerlink" title="创建字符串"></a>创建字符串</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">"abc"</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">"abc"</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> 01</td>
+<td>equals()</td>
+<td> 将此字符串与指定的对象比较</td>
+</tr>
+<tr>
+<td> 02</td>
+<td>equalsIgnoreCase()</td>
+<td> 用于将字符串与指定的对象比较，不考虑大小写</td>
+</tr>
+<tr>
+<td> 03</td>
+<td>indexOf()</td>
+<td> 返回指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1</td>
+</tr>
+<tr>
+<td>04</td>
+<td>lastIndexOf()</td>
+<td> 返回指定子字符串在此字符串中最右边出现处的索引，如果此字符串中没有这样的字符，则返回 -1</td>
+</tr>
+<tr>
+<td>05</td>
+<td>length()</td>
+<td> 用于返回字符串的长度，空字符串的长度返回 0</td>
+</tr>
+<tr>
+<td>06</td>
+<td>replace()</td>
+<td> 通过用 newChar 字符替换字符串中出现的所有 searchChar 字符，并返回替换后的新字符串</td>
+</tr>
+<tr>
+<td> 07</td>
+<td>split()</td>
+<td> 根据匹配给定的正则表达式来拆分字符串</td>
+</tr>
+<tr>
+<td> 08</td>
+<td>substring()</td>
+<td> 返回字符串的子字符串</td>
+</tr>
+<tr>
+<td> 09</td>
+<td>startsWith()</td>
+<td> 检测字符串是否以指定的前缀开始</td>
+</tr>
+<tr>
+<td> 10</td>
+<td>trim()</td>
+<td> 返回字符串的副本，忽略前导空白和尾部空白</td>
+</tr>
+<tr>
+<td> 11</td>
+<td>isEmpty()</td>
+<td> 判断字符串是否为空 </td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">"abcabc"</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">"ABCABC"</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s3</span> <span class="operator">=</span> <span class="string">"      abc      "</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>();</span><br><span class="line">System.out.println(s1.equals(s2));  <span class="comment">//false</span></span><br><span class="line">System.out.println(s1.equalsIgnoreCase(s2));    <span class="comment">//true</span></span><br><span class="line">System.out.println(s1.indexOf(<span class="string">'b'</span>));    <span class="comment">//1</span></span><br><span class="line">System.out.println(s1.lastIndexOf(<span class="string">'b'</span>));    <span class="comment">//4</span></span><br><span class="line">System.out.println(s1.length());    <span class="comment">//6</span></span><br><span class="line">System.out.println(s1.replace(<span class="string">'a'</span>,<span class="string">'A'</span>));    <span class="comment">//AbcAbc</span></span><br><span class="line">System.out.println(s1.substring(<span class="number">2</span>));    <span class="comment">//cabc</span></span><br><span class="line">System.out.println(s1.substring(<span class="number">2</span>,<span class="number">3</span>));  <span class="comment">//c</span></span><br><span class="line">System.out.println(s3.trim());  <span class="comment">//abc</span></span><br><span class="line">System.out.println(s4.isEmpty());   <span class="comment">//true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><h3 id="包装类的介绍"><a href="#包装类的介绍" class="headerlink" title="包装类的介绍"></a>包装类的介绍</h3><p>Java 为每一个基本数据类型提供相对应的包装类，提供常用的方法</p>
+<table>
+<thead>
+<tr>
+<th align="left">原始数据类型</th>
+<th align="left">包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"> byte</td>
+<td align="left">Byte</td>
+</tr>
+<tr>
+<td align="left">short</td>
+<td align="left">Short</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td align="left">Integer</td>
+</tr>
+<tr>
+<td align="left">long</td>
+<td align="left">Long</td>
+</tr>
+<tr>
+<td align="left">float</td>
+<td align="left">Float</td>
+</tr>
+<tr>
+<td align="left">double</td>
+<td align="left">Double</td>
+</tr>
+<tr>
+<td align="left">boolean</td>
+<td align="left">Boolean</td>
+</tr>
+<tr>
+<td align="left">char</td>
+<td align="left">Character</td>
+</tr>
+</tbody></table>
+<h3 id="Integer"><a href="#Integer" class="headerlink" title="Integer"></a>Integer</h3><h4 id="对象创建"><a href="#对象创建" class="headerlink" title="对象创建"></a>对象创建</h4><h5 id="直接创建"><a href="#直接创建" class="headerlink" title="直接创建"></a>直接创建</h5><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="构造方法创建"><a href="#构造方法创建" class="headerlink" title="构造方法创建"></a>构造方法创建</h5><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">20</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="使用静态方法valueOf-创建"><a href="#使用静态方法valueOf-创建" class="headerlink" title="使用静态方法valueOf()创建"></a>使用静态方法 valueOf () 创建</h5><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i3</span> <span class="operator">=</span> Integer.valueOf(<span class="number">30</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> byteValue()</td>
+<td>byte</td>
+<td> 以 byte 类型返回该 Integer 的值</td>
+</tr>
+<tr>
+<td> compareTo(Integer anotherInteger)</td>
+<td>int</td>
+<td> 在数字上比较两个 Integer 对象。如果相同返回 0；调用对象的数值小于 anotherInteger 返回负值，反之，返回正值。</td>
+</tr>
+<tr>
+<td>equals(Object IntegerObj)</td>
+<td>boolean</td>
+<td> 比较此对象与指定对象是否相等</td>
+</tr>
+<tr>
+<td> intValue()</td>
+<td>int</td>
+<td> 以 int 型返回此 Integer 对象</td>
+</tr>
+<tr>
+<td> shortValue()</td>
+<td>short</td>
+<td> 以 short 型返回此 Integer 对象</td>
+</tr>
+<tr>
+<td> toString()</td>
+<td>String</td>
+<td> 返回一个表示该 Integer 值的 String 对象</td>
+</tr>
+<tr>
+<td> valueOf(String str)</td>
+<td>Integer</td>
+<td> 返回指定 Sting 值的 Integer 对象</td>
+</tr>
+<tr>
+<td> parseInt(String str)</td>
+<td>int</td>
+<td> 返回包含在由 str 指定的字符串中的数字的等价整数值 </td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1000</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">i2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">20</span>);</span><br><span class="line"><span class="type">Integer</span> <span class="variable">i3</span> <span class="operator">=</span> Integer.valueOf(<span class="number">30</span>);</span><br><span class="line"><span class="comment">//以byte类型返回该Integer的值</span></span><br><span class="line">System.out.println(i.byteValue());  <span class="comment">//-24</span></span><br><span class="line"><span class="comment">//在数字上比较两个Integer对象。如果相同返回0；调用对象的数值小于anotherInteger返回负值，反之，返回正值。</span></span><br><span class="line">System.out.println(i2.compareTo(i));    <span class="comment">//-1</span></span><br><span class="line"><span class="comment">//比较此对象与指定对象是否相等</span></span><br><span class="line">System.out.println(i.equals(i2));<span class="comment">// false</span></span><br><span class="line"><span class="comment">//以int型返回此Integer对象</span></span><br><span class="line">System.out.println(i.intValue());   <span class="comment">//1000</span></span><br><span class="line"><span class="comment">//以short型返回此Integer对象   </span></span><br><span class="line">System.out.println(i.shortValue()); <span class="comment">//1000</span></span><br><span class="line"><span class="comment">//返回一个表示该Integer值的String对象</span></span><br><span class="line">System.out.println(Integer.toString(i));    <span class="comment">//1000</span></span><br><span class="line"><span class="comment">//返回指定Sting值的Integer对象</span></span><br><span class="line">System.out.println(Integer.valueOf(<span class="string">"20"</span>));  <span class="comment">//20</span></span><br><span class="line"><span class="comment">//返回包含在由str指定的字符串中的数字的等价整数值</span></span><br><span class="line">System.out.println(Integer.parseInt(<span class="string">"123"</span>));    <span class="comment">//123</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="常用常量"><a href="#常用常量" class="headerlink" title="常用常量"></a>常用常量</h4><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>常量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> 1</td>
+<td>MAX_VALUE</td>
+<td> 表示 int 型可取的最大值</td>
+</tr>
+<tr>
+<td> 2</td>
+<td>MIN_VALUE</td>
+<td> 表示 int 型可取的最小值</td>
+</tr>
+<tr>
+<td> 3</td>
+<td>SIZE</td>
+<td> 表示以 2 进制补码形式表示 int 值的位数 </td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//表示int型可取的最大值</span></span><br><span class="line">System.out.println(Integer.MAX_VALUE);  <span class="comment">//2147483647</span></span><br><span class="line"><span class="comment">//表示int型可取的最小值</span></span><br><span class="line">System.out.println(Integer.MIN_VALUE);  <span class="comment">//-2147483648</span></span><br><span class="line"><span class="comment">//表示以2进制补码形式表示int值的位数</span></span><br><span class="line">System.out.println(Integer.SIZE);   <span class="comment">//32</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><h4 id="对象创建-1"><a href="#对象创建-1" class="headerlink" title="对象创建"></a>对象创建</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Boolean</span> <span class="variable">b</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line"><span class="type">Boolean</span> <span class="variable">b2</span> <span class="operator">=</span> Boolean.TRUE;</span><br><span class="line"><span class="type">Boolean</span> <span class="variable">b3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Boolean</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="type">Boolean</span> <span class="variable">b4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Boolean</span>(<span class="string">"true"</span>);</span><br><span class="line"><span class="type">Boolean</span> <span class="variable">b5</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Boolean</span>(<span class="string">"TRUE"</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="常用方法-3"><a href="#常用方法-3" class="headerlink" title="常用方法"></a>常用方法</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> booleanValue()</td>
+<td>boolean</td>
+<td> 将 Boolean 对象的值以对应的 boolean 值返回</td>
+</tr>
+<tr>
+<td> equals(Object obj)</td>
+<td>boolean</td>
+<td> 判断调用该方法的对象与 obj 是否相等，当且仅当参数不是 null，而且与调用该方法的对象一样都表示同一个 boolean 值的 Boolean 对象时才返回 true</td>
+</tr>
+<tr>
+<td>toString()</td>
+<td>String</td>
+<td> 返回一个表示该 boolean 值的 String 对象</td>
+</tr>
+<tr>
+<td> valueOf(String str)</td>
+<td>boolean</td>
+<td> 返回一个用指定的字符串表示值的 boolean 值</td>
+</tr>
+<tr>
+<td> parseBoolean(String str)</td>
+<td>boolean</td>
+<td> 将字符串参数解析为 boolean 值</td>
+</tr>
+</tbody></table>
+<h4 id="常用常量-1"><a href="#常用常量-1" class="headerlink" title="常用常量"></a>常用常量</h4><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>常量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> 1</td>
+<td>TRUE</td>
+<td> 对应基值 true 的 Boolean 对象</td>
+</tr>
+<tr>
+<td> 2</td>
+<td>FALSE</td>
+<td> 对应基值 false 的 Boolean 对象</td>
+</tr>
+</tbody></table>
+<h3 id="Byte"><a href="#Byte" class="headerlink" title="Byte"></a>Byte</h3><h4 id="对象创建-2"><a href="#对象创建-2" class="headerlink" title="对象创建"></a>对象创建</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Byte</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line"><span class="type">byte</span> <span class="variable">b1</span> <span class="operator">=</span> <span class="number">45</span>;</span><br><span class="line"><span class="type">Byte</span> <span class="variable">b2</span> <span class="operator">=</span> b;</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="常用方法-4"><a href="#常用方法-4" class="headerlink" title="常用方法"></a>常用方法</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> byteValue()</td>
+<td>byte</td>
+<td> 以一个 byte 值返回 Byte 对象</td>
+</tr>
+<tr>
+<td> compareTo(Byte anotherByte)</td>
+<td>int</td>
+<td> 在数字上比较两个 Byte 对象 (两数相减)</td>
+</tr>
+<tr>
+<td>doubleValue()</td>
+<td>double</td>
+<td> 以一个 double 值返回 Byte 对象</td>
+</tr>
+<tr>
+<td> equals(Object obj)</td>
+<td>boolean</td>
+<td> 比较此对象与指定对象是否相等</td>
+</tr>
+<tr>
+<td> intValue()</td>
+<td>int</td>
+<td> 以 int 值返回此 Byte 的值</td>
+</tr>
+<tr>
+<td> toString()</td>
+<td>String</td>
+<td> 返回一个 Byte 值的 String 对象</td>
+</tr>
+<tr>
+<td> valueOf(String str)</td>
+<td>byte</td>
+<td> 返回指定 Sting 值的 Byte 对象</td>
+</tr>
+<tr>
+<td> parseByte(String str)</td>
+<td>byte</td>
+<td> 返回包含在由 str 指定的字符串中的数字的等价 byte</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">byte</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">45</span>;</span><br><span class="line"><span class="type">Byte</span> <span class="variable">b2</span> <span class="operator">=</span> b;</span><br><span class="line">System.out.println(b2.byteValue()); <span class="comment">//45</span></span><br><span class="line">System.out.println(b2.compareTo((<span class="type">byte</span>) <span class="number">100</span>));   <span class="comment">//-55</span></span><br><span class="line">System.out.println(b2.doubleValue());   <span class="comment">//45.0</span></span><br><span class="line">System.out.println(b2.equals(b));   <span class="comment">//true</span></span><br><span class="line">System.out.println(b2.intValue());  <span class="comment">//45</span></span><br><span class="line">System.out.println(b2.toString());  <span class="comment">//45</span></span><br><span class="line">System.out.println(Byte.valueOf(<span class="string">"40"</span>)); <span class="comment">//40</span></span><br><span class="line">System.out.println(Byte.parseByte(<span class="string">"50"</span>));   <span class="comment">//50</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="常用常量-2"><a href="#常用常量-2" class="headerlink" title="常用常量"></a>常用常量</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(Byte.MAX_VALUE);	<span class="comment">//127</span></span><br><span class="line">System.out.println(Byte.MIN_VALUE);	<span class="comment">//-128</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h3><h4 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Character</span> <span class="variable">c</span> <span class="operator">=</span> <span class="string">'1'</span>;</span><br><span class="line"><span class="type">Character</span> <span class="variable">c1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Character</span>(<span class="string">'2'</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="常用方法-5"><a href="#常用方法-5" class="headerlink" title="常用方法"></a>常用方法</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> charValue()</td>
+<td>char</td>
+<td> 返回此 Character 对象的值</td>
+</tr>
+<tr>
+<td> compareTo(Character anotherCharacter)</td>
+<td>int</td>
+<td> 在数字上比较两个 Character 对象。</td>
+</tr>
+<tr>
+<td>equals(Object obj)</td>
+<td>boolean</td>
+<td> 比较此对象与指定对象是否相等</td>
+</tr>
+<tr>
+<td> toString()</td>
+<td>String</td>
+<td> 返回一个表示该 char 值的 String 对象</td>
+</tr>
+<tr>
+<td> toUpperCase(char ch)</td>
+<td>char</td>
+<td> 将字符参数转为大写</td>
+</tr>
+<tr>
+<td> toLowerCase(char ch)</td>
+<td>char</td>
+<td> 将字符参数转为小写</td>
+</tr>
+<tr>
+<td> isUpperCase(char ch)</td>
+<td>boolean</td>
+<td> 判定指定字符参数是否为大写</td>
+</tr>
+<tr>
+<td> isLowerCase(char ch)</td>
+<td>boolean</td>
+<td> 判定指定字符参数是否为小写 </td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Character</span> <span class="variable">c</span> <span class="operator">=</span> <span class="string">'1'</span>;</span><br><span class="line"><span class="type">Character</span> <span class="variable">c1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Character</span>(<span class="string">'2'</span>);</span><br><span class="line">System.out.println(c.charValue());      <span class="comment">//1</span></span><br><span class="line">System.out.println(c.compareTo(<span class="string">'1'</span>));       <span class="comment">//0</span></span><br><span class="line">System.out.println(c.equals(c1));       <span class="comment">//false</span></span><br><span class="line">System.out.println(c.toString());       <span class="comment">//1</span></span><br><span class="line">System.out.println(Character.toUpperCase(<span class="string">'a'</span>));     <span class="comment">//A</span></span><br><span class="line">System.out.println(Character.toLowerCase(<span class="string">'A'</span>));     <span class="comment">//a</span></span><br><span class="line">System.out.println(Character.isUpperCase(<span class="string">'a'</span>));     <span class="comment">//false</span></span><br><span class="line">System.out.println(Character.isLowerCase(<span class="string">'a'</span>));     <span class="comment">//true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Double"><a href="#Double" class="headerlink" title="Double"></a>Double</h3><h4 id="对象创建-3"><a href="#对象创建-3" class="headerlink" title="对象创建"></a>对象创建</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Double</span> <span class="variable">d</span> <span class="operator">=</span> <span class="number">10.0</span>;</span><br><span class="line"><span class="type">Double</span> <span class="variable">d1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Double</span>(<span class="number">10</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="常用方法-6"><a href="#常用方法-6" class="headerlink" title="常用方法"></a>常用方法</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> byteValue()</td>
+<td>byte</td>
+<td> 以 byte 类型返回该 Double 对象的值（通过强制转换）</td>
+</tr>
+<tr>
+<td>compareTo(Double d)</td>
+<td>int</td>
+<td> 在数字上比较两个 Double 对象。如果相同返回 0；调用对象的数值小于 d 返回负值，反之，返回正值。</td>
+</tr>
+<tr>
+<td>equals(Object obj)</td>
+<td>boolean</td>
+<td> 比较此对象与指定对象是否相等</td>
+</tr>
+<tr>
+<td> intValue()</td>
+<td>int</td>
+<td> 以 int 型返回此 Double 对象</td>
+</tr>
+<tr>
+<td> isNaN()</td>
+<td>boolean</td>
+<td> 如果此 double 是非数字，则返回 true</td>
+</tr>
+<tr>
+<td>toString()</td>
+<td>String</td>
+<td> 返回此 Double 对象值的 String 对象</td>
+</tr>
+<tr>
+<td> valueOf(String str)</td>
+<td>double</td>
+<td> 返回指定 Sting 值的 Double 对象</td>
+</tr>
+<tr>
+<td> doubleValue()</td>
+<td>double</td>
+<td> 以 double 形式返回此 Double 对象</td>
+</tr>
+<tr>
+<td> longValue()</td>
+<td>long</td>
+<td> 以 long 形式返回此 Double 对象（通过强制转换）</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Double</span> <span class="variable">d</span> <span class="operator">=</span> <span class="number">10.0</span>;</span><br><span class="line"><span class="type">Double</span> <span class="variable">d1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Double</span>(<span class="number">10</span>);</span><br><span class="line">System.out.println(d.byteValue());      <span class="comment">//10</span></span><br><span class="line">System.out.println(d.compareTo(d1));        <span class="comment">//0</span></span><br><span class="line">System.out.println(d.equals(d1));       <span class="comment">//true</span></span><br><span class="line">System.out.println(d.intValue());       <span class="comment">//10</span></span><br><span class="line">System.out.println(d.isNaN());      <span class="comment">//false</span></span><br><span class="line">System.out.println(Double.valueOf(<span class="string">"100"</span>));      <span class="comment">//100.0</span></span><br><span class="line">System.out.println(d.doubleValue());        <span class="comment">//10.0</span></span><br><span class="line">System.out.println(d.longValue());      <span class="comment">//10</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><h4 id="常用方法-7"><a href="#常用方法-7" class="headerlink" title="常用方法"></a>常用方法</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> byteValue()</td>
+<td>byte</td>
+<td> 以 byte 类型返回指定的数值</td>
+</tr>
+<tr>
+<td> intValue()</td>
+<td>int</td>
+<td> 以 int 类型返回指定的数值</td>
+</tr>
+<tr>
+<td> floatValue()</td>
+<td>float</td>
+<td> 以 float 类型返回指定的数值</td>
+</tr>
+<tr>
+<td> shortValue()</td>
+<td>short</td>
+<td> 以 short 类型返回指定的数值</td>
+</tr>
+<tr>
+<td> longValue()</td>
+<td>long</td>
+<td> 以 long 类型返回指定的数值</td>
+</tr>
+<tr>
+<td> doubleValue()</td>
+<td>double</td>
+<td> 以 double 类型返回指定的数值 </td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Number</span> <span class="variable">n</span> <span class="operator">=</span> <span class="number">1000</span>;</span><br><span class="line">System.out.println(n.byteValue());      <span class="comment">//-24</span></span><br><span class="line">System.out.println(n.intValue());       <span class="comment">//1000</span></span><br><span class="line">System.out.println(n.floatValue());     <span class="comment">//1000.0</span></span><br><span class="line">System.out.println(n.shortValue());     <span class="comment">//1000</span></span><br><span class="line">System.out.println(n.longValue());      <span class="comment">//1000</span></span><br><span class="line">System.out.println(n.doubleValue());        <span class="comment">//1000.0</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="自动装箱"><a href="#自动装箱" class="headerlink" title="自动装箱"></a>自动装箱</h3><h4 id="占时跳过，实现valueOf-方法，具体看源码"><a href="#占时跳过，实现valueOf-方法，具体看源码" class="headerlink" title="占时跳过，实现valueOf()方法，具体看源码"></a>占时跳过，实现 valueOf () 方法，具体看源码</h4><h2 id="StringBuffer和StringBuilder"><a href="#StringBuffer和StringBuilder" class="headerlink" title="StringBuffer和StringBuilder"></a>StringBuffer 和 StringBuilder</h2><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>String 是不可变的字符串，每对 String 进行次变更操作都会创建一个新的对象。</p>
+<p>StringBuilder 是可变字符序列，线程不安全，但效率高。</p>
+<p>StringBuffer 是可变的字符串，具有线程安全的特性，相对于 StringBuilder 来说效率较低。</p>
+<h3 id="对象创建-4"><a href="#对象创建-4" class="headerlink" title="对象创建"></a>对象创建</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">buffer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="String对字符串的操作"><a href="#String对字符串的操作" class="headerlink" title="String对字符串的操作"></a>String 对字符串的操作</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">startTime</span> <span class="operator">=</span> System.currentTimeMillis(); </span><br><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) {</span><br><span class="line">    s = s+<span class="string">"a"</span>;</span><br><span class="line">}</span><br><span class="line"><span class="type">long</span> <span class="variable">endTime</span> <span class="operator">=</span> System.currentTimeMillis(); </span><br><span class="line">System.out.println(<span class="string">"程序运行时间："</span> + (endTime - startTime) + <span class="string">"ms"</span>);<span class="comment">//程序运行时间：3754ms</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>String 对字符串的操作确实效率太低了，只是做了十万次的拼接，就耗费了 3.75s 的时间</p>
+<h3 id="StringBuilder对字符串的操作"><a href="#StringBuilder对字符串的操作" class="headerlink" title="StringBuilder对字符串的操作"></a>StringBuilder 对字符串的操作</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">startTime</span> <span class="operator">=</span> System.currentTimeMillis(); </span><br><span class="line"><span class="type">StringBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100000000</span>; i++) {</span><br><span class="line">    builder.append(<span class="string">'a'</span>);</span><br><span class="line">}</span><br><span class="line"><span class="type">long</span> <span class="variable">endTime</span> <span class="operator">=</span> System.currentTimeMillis(); </span><br><span class="line">System.out.println(<span class="string">"程序运行时间："</span> + (endTime - startTime) + <span class="string">"ms"</span>);<span class="comment">//程序运行时间：469ms</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>可以看出，StringBuilder 的性能有多优异，做了一亿次的字符串拼接，只花费了 0.469s 的时间，可以这么讲，相对于 String 的性能来说根本不是一个维度的。</p>
+<h3 id="StringBuffer对字符串的操作"><a href="#StringBuffer对字符串的操作" class="headerlink" title="StringBuffer对字符串的操作"></a>StringBuffer 对字符串的操作</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">startTime</span> <span class="operator">=</span> System.currentTimeMillis(); </span><br><span class="line"><span class="type">StringBuffer</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100000000</span>; i++) {</span><br><span class="line">    s.append(<span class="string">'a'</span>);</span><br><span class="line">}</span><br><span class="line"><span class="type">long</span> <span class="variable">endTime</span> <span class="operator">=</span> System.currentTimeMillis(); </span><br><span class="line">System.out.println(<span class="string">"程序运行时间："</span> + (endTime - startTime) + <span class="string">"ms"</span>);<span class="comment">//程序运行时间：1680ms</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>在前面说到 StringBuffer 的线程是安全的，但性能相对于 StringBuilder 来说是有所下降的，在一亿次的字符拼接拼接中，StringBuffer 花费了 1.68s，确实是有很大的差距。</p>
+<h3 id="常用方法-8"><a href="#常用方法-8" class="headerlink" title="常用方法"></a>常用方法</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回类型</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> append()</td>
+<td>StringBuilder</td>
+<td> 将指定的字符串追加到此字符序列。</td>
+</tr>
+<tr>
+<td>insert()</td>
+<td>StringBuilder</td>
+<td> 将字符串插入此字符序列.</td>
+</tr>
+<tr>
+<td>reverse()</td>
+<td>StringBuilder</td>
+<td> 导致此字符序列被序列的反向替换</td>
+</tr>
+<tr>
+<td> setCharAt(int index, char ch)</td>
+<td>void</td>
+<td> 指定索引处的字符设置为 ch</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -738,145 +1391,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/09/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Android/%E3%80%90Android%E3%80%91QDM%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s2.loli.net/2022/06/09/bCBxUlXrFGT93he.png">
-      <meta itemprop="name" content="清风明月">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="清风明月的小破站">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 清风明月的小破站">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/09/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Android/%E3%80%90Android%E3%80%91QDM%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6/" class="post-title-link" itemprop="url">【Android】QDM—— 一款强大的音乐下载软件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-06-09 13:50:19 / 修改时间：14:09:06" itemprop="dateCreated datePublished" datetime="2022-06-09T13:50:19+08:00">2022-06-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>919</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>QMD 是一款简洁、实用的<strong>音乐下载</strong> APP。</p>
-<p>支持系统版本：Android 5.0 及以上</p>
-<h2 id="QMD-1-7-1-更新内容："><a href="#QMD-1-7-1-更新内容：" class="headerlink" title="QMD 1.7.1 更新内容："></a>QMD 1.7.1 更新内容：</h2><p><strong>1. 修复部分闪退和已知问题</strong></p>
-<p>数都数不清，修也修不完。</p>
-<p><strong>2. 重构歌单数据库</strong></p>
-<p>所有歌单会被清空，但其他数据不影响。最近已经把所有数据库都重构了一遍，以后不会再出现收藏歌曲或者歌单被清空的情况了。</p>
-<p><strong>3. 添加歌曲页面为空时的缺省页</strong></p>
-<p><img src="https://s2.loli.net/2022/06/09/fWARs53SyTdiNIp.png" alt="图片"></p>
-<p><strong>4. 修复收藏页面多选取消收藏的卡顿 bug</strong></p>
-<p><strong>！！！特别事项！！！</strong></p>
-<p>此版为重构版，数据无法与旧版 QMD（1.6.0 及以前的版本）兼容，如果你之前已经安装过 QMD，安装完这个版本之后你的手机会出现两个 QMD。</p>
-<hr>
-<p><strong>其他事项：</strong></p>
-<ol>
-<li><p>网络问题可能会导致资源获取失败。</p>
-</li>
-<li><p>播放不了可以尝试切换网络，或者降低试听音质。</p>
-</li>
-<li><p>QQ 音乐无版权的歌和数字专辑无法下载和试听！</p>
-</li>
-<li><p>1.5.4 及以下的版本由于服务器到期已经全部失效，不再维护。</p>
-</li>
-</ol>
-<p>\5. 下载链接在后面。</p>
-<p>\7. 也许根本不会有人看这段话。</p>
-<ol start="6">
-<li>也不会有多少人仔细看更新内容。</li>
-</ol>
-<p>\8. 更不会有人注意序号错了。</p>
-<ol start="9">
-<li>竟然被你发现了 Σ(っ °Д °;) っ</li>
-</ol>
-<p><strong>QMD 常见问题</strong></p>
-<p><strong>1. 找不到音乐文件。</strong><br>音乐文件默认在手机目录下 Music 文件夹。可以直接用音乐 app 扫描。在 QMD 已下载页面长按歌曲，点击歌曲信息也能查看歌曲位置。</p>
-<p><strong>2. 添加歌单里面提示 QQ 没有音乐。</strong><br>打开 QQ 音乐 APP，打开个人主页设置，在访问设置里面确保个人主页和歌单的访问权限已开启。</p>
-<p>如果你添加的是歌单码，请确保”qmd:/“这串文字也要添加进去。</p>
-<p><strong>3. 获取资源失败。</strong><br>获取资源失败请尝试下载安装最新版。数字专辑（付费歌曲）以及 QQ 音乐无版权的歌无法下载和试听！<br>一般的歌曲不能下载，那就是接口失效了，耐心等待修复。</p>
-<p><strong>4. 如何导入网易云或者其他音乐平台的歌单。</strong><br>在 QQ 音乐里面有导入外部歌单功能，可以将其他音乐平台的歌单转换到 QQ 音乐，再从 QMD 导入歌单。</p>
-<p><strong>5. 提示内部错误。</strong><br>打开设置页面，重置下载器。或者请尝试卸载重装或者清除数据。</p>
-<p><strong>6. 字体空白。</strong></p>
-<p>通常 MIUI 上使用第三方主题会出现这个问题，换个手机主题就能解决。</p>
-<p><strong>7. QMD 有没有 IOS 或者 PC 版？</strong></p>
-<p><strong>不会有 IOS 版。</strong>但 PC 版的话之前有过想法，但是暂时没有计划开发。</p>
-<hr>
-<p><strong>下载地址：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.kzwr.com/kzwrfs?fid=5f1ed494dc52n5eum5.apk">直接下载</a>				<a href="**https://c.ddot.top/api/v3/file/get/15/QMD%201.7.1.apk?sign=kJuU0zF7zoiJAaPU8jboGKHU1f9yWz7PnCaAFWRK0aY=:0**">直接下载</a>				<a target="_blank" rel="noopener" href="https://jzen.lanzoum.com/iAaNe018qw4h">蓝奏云</a>					<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1z2xDSlQ9zn9DElXf34i54g">百度网盘 提取码: <strong>uqwj</strong></a>				<pangu> </pangu><a target="_blank" rel="noopener" href="https://share.weiyun.com/ZFAqXo8T">微云</a>				<pangu> </pangu><a target="_blank" rel="noopener" href="https://github.com/OJZen/QMD_Android/releases/download/1.7.1/QMD.1.7.1.apk">GitHub</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -901,13 +1415,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">39k</span>
+    <span title="站点总字数">47k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">35 分钟</span>
+    <span title="站点阅读时长">43 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动

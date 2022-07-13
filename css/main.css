@@ -2765,12 +2765,6 @@ mark.search-keyword {
     margin-bottom: 10px;
   }
 }
-.fireworks {
-  left: 0;
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-}
 .exif-container {
   position: relative;
 }
@@ -2786,18 +2780,24 @@ mark.search-keyword {
   font-style: italic;
   margin: 0 1em;
 }
+.fireworks {
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+}
 body {
-  background: url("https://w.wallhaven.cc/full/01/wallhaven-015wzw.jpg");
+  background: url("https://w.wallhaven.cc/full/yj/wallhaven-yjeljk.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 .sidebar {
   background-color: transparent;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 .header-inner {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.85);
 }

@@ -42,7 +42,7 @@
 
 
 
-<script src="https://fastly.jsdelivr.net/npm/exif-js@2/exif.min.js"></script><script src="/lib/fireworks.js"></script>
+<script src="/lib/fireworks.js"></script><script src="https://fastly.jsdelivr.net/npm/exif-js@2/exif.min.js"></script>
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -249,7 +249,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-13 19:29:25" itemprop="dateModified" datetime="2022-07-13T19:29:25+08:00">2022-07-13</time>
+      <time title="修改时间：2022-07-13 19:37:11" itemprop="dateModified" datetime="2022-07-13T19:37:11+08:00">2022-07-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -275,7 +275,7 @@
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>14 分钟</span>
+      <span>15 分钟</span>
     </span>
 </div>
 
@@ -902,6 +902,9 @@
 <h5 id="foreach产生并发修改的思考"><a href="#foreach产生并发修改的思考" class="headerlink" title="foreach产生并发修改的思考"></a>foreach 产生并发修改的思考</h5><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(String game: games){</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">"PUBG: BATTLEGROUNDS"</span>.equals(game)){</span><br><span class="line">        games.remove(game);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>在使用 foreach 时发现这段代码居然也会产生并发修改异常，而且错误信息和之前完全一样，所以大胆的猜测使用 foreach 遍历 ArrayList 时，使用的依旧是 iterator 来实现的，通过 Debug 发现，果然是调用的 iterator，在 Iterator 接口的实现类的 next () 方法执行时，调用了 checkForComodification ()，而由于上一次已经对 games 进行了修改，所以在 checkForComodification () 里进行判断时，modCount 不等于 expectedModCount 条件成立。</p>
+<h4 id="toArray"><a href="#toArray" class="headerlink" title="toArray()"></a>toArray()</h4><p>以正确的顺序（从第一个到最后一个元素）返回一个包含此列表中所有元素的数组</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; games = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">games.add(<span class="string">"Counter-Strike: Global Offensive"</span>);</span><br><span class="line">games.add(<span class="string">"Dota 2"</span>);</span><br><span class="line">games.add(<span class="string">"PUBG: BATTLEGROUNDS"</span>);</span><br><span class="line">games.add(<span class="string">"Apex Legends"</span>);</span><br><span class="line">games.add(<span class="string">"Grand Theft Auto V"</span>);</span><br><span class="line">Object[] array = games.toArray();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; array.length; i++) {</span><br><span class="line">    System.out.println(array[i]);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
 
       
     </div>
@@ -1477,13 +1480,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">54k</span>
+    <span title="站点总字数">55k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">49 分钟</span>
+    <span title="站点阅读时长">50 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动

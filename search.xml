@@ -752,7 +752,19 @@
 <h5 id="foreach产生并发修改的思考"><a href="#foreach产生并发修改的思考" class="headerlink" title="foreach产生并发修改的思考"></a>foreach 产生并发修改的思考</h5><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(String game: games){</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">"PUBG: BATTLEGROUNDS"</span>.equals(game)){</span><br><span class="line">        games.remove(game);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>在使用 foreach 时发现这段代码居然也会产生并发修改异常，而且错误信息和之前完全一样，所以大胆的猜测使用 foreach 遍历 ArrayList 时，使用的依旧是 iterator 来实现的，通过 Debug 发现，果然是调用的 iterator，在 Iterator 接口的实现类的 next () 方法执行时，调用了 checkForComodification ()，而由于上一次已经对 games 进行了修改，所以在 checkForComodification () 里进行判断时，modCount 不等于 expectedModCount 条件成立。</p>
+<h4 id="toArray"><a href="#toArray" class="headerlink" title="toArray()"></a>toArray()</h4><p>以正确的顺序（从第一个到最后一个元素）返回一个包含此列表中所有元素的数组</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">ArrayList&lt;String&gt; games = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">games.add(<span class="string">"Counter-Strike: Global Offensive"</span>);</span><br><span class="line">games.add(<span class="string">"Dota 2"</span>);</span><br><span class="line">games.add(<span class="string">"PUBG: BATTLEGROUNDS"</span>);</span><br><span class="line">games.add(<span class="string">"Apex Legends"</span>);</span><br><span class="line">games.add(<span class="string">"Grand Theft Auto V"</span>);</span><br><span class="line">Object[] array = games.toArray();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; array.length; i++) {</span><br><span class="line">    System.out.println(array[i]);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
 ]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【Java】int 数组的排序和倒叙以及 toString</title>
+    <url>/2022/06/09/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91int%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F%E5%92%8C%E5%80%92%E5%8F%99%E4%BB%A5%E5%8F%8AtoString/</url>
+    <content><![CDATA[<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>顺序排序使用的是冒泡排序来实现的，而倒叙排序则是在排序前通过顺序排序将数组的顺序排好，在此基础上对数组进行元素调换来实现倒叙。</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArraySort</span> {</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 正序使用冒泡排序完成</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] sort(<span class="type">int</span>[] arr){</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; arr.length; i++) {</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length - i; j++) {</span><br><span class="line">                <span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>]){</span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[j];</span><br><span class="line">                    arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                    arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 倒叙排序直接将元素交换</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] reverse(<span class="type">int</span>[] arr){</span><br><span class="line">        arr = sort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">0</span>,e=arr.length-<span class="number">1</span>; s &lt; e; s++,e--){</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[s];</span><br><span class="line">            arr[s] = arr[e];</span><br><span class="line">            arr[e] = temp;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toString</span><span class="params">(<span class="type">int</span>[] arr)</span>{</span><br><span class="line">        <span class="keyword">if</span> (arr == <span class="literal">null</span>){</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"null"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="type">int</span> <span class="variable">iMax</span> <span class="operator">=</span> arr.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (iMax == -<span class="number">1</span>){</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"[]"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">buffer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        buffer.append(<span class="string">"["</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; ; i++) {</span><br><span class="line">            buffer.append(arr[i]);</span><br><span class="line">            <span class="keyword">if</span> (i==iMax){</span><br><span class="line">                <span class="keyword">return</span> buffer.append(<span class="string">']'</span>).toString();</span><br><span class="line">            }</span><br><span class="line">            buffer.append(<span class="string">","</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>]]></content>
       <categories>
         <category>编程</category>
       </categories>
@@ -900,13 +912,61 @@
       </categories>
   </entry>
   <entry>
-    <title>【Java】int 数组的排序和倒叙以及 toString</title>
-    <url>/2022/06/09/%E7%BC%96%E7%A8%8B/Java/%E3%80%90Java%E3%80%91int%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F%E5%92%8C%E5%80%92%E5%8F%99%E4%BB%A5%E5%8F%8AtoString/</url>
-    <content><![CDATA[<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>顺序排序使用的是冒泡排序来实现的，而倒叙排序则是在排序前通过顺序排序将数组的顺序排好，在此基础上对数组进行元素调换来实现倒叙。</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArraySort</span> {</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 正序使用冒泡排序完成</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] sort(<span class="type">int</span>[] arr){</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; arr.length; i++) {</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length - i; j++) {</span><br><span class="line">                <span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>]){</span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[j];</span><br><span class="line">                    arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                    arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 倒叙排序直接将元素交换</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] reverse(<span class="type">int</span>[] arr){</span><br><span class="line">        arr = sort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">0</span>,e=arr.length-<span class="number">1</span>; s &lt; e; s++,e--){</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[s];</span><br><span class="line">            arr[s] = arr[e];</span><br><span class="line">            arr[e] = temp;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toString</span><span class="params">(<span class="type">int</span>[] arr)</span>{</span><br><span class="line">        <span class="keyword">if</span> (arr == <span class="literal">null</span>){</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"null"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="type">int</span> <span class="variable">iMax</span> <span class="operator">=</span> arr.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (iMax == -<span class="number">1</span>){</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"[]"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">buffer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        buffer.append(<span class="string">"["</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; ; i++) {</span><br><span class="line">            buffer.append(arr[i]);</span><br><span class="line">            <span class="keyword">if</span> (i==iMax){</span><br><span class="line">                <span class="keyword">return</span> buffer.append(<span class="string">']'</span>).toString();</span><br><span class="line">            }</span><br><span class="line">            buffer.append(<span class="string">","</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>]]></content>
+    <title>【Android】QDM—— 一款强大的音乐下载软件</title>
+    <url>/2022/06/09/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Android/%E3%80%90Android%E3%80%91QDM%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>QMD 是一款简洁、实用的<strong>音乐下载</strong> APP。</p>
+<p>支持系统版本：Android 5.0 及以上</p>
+<h2 id="QMD-1-7-1-更新内容："><a href="#QMD-1-7-1-更新内容：" class="headerlink" title="QMD 1.7.1 更新内容："></a>QMD 1.7.1 更新内容：</h2><p><strong>1. 修复部分闪退和已知问题</strong></p>
+<p>数都数不清，修也修不完。</p>
+<p><strong>2. 重构歌单数据库</strong></p>
+<p>所有歌单会被清空，但其他数据不影响。最近已经把所有数据库都重构了一遍，以后不会再出现收藏歌曲或者歌单被清空的情况了。</p>
+<p><strong>3. 添加歌曲页面为空时的缺省页</strong></p>
+<p><img src="https://s2.loli.net/2022/06/09/fWARs53SyTdiNIp.png" alt="图片"></p>
+<p><strong>4. 修复收藏页面多选取消收藏的卡顿 bug</strong></p>
+<p><strong>！！！特别事项！！！</strong></p>
+<p>此版为重构版，数据无法与旧版 QMD（1.6.0 及以前的版本）兼容，如果你之前已经安装过 QMD，安装完这个版本之后你的手机会出现两个 QMD。</p>
+<hr>
+<p><strong>其他事项：</strong></p>
+<ol>
+<li><p>网络问题可能会导致资源获取失败。</p>
+</li>
+<li><p>播放不了可以尝试切换网络，或者降低试听音质。</p>
+</li>
+<li><p>QQ 音乐无版权的歌和数字专辑无法下载和试听！</p>
+</li>
+<li><p>1.5.4 及以下的版本由于服务器到期已经全部失效，不再维护。</p>
+</li>
+</ol>
+<p>\5. 下载链接在后面。</p>
+<p>\7. 也许根本不会有人看这段话。</p>
+<ol start="6">
+<li>也不会有多少人仔细看更新内容。</li>
+</ol>
+<p>\8. 更不会有人注意序号错了。</p>
+<ol start="9">
+<li>竟然被你发现了 Σ(っ °Д °;) っ</li>
+</ol>
+<p><strong>QMD 常见问题</strong></p>
+<p><strong>1. 找不到音乐文件。</strong><br>音乐文件默认在手机目录下 Music 文件夹。可以直接用音乐 app 扫描。在 QMD 已下载页面长按歌曲，点击歌曲信息也能查看歌曲位置。</p>
+<p><strong>2. 添加歌单里面提示 QQ 没有音乐。</strong><br>打开 QQ 音乐 APP，打开个人主页设置，在访问设置里面确保个人主页和歌单的访问权限已开启。</p>
+<p>如果你添加的是歌单码，请确保”qmd:/“这串文字也要添加进去。</p>
+<p><strong>3. 获取资源失败。</strong><br>获取资源失败请尝试下载安装最新版。数字专辑（付费歌曲）以及 QQ 音乐无版权的歌无法下载和试听！<br>一般的歌曲不能下载，那就是接口失效了，耐心等待修复。</p>
+<p><strong>4. 如何导入网易云或者其他音乐平台的歌单。</strong><br>在 QQ 音乐里面有导入外部歌单功能，可以将其他音乐平台的歌单转换到 QQ 音乐，再从 QMD 导入歌单。</p>
+<p><strong>5. 提示内部错误。</strong><br>打开设置页面，重置下载器。或者请尝试卸载重装或者清除数据。</p>
+<p><strong>6. 字体空白。</strong></p>
+<p>通常 MIUI 上使用第三方主题会出现这个问题，换个手机主题就能解决。</p>
+<p><strong>7. QMD 有没有 IOS 或者 PC 版？</strong></p>
+<p><strong>不会有 IOS 版。</strong>但 PC 版的话之前有过想法，但是暂时没有计划开发。</p>
+<hr>
+<p><strong>下载地址：</strong></p>
+<p><a href="https://www.kzwr.com/kzwrfs?fid=5f1ed494dc52n5eum5.apk">直接下载</a>				<a href="**https://c.ddot.top/api/v3/file/get/15/QMD%201.7.1.apk?sign=kJuU0zF7zoiJAaPU8jboGKHU1f9yWz7PnCaAFWRK0aY=:0**">直接下载</a>				<a href="https://jzen.lanzoum.com/iAaNe018qw4h">蓝奏云</a>					<a href="https://pan.baidu.com/s/1z2xDSlQ9zn9DElXf34i54g">百度网盘 提取码: <strong>uqwj</strong></a>				<pangu> </pangu><a href="https://share.weiyun.com/ZFAqXo8T">微云</a>				<pangu> </pangu><a href="https://github.com/OJZen/QMD_Android/releases/download/1.7.1/QMD.1.7.1.apk">GitHub</a></p>
+]]></content>
       <categories>
-        <category>编程</category>
+        <category>软件</category>
       </categories>
+      <tags>
+        <tag>软件推荐</tag>
+      </tags>
   </entry>
   <entry>
     <title>【Python】Python 执行 pip 安装下载慢？这里教你怎么解决</title>
@@ -1123,63 +1183,6 @@
       <categories>
         <category>编程</category>
       </categories>
-  </entry>
-  <entry>
-    <title>【Android】QDM—— 一款强大的音乐下载软件</title>
-    <url>/2022/06/09/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Android/%E3%80%90Android%E3%80%91QDM%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6/</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>QMD 是一款简洁、实用的<strong>音乐下载</strong> APP。</p>
-<p>支持系统版本：Android 5.0 及以上</p>
-<h2 id="QMD-1-7-1-更新内容："><a href="#QMD-1-7-1-更新内容：" class="headerlink" title="QMD 1.7.1 更新内容："></a>QMD 1.7.1 更新内容：</h2><p><strong>1. 修复部分闪退和已知问题</strong></p>
-<p>数都数不清，修也修不完。</p>
-<p><strong>2. 重构歌单数据库</strong></p>
-<p>所有歌单会被清空，但其他数据不影响。最近已经把所有数据库都重构了一遍，以后不会再出现收藏歌曲或者歌单被清空的情况了。</p>
-<p><strong>3. 添加歌曲页面为空时的缺省页</strong></p>
-<p><img src="https://s2.loli.net/2022/06/09/fWARs53SyTdiNIp.png" alt="图片"></p>
-<p><strong>4. 修复收藏页面多选取消收藏的卡顿 bug</strong></p>
-<p><strong>！！！特别事项！！！</strong></p>
-<p>此版为重构版，数据无法与旧版 QMD（1.6.0 及以前的版本）兼容，如果你之前已经安装过 QMD，安装完这个版本之后你的手机会出现两个 QMD。</p>
-<hr>
-<p><strong>其他事项：</strong></p>
-<ol>
-<li><p>网络问题可能会导致资源获取失败。</p>
-</li>
-<li><p>播放不了可以尝试切换网络，或者降低试听音质。</p>
-</li>
-<li><p>QQ 音乐无版权的歌和数字专辑无法下载和试听！</p>
-</li>
-<li><p>1.5.4 及以下的版本由于服务器到期已经全部失效，不再维护。</p>
-</li>
-</ol>
-<p>\5. 下载链接在后面。</p>
-<p>\7. 也许根本不会有人看这段话。</p>
-<ol start="6">
-<li>也不会有多少人仔细看更新内容。</li>
-</ol>
-<p>\8. 更不会有人注意序号错了。</p>
-<ol start="9">
-<li>竟然被你发现了 Σ(っ °Д °;) っ</li>
-</ol>
-<p><strong>QMD 常见问题</strong></p>
-<p><strong>1. 找不到音乐文件。</strong><br>音乐文件默认在手机目录下 Music 文件夹。可以直接用音乐 app 扫描。在 QMD 已下载页面长按歌曲，点击歌曲信息也能查看歌曲位置。</p>
-<p><strong>2. 添加歌单里面提示 QQ 没有音乐。</strong><br>打开 QQ 音乐 APP，打开个人主页设置，在访问设置里面确保个人主页和歌单的访问权限已开启。</p>
-<p>如果你添加的是歌单码，请确保”qmd:/“这串文字也要添加进去。</p>
-<p><strong>3. 获取资源失败。</strong><br>获取资源失败请尝试下载安装最新版。数字专辑（付费歌曲）以及 QQ 音乐无版权的歌无法下载和试听！<br>一般的歌曲不能下载，那就是接口失效了，耐心等待修复。</p>
-<p><strong>4. 如何导入网易云或者其他音乐平台的歌单。</strong><br>在 QQ 音乐里面有导入外部歌单功能，可以将其他音乐平台的歌单转换到 QQ 音乐，再从 QMD 导入歌单。</p>
-<p><strong>5. 提示内部错误。</strong><br>打开设置页面，重置下载器。或者请尝试卸载重装或者清除数据。</p>
-<p><strong>6. 字体空白。</strong></p>
-<p>通常 MIUI 上使用第三方主题会出现这个问题，换个手机主题就能解决。</p>
-<p><strong>7. QMD 有没有 IOS 或者 PC 版？</strong></p>
-<p><strong>不会有 IOS 版。</strong>但 PC 版的话之前有过想法，但是暂时没有计划开发。</p>
-<hr>
-<p><strong>下载地址：</strong></p>
-<p><a href="https://www.kzwr.com/kzwrfs?fid=5f1ed494dc52n5eum5.apk">直接下载</a>				<a href="**https://c.ddot.top/api/v3/file/get/15/QMD%201.7.1.apk?sign=kJuU0zF7zoiJAaPU8jboGKHU1f9yWz7PnCaAFWRK0aY=:0**">直接下载</a>				<a href="https://jzen.lanzoum.com/iAaNe018qw4h">蓝奏云</a>					<a href="https://pan.baidu.com/s/1z2xDSlQ9zn9DElXf34i54g">百度网盘 提取码: <strong>uqwj</strong></a>				<pangu> </pangu><a href="https://share.weiyun.com/ZFAqXo8T">微云</a>				<pangu> </pangu><a href="https://github.com/OJZen/QMD_Android/releases/download/1.7.1/QMD.1.7.1.apk">GitHub</a></p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>软件推荐</tag>
-      </tags>
   </entry>
   <entry>
     <title>【Windows】Typora 的免费测试版本备份</title>

@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【Hexo】Hexo 博客插件安装记录</title>
+    <url>/2022/07/14/%E7%BC%96%E7%A8%8B/Hexo%E5%8D%9A%E5%AE%A2/%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h3 id="如何查看已安装的插件"><a href="#如何查看已安装的插件" class="headerlink" title="如何查看已安装的插件"></a>如何查看已安装的插件</h3><figure class="highlight cmd"><table><tbody><tr><td class="code"><pre><span class="line">Npm ls -dept <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2022-07-14"><a href="#2022-07-14" class="headerlink" title="2022-07-14"></a>2022-07-14</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> [hexo-deployer-git](<a href="https://github.com/hexojs/hexo-deployer-git">GitHub - hexojs/hexo-deployer-git： Git deployer plugin for Hexo.</a>)</td>
+<td> 推送到 git</td>
+<td>3.0.0</td>
+</tr>
+<tr>
+<td>[hexo-filter-emoji](<a href="https://github.com/next-theme/hexo-filter-emoji">GitHub - next-theme/hexo-filter-emoji: 🚀 GitHub emojis for Hexo!</a>)</td>
+<td> 渲染 emoji 表情</td>
+<td> 2.2.2</td>
+</tr>
+<tr>
+<td>[hexo-filter-mathjax](<a href="https://github.com/next-theme/hexo-filter-mathjax">GitHub - next-theme/hexo-filter-mathjax: 💯 Server side MathJax renderer plugin for Hexo.</a>)</td>
+<td> 数学公式的支持</td>
+<td> 0.8.1</td>
+</tr>
+<tr>
+<td>[hexo-next-exif](<a href="https://github.com/next-theme/hexo-next-exif">GitHub - next-theme/hexo-next-exif: 📷 Exif.js for NexT.</a>)</td>
+<td>next 插件</td>
+<td> 2.3.0</td>
+</tr>
+<tr>
+<td>[hexo-next-fireworks](<a href="https://github.com/next-theme/hexo-next-fireworks">GitHub - next-theme/hexo-next-fireworks: 💥 Fireworks animation for NexT.</a>)</td>
+<td>next 主题核心</td>
+<td> 1.0.2</td>
+</tr>
+<tr>
+<td><a href="">hexo-pangu</a></td>
+<td>next 主题需要安装</td>
+<td> 0.2.1</td>
+</tr>
+<tr>
+<td>[hexo-generator-searchdb](<a href="https://github.com/next-theme/hexo-generator-searchdb">GitHub - next-theme/hexo-generator-searchdb: 🔍 Seach data generator plugin for Hexo.</a>)</td>
+<td> 本地搜索，next 需要</td>
+<td> 1.4.0</td>
+</tr>
+<tr>
+<td>[hexo-word-counter](<a href="https://github.com/next-theme/hexo-word-counter">GitHub - next-theme/hexo-word-counter: ⏰ Symbols count and time to read of articles for Hexo.</a>)</td>
+<td> 字数统计，next 需要</td>
+<td> 0.0.3</td>
+</tr>
+<tr>
+<td>[hexo-next-three](<a href="https://github.com/next-theme/hexo-next-three">GitHub - next-theme/hexo-next-three: JavaScript 3D library for NexT.</a>)</td>
+<td>next 主题</td>
+<td> 8.12.1</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【Java】Java Web 之 Servlet</title>
     <url>/2022/06/15/%E7%BC%96%E7%A8%8B/Java/Java%20Web%E4%B9%8BServlet/</url>
     <content><![CDATA[<h3 id="什么是Servlet"><a href="#什么是Servlet" class="headerlink" title="什么是Servlet"></a>什么是 Servlet</h3><ol>
@@ -97,41 +161,6 @@
 
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/servlet/RequestTest</span><br><span class="line">http://localhost:8080/servlet/RequestTest</span><br><span class="line">0:0:0:0:0:0:0:1</span><br><span class="line">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36</span><br><span class="line">POST</span><br><span class="line">我是用户名</span><br><span class="line">[cpp, java, python, js, c]</span><br><span class="line">域设置前null</span><br><span class="line">域设置后这是在设置域</span><br></pre></td></tr></tbody></table></figure>
 
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>【Java】Java 多线程的实现方式 —— 持续更新中</title>
-    <url>/2022/06/09/%E7%BC%96%E7%A8%8B/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/</url>
-    <content><![CDATA[<h1 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承 Thread 类</h1><p>基础 Thread 类的方法需要从四部去执行</p>
-<ol>
-<li>基础 Thread 类</li>
-<li>重写 Thread 类的 run 方法</li>
-<li>创建 Thread 类的子类对象</li>
-<li>通过子类对象执行 start 方法 </li>
-</ol>
-<span id="more"></span>
-
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadLearn_Ex_Thread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"我多线程看书的第"</span>+i+<span class="string">"分钟"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">ThreadLearn_Ex_Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadLearn_Ex_Thread</span>();</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"我主线程打游戏的第"</span>+i+<span class="string">"分钟"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Thread的常用方法</span></span><br><span class="line"><span class="comment"> * start()执行当前线程</span></span><br><span class="line"><span class="comment"> * run()重新Thread的run方法，在此方法中写需要线程执行的内容</span></span><br><span class="line"><span class="comment"> * currentThread()，静态方法，返回当前线程</span></span><br><span class="line"><span class="comment"> * getName()获取线程名称</span></span><br><span class="line"><span class="comment"> * setName()设置线程名称</span></span><br><span class="line"><span class="comment"> * yield释放当前CPU执行权</span></span><br><span class="line"><span class="comment"> * join()线程进入阻塞状态，需要等其他线程执行完才继续执行</span></span><br><span class="line"><span class="comment"> * sleep()线程休眠，单位毫秒</span></span><br><span class="line"><span class="comment"> * isAlive()判断线程是否存活</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadMethodTest</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            <span class="keyword">try</span> {</span><br><span class="line">                sleep(<span class="number">50</span>);</span><br><span class="line">            } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            }</span><br><span class="line">            System.out.println(<span class="string">"线程"</span>+currentThread().getName()+<span class="string">"第"</span>+i+<span class="string">"次调用"</span>);</span><br><span class="line">            <span class="keyword">if</span> (i==<span class="number">80</span>){</span><br><span class="line">                Thread.yield();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">ThreadMethodTest</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadMethodTest</span>();</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="type">ThreadMethodTest</span> <span class="variable">test</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadMethodTest</span>();</span><br><span class="line">        test.start();</span><br><span class="line">        Thread.currentThread().setName(<span class="string">"主线程"</span>);</span><br><span class="line">        System.out.println(test.isAlive());</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"线程"</span>+currentThread().getName()+<span class="string">"第"</span>+i+<span class="string">"次调用"</span>);</span><br><span class="line">            <span class="keyword">if</span> (i==<span class="number">50</span>){</span><br><span class="line">                <span class="keyword">try</span> {</span><br><span class="line">                    thread.join();</span><br><span class="line">                } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        System.out.println(test.isAlive());</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>Thread 的常用方法</li>
-<li> start () 执行当前线程</li>
-<li> run () 重新 Thread 的 run 方法，在此方法中写需要线程执行的内容</li>
-<li> currentThread ()，静态方法，返回当前线程</li>
-<li> getName () 获取线程名称</li>
-<li> setName () 设置线程名称</li>
-<li> yield 释放当前 CPU 执行权</li>
-<li> join () 线程进入阻塞状态，需要等其他线程执行完才继续执行</li>
-<li> sleep () 线程休眠，单位毫秒</li>
-<li> isAlive () 判断线程是否存活<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2></li>
-</ul>
-<ol>
-<li>不能在主线程调用 run 方法启动，必须调用 start 方法，否则无法实现多线程</li>
-<li>不能在已 start 的线程再次 start</li>
-</ol>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -941,25 +970,61 @@
 <figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestImpl</span> <span class="keyword">implements</span> <span class="title class_">Test</span>&lt;String&gt;{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">test</span><span class="params">(String s)</span> {</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Test&lt;String&gt; stringTest = <span class="keyword">new</span> <span class="title class_">TestImpl</span>();</span><br><span class="line"><span class="type">String</span> <span class="variable">java</span> <span class="operator">=</span> stringTest.test(<span class="string">"Java"</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><p>每次调用方法的时候确定类型</p>
+<h4 id="泛型方法的定义"><a href="#泛型方法的定义" class="headerlink" title="泛型方法的定义"></a>泛型方法的定义</h4><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">test</span><span class="params">(T t)</span>{</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="keyword">void</span> <span class="title function_">test2</span><span class="params">(T t)</span>{</span><br><span class="line">    System.out.println(t);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="泛型方法的使用"><a href="#泛型方法的使用" class="headerlink" title="泛型方法的使用"></a>泛型方法的使用</h4><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">    System.out.println(test(<span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">"Java"</span>)));</span><br><span class="line">    test2(<span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">"Java"</span>));</span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">test</span><span class="params">(T t)</span>{</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="keyword">void</span> <span class="title function_">test2</span><span class="params">(T t)</span>{</span><br><span class="line">    System.out.println(t);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="泛型上限与泛型下限"><a href="#泛型上限与泛型下限" class="headerlink" title="泛型上限与泛型下限"></a>泛型上限与泛型下限</h3><p>在特特定的情况下，需要对泛型做一定的限制，所以有了泛型的上限和泛型下限</p>
+<p>格式</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">&lt;? extends 具体的类型&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><p>首先创建一个类</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>再创建一个类继承 Person 类</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">extends</span> <span class="title class_">Person</span>{</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">    ArrayList&lt;Person&gt; people = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    ArrayList&lt;Student&gt; students = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    people.add(<span class="keyword">new</span> <span class="title class_">Person</span>());</span><br><span class="line">    students.add(<span class="keyword">new</span> <span class="title class_">Student</span>());</span><br><span class="line">    test(people);</span><br><span class="line">    test(students);</span><br><span class="line">    test2(people);</span><br><span class="line">    test2(students);</span><br><span class="line">    </span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">(List&lt;? extends Person&gt; list)</span>{</span><br><span class="line">    System.out.println(list.toString());</span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">test2</span><span class="params">(List&lt;? <span class="built_in">super</span> Student&gt; list)</span>{</span><br><span class="line">    System.out.println(list.toString());</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在测试方法 test 中，对 List 的泛型做了限制，test 的参数类型 List 的元素只能是 Person 或者继承 Person 的对象，所以在 list.add (1) 出会发生错误，因为不符合 test () 的泛型，而 people 和 students 都符合，所以这里的代码不会出现异常，这就是泛型上限。</p>
+<p>在 test2 () 中，对泛型做了限制，List 的元素只能是 Student 或者 Student 的父类，people 和 students 分别是 Person 对象和 Student 对象，所以符合 test2 () 的条件，这就是泛型下限。</p>
 ]]></content>
       <categories>
         <category>编程</category>
       </categories>
   </entry>
   <entry>
-    <title>【Python】Python 执行 pip 安装下载慢？这里教你怎么解决</title>
-    <url>/2021/09/16/%E7%BC%96%E7%A8%8B/Python/Python%E6%89%A7%E8%A1%8Cpip%E5%AE%89%E8%A3%85%E4%B8%8B%E8%BD%BD%E6%85%A2%EF%BC%9F%E8%BF%99%E9%87%8C%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<p>Python 官方的 PIP 库安装需要连接的服务器在国外，所以在国内访问服务器下载第三方库时并不方便，所以需要将服务器指定到国内的服务器，已获得更加稳定的使用体验。</p>
+    <title>【Java】Java 多线程的实现方式 —— 持续更新中</title>
+    <url>/2022/06/09/%E7%BC%96%E7%A8%8B/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/</url>
+    <content><![CDATA[<h1 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承 Thread 类</h1><p>基础 Thread 类的方法需要从四部去执行</p>
+<ol>
+<li>基础 Thread 类</li>
+<li>重写 Thread 类的 run 方法</li>
+<li>创建 Thread 类的子类对象</li>
+<li>通过子类对象执行 start 方法 </li>
+</ol>
 <span id="more"></span>
 
-<h3 id="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件"><a href="#首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件" class="headerlink" title="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip.ini文件"></a>首先在当前用户文件夹下新建一个 pip 文件夹，再在此文件夹下新建一个 pip.ini 文件</h3><p>此处以 Windows 为例，其他系统也是如此，在当前用户目录下新建相应的 pip 文件夹和 pip.ini</p>
-<p><img src="https://s2.loli.net/2022/06/09/mwGqlXyeiLIvd9E.png"></p>
-<h3 id="编辑该文件，在该文件中写入"><a href="#编辑该文件，在该文件中写入" class="headerlink" title="编辑该文件，在该文件中写入"></a>编辑该文件，在该文件中写入</h3><figure class="highlight ini"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"><span class="section">[install]</span></span><br><span class="line"><span class="attr">trusted-host</span> = https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<p>使用哪个源可以根据自己的实习需求进行修改，直接替换即可</p>
-<p>阿里云                <a href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学        <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>豆瓣 (douban)      <a href="https://pypi.douban.com/simple/">https://pypi.douban.com/simple/</a> （avact 报毒，不确定……）<br>清华大学             <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学  <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadLearn_Ex_Thread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"我多线程看书的第"</span>+i+<span class="string">"分钟"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">ThreadLearn_Ex_Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadLearn_Ex_Thread</span>();</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"我主线程打游戏的第"</span>+i+<span class="string">"分钟"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Thread的常用方法</span></span><br><span class="line"><span class="comment"> * start()执行当前线程</span></span><br><span class="line"><span class="comment"> * run()重新Thread的run方法，在此方法中写需要线程执行的内容</span></span><br><span class="line"><span class="comment"> * currentThread()，静态方法，返回当前线程</span></span><br><span class="line"><span class="comment"> * getName()获取线程名称</span></span><br><span class="line"><span class="comment"> * setName()设置线程名称</span></span><br><span class="line"><span class="comment"> * yield释放当前CPU执行权</span></span><br><span class="line"><span class="comment"> * join()线程进入阻塞状态，需要等其他线程执行完才继续执行</span></span><br><span class="line"><span class="comment"> * sleep()线程休眠，单位毫秒</span></span><br><span class="line"><span class="comment"> * isAlive()判断线程是否存活</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadMethodTest</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            <span class="keyword">try</span> {</span><br><span class="line">                sleep(<span class="number">50</span>);</span><br><span class="line">            } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            }</span><br><span class="line">            System.out.println(<span class="string">"线程"</span>+currentThread().getName()+<span class="string">"第"</span>+i+<span class="string">"次调用"</span>);</span><br><span class="line">            <span class="keyword">if</span> (i==<span class="number">80</span>){</span><br><span class="line">                Thread.yield();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">ThreadMethodTest</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadMethodTest</span>();</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="type">ThreadMethodTest</span> <span class="variable">test</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadMethodTest</span>();</span><br><span class="line">        test.start();</span><br><span class="line">        Thread.currentThread().setName(<span class="string">"主线程"</span>);</span><br><span class="line">        System.out.println(test.isAlive());</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"线程"</span>+currentThread().getName()+<span class="string">"第"</span>+i+<span class="string">"次调用"</span>);</span><br><span class="line">            <span class="keyword">if</span> (i==<span class="number">50</span>){</span><br><span class="line">                <span class="keyword">try</span> {</span><br><span class="line">                    thread.join();</span><br><span class="line">                } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        System.out.println(test.isAlive());</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>Thread 的常用方法</li>
+<li> start () 执行当前线程</li>
+<li> run () 重新 Thread 的 run 方法，在此方法中写需要线程执行的内容</li>
+<li> currentThread ()，静态方法，返回当前线程</li>
+<li> getName () 获取线程名称</li>
+<li> setName () 设置线程名称</li>
+<li> yield 释放当前 CPU 执行权</li>
+<li> join () 线程进入阻塞状态，需要等其他线程执行完才继续执行</li>
+<li> sleep () 线程休眠，单位毫秒</li>
+<li> isAlive () 判断线程是否存活<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2></li>
+</ul>
+<ol>
+<li>不能在主线程调用 run 方法启动，必须调用 start 方法，否则无法实现多线程</li>
+<li>不能在已 start 的线程再次 start</li>
+</ol>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -1104,6 +1169,25 @@
 <h2 id="1-12、URL"><a href="#1-12、URL" class="headerlink" title="1.12、URL"></a>1.12、URL</h2><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.haibara.lesson04;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.HttpURLConnection;</span><br><span class="line"><span class="keyword">import</span> java.net.URL;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@projectName</span>: study</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@package</span>: com.haibara.lesson04</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@className</span>: UrlDownload</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Haibara</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 访问互联网上的资源</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UrlDownload</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception{</span><br><span class="line">        <span class="comment">//设置地址</span></span><br><span class="line">        <span class="type">URL</span> <span class="variable">url</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">URL</span>(<span class="string">"https://m10.music.126.net/20211020154612/6e9398a4e832aeb692fd5a6a38d66c2a/ymusic/025c/0652/025c/56b3c6564118d2dbed38565d97627fd7.mp3"</span>);</span><br><span class="line">        <span class="comment">//访问</span></span><br><span class="line">        <span class="type">HttpURLConnection</span> <span class="variable">urlConnection</span> <span class="operator">=</span> (HttpURLConnection) url.openConnection();</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> urlConnection.getInputStream();</span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">"从别后.mp3"</span>);</span><br><span class="line">        <span class="type">byte</span>[] buffer = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="type">int</span> len;</span><br><span class="line">        <span class="keyword">while</span> ((len=inputStream.read(buffer))!=-<span class="number">1</span>){</span><br><span class="line">            fos.write(buffer,<span class="number">0</span>,len);</span><br><span class="line">        }</span><br><span class="line">        fos.close();</span><br><span class="line">        inputStream.close();</span><br><span class="line">        <span class="comment">//断开连接</span></span><br><span class="line">        urlConnection.disconnect();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>访问互联网的内容保存到本地</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【Python】Python 执行 pip 安装下载慢？这里教你怎么解决</title>
+    <url>/2021/09/16/%E7%BC%96%E7%A8%8B/Python/Python%E6%89%A7%E8%A1%8Cpip%E5%AE%89%E8%A3%85%E4%B8%8B%E8%BD%BD%E6%85%A2%EF%BC%9F%E8%BF%99%E9%87%8C%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<p>Python 官方的 PIP 库安装需要连接的服务器在国外，所以在国内访问服务器下载第三方库时并不方便，所以需要将服务器指定到国内的服务器，已获得更加稳定的使用体验。</p>
+<span id="more"></span>
+
+<h3 id="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件"><a href="#首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件" class="headerlink" title="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip.ini文件"></a>首先在当前用户文件夹下新建一个 pip 文件夹，再在此文件夹下新建一个 pip.ini 文件</h3><p>此处以 Windows 为例，其他系统也是如此，在当前用户目录下新建相应的 pip 文件夹和 pip.ini</p>
+<p><img src="https://s2.loli.net/2022/06/09/mwGqlXyeiLIvd9E.png"></p>
+<h3 id="编辑该文件，在该文件中写入"><a href="#编辑该文件，在该文件中写入" class="headerlink" title="编辑该文件，在该文件中写入"></a>编辑该文件，在该文件中写入</h3><figure class="highlight ini"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"><span class="section">[install]</span></span><br><span class="line"><span class="attr">trusted-host</span> = https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<p>使用哪个源可以根据自己的实习需求进行修改，直接替换即可</p>
+<p>阿里云                <a href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学        <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>豆瓣 (douban)      <a href="https://pypi.douban.com/simple/">https://pypi.douban.com/simple/</a> （avact 报毒，不确定……）<br>清华大学             <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学  <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></p>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -1317,82 +1401,6 @@
       </categories>
   </entry>
   <entry>
-    <title>【Windows】AdGuard 的破解</title>
-    <url>/2022/03/29/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Windows/AdGuard%E7%9A%84%E7%A0%B4%E8%A7%A3/</url>
-    <content><![CDATA[<h2 id="什么是AdGuard？"><a href="#什么是AdGuard？" class="headerlink" title="什么是AdGuard？"></a>什么是 AdGuard？</h2><p>AdGuard 是一款强大的广告拦截工具，主打广告拦截、上网安全和隐私保护等功能，对于我们而已，最主要的就是它的广告拦截功能。AdGuard 有多个版本，支持多平台，分别为浏览器扩展版，桌面版，和移动版，桌面版支持 Windows 和 Mac 系统，移动版则是支持 Android 和 iOS。AdGuard 可以去除绝大部分的网页的烦人广告，给我们一个良好舒适的上网冲浪环境。</p>
-<span id="more"></span>
-
-<h2 id="使用AdGuard的前后对比"><a href="#使用AdGuard的前后对比" class="headerlink" title="使用AdGuard的前后对比"></a>使用 AdGuard 的前后对比</h2><h3 id="使用前"><a href="#使用前" class="headerlink" title="使用前"></a>使用前</h3><p><img src="https://s2.loli.net/2022/03/29/bCwY96c7EAKXiFa.png" alt="AdGuard的破解"></p>
-<h3 id="使用后"><a href="#使用后" class="headerlink" title="使用后"></a>使用后</h3><p><img src="https://s2.loli.net/2022/03/29/qCjYHItAPK9UB2v.png" alt="AdGuard的破解"></p>
-<p>可以通过使用的前后对比图发现，头部广告和页脚广告都被轻松的清理掉了（对不起了扩展迷！）</p>
-<h2 id="浏览器扩展不是免费嘛？为什么要安装应用？"><a href="#浏览器扩展不是免费嘛？为什么要安装应用？" class="headerlink" title="浏览器扩展不是免费嘛？为什么要安装应用？"></a>浏览器扩展不是免费嘛？为什么要安装应用？</h2><p>萝卜青菜各有所爱，安装一个应用，其他的应用和浏览器都可以实现广告拦截，所以还是安装个应用更香啦</p>
-<h2 id="怎么破解？"><a href="#怎么破解？" class="headerlink" title="怎么破解？"></a>怎么破解？</h2><p>首先，安装官方的应用，官方应用有试用期的，试用期可以享受全部的功能，到了试用期结束就需要付费了。</p>
-<p><img src="https://s2.loli.net/2022/03/29/8Wyr5cYLESUijte.png" alt="AdGuard的破解"></p>
-<p>此时，我们可以看到试用期是到 4 月 1 日就到期了的，而我们可以通过时间大法来实现破解</p>
-<p><img src="https://s2.loli.net/2022/03/29/N2MX5smRyZvl61W.png" alt="AdGuard的破解"></p>
-<p><img src="https://s2.loli.net/2022/03/29/WGMkfIAKq6dmZ1n.png" alt="AdGuard的破解"></p>
-<p>此时再输入一个邮箱即可实现延期 180 天的操作，如果 180 天都试用过了，就需要使用本次的工具了</p>
-<p><img src="https://s2.loli.net/2022/03/29/7IQHBeaOi5Vhw2R.png" alt="AdGuard的破解"></p>
-<p>它可以让 AdGuard 恢复到最开始的状态，已实现在此试用 180 天的效果</p>
-<p>链接：</p>
-<p><a href="https://asuna773.lanzoul.com/iZsmG028ei9c">https://asuna773.lanzoul.com/iZsmG028ei9c</a></p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>【Windows】Jetbrains 系列软件的破解补丁</title>
-    <url>/2021/12/04/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Windows/Jetbrains%E7%B3%BB%E5%88%97%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E8%A1%A5%E4%B8%81/</url>
-    <content><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Jetbrains 系列的的软件是真的好用，但是也是真的贵，对于一个学生党来说确实是支持不起这个费用啊。当然，官方也有基础的免费版本，可是专业版的对于学习来说太方便了，所以上个 “学习版” 是有必要的。当然，有财力的还是建议支持正版，毕竟只有收费才可以让开发的公司有动力持续地更新产品，我们才能用到更好的产品。废话不多说，妹子图开局。</p>
-<span id="more"></span>
-
-<p><img src="https://s2.loli.net/2022/06/09/sbyJzeRjhXad32Z.png"></p>
-<h3 id="IDE-Eval-Reset插件（已停更）"><a href="#IDE-Eval-Reset插件（已停更）" class="headerlink" title="IDE Eval Reset插件（已停更）"></a><code>IDE Eval Reset</code> 插件（已停更）</h3><p>这是一款用起来比较简单的插件，可以通过重置 30 天试用来实现破解，但这个只可以在 2021.3 之前的版本可用，但比较稳定，相对于一些用老版本或者激活码我更倾向于使用这个插件。</p>
-<h3 id="如何下载2021-3之前的版本？"><a href="#如何下载2021-3之前的版本？" class="headerlink" title="如何下载2021.3之前的版本？"></a>如何下载 2021.3 之前的版本？</h3><p>此处我已 PyCharm 为例，我们访问官方的下载页面，选择其他版本，就可以挑选老版本了</p>
-<p><img src="https://s2.loli.net/2022/06/09/aoXJbPOQ59legwH.png"></p>
-<p><img src="https://s2.loli.net/2022/06/09/fp7xDwrXoiBZ5Vu.png"></p>
-<p>当然，可能过段时间官方会下线这些版本，所以我就给我备份了 PyCharm 和 IDEA 以及 WebStorm 的 2021.2 的安装包，说不定什么时候需要到呢？大概率是用不上得啦。</p>
-<p>软件链接：<a href="https://pan.baidu.com/s/1S7lrn9mQ5aXU-Hcpi_eaWg">https://pan.baidu.com/s/1S7lrn9mQ5aXU-Hcpi_eaWg</a> 提取码: qxja </p>
-<p>补丁链接：<a href="https://pan.baidu.com/s/1UQpHQKAmcgeE-dO-xBummg">https://pan.baidu.com/s/1UQpHQKAmcgeE-dO-xBummg</a> 提取码: 6ngd </p>
-<p>补丁作者的博客：<a href="https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html">Jetbrains 系列产品重置试用方法 | 知了 (zhile.io)</a></p>
-<h3 id="如何使用？"><a href="#如何使用？" class="headerlink" title="如何使用？"></a>如何使用？</h3><p>其实很简单，保证自己可以打开相关的软件，如果进入需要激活的情况建议使用下面说到的激活码激活一次后再进行安装插件。</p>
-<p>如果是第一次安装，那就点击使用 30 天（2021.3 后需要登录，貌似这个插件也不支持后面的版本激活）即可进入软件。</p>
-<p>在打开软件后随便创建一个项目，然后把补丁直接拖动到这里</p>
-<p><img src="https://s2.loli.net/2022/06/09/D8XzCtnGxBPueIc.png"></p>
-<p>点击 Help，然后选择这个</p>
-<p><img src="https://s2.loli.net/2022/06/09/pdqOJeG1r2yiP78.png"></p>
-<p>这般设置一下便可</p>
-<p><img src="https://s2.loli.net/2022/06/09/gotUsxLAXWYD4rd.png"></p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>【Windows】Typora 的免费测试版本备份</title>
-    <url>/2021/12/04/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Windows/Typora%E7%9A%84%E5%85%8D%E8%B4%B9%E6%B5%8B%E8%AF%95%E7%89%88%E6%9C%AC%E5%A4%87%E4%BB%BD/</url>
-    <content><![CDATA[<h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><p>Typora，一个我个人一直在用的 Markdown 编辑器，它的界面简洁，没有过于复杂的操作界面，左边是分级文件查看和大纲查看，多个文档的切换和大纲展示对于写长篇文章很有帮助，这一点能给用户相当舒适的使用体验。其次是它功能完善，可以配合 PicGo+GitHub+jsdelivr 实现完美的上传图片体验，只需要简单的设置，便可以插图图片即上传到图床，这样做的好处是不管我写的笔记文章是放在博客也好，本地也罢，换另一台设备也行，都可以打开 Markdown 就能读取到云端的图片（没有网除外），节省了磁盘空间是次要，最重要的是可以让我们的文章可以跨设备阅读时不需要考虑图片的问题。而且 Typora 是所见即所得的编辑体验，不需要想 jupyter notebook 那样需要运行才可渲染，或者 vscode 那样分栏展示，毕竟 Typora 是专攻这方面的，所以在 Markdown 编写上比其他软件专业也是正常。</p>
-<span id="more"></span>
-
-<h3 id="收费"><a href="#收费" class="headerlink" title="收费"></a>收费</h3><p>其实 Markdown 编辑器不止 Typora 一个，但是我还是习惯了这个软件。最近 Typora 迎来了 1.0 正式版，正式版开始收费了</p>
-<p><img src="https://s2.loli.net/2022/06/09/G1gzduEC5xbqYvp.png"></p>
-<pre><code>    虽然89元的价格不算贵，但是嘛，据说正式版相对于之前的测试版并没有什么大的区别，由于之前的版本免费，所以我肯定选择免费啊，更何况……
-</code></pre>
-<p><img src="https://s2.loli.net/2022/06/09/37GS8HPNyDxzutT.png"></p>
-<p>算了算了。还是白嫖算了，我的财力暂时无法支撑我入正啊</p>
-<h3 id="备份链接"><a href="#备份链接" class="headerlink" title="备份链接"></a>备份链接</h3><p>官方并没有把之前的测试版下架，还是提供了下载链接的，不清楚接下来的版本是否还有免费的测试版本，所以现在还是把文件备份一下把，说不定某一天用得上呢</p>
-<p><a href="https://www.kzwr.com/kzwrfs?fid=573eedf9ef1211mwao.exe">直接下载 —— 酷族网软</a></p>
-<p><a href="https://pan.bilnn.cn/api/v3/file/sourcejump/vkAggysq/x9gzI8D5Y_ZElTwKljauaQAbUJhZownDqLbWe9RjmXI*">直接下载 —— 比邻云盘</a></p>
-<p>百度云： <a href="https://pan.baidu.com/s/1Bud-659H4Xg3W2hFZ7TIRg">https://pan.baidu.com/s/1Bud-659H4Xg3W2hFZ7TIRg</a> 提取码: skx5 </p>
-<p>坚果云：<a href="https://www.jianguoyun.com/p/DWsz9ocQ35ngCRjy8Z4E">https://www.jianguoyun.com/p/DWsz9ocQ35ngCRjy8Z4E</a></p>
-<p>蓝奏云：<a href="https://asuna773.lanzouo.com/izr9nx86j0b">https://asuna773.lanzouo.com/izr9nx86j0b</a>			<a href="https://asuna773.lanzoui.com/izr9nx86j0b">https://asuna773.lanzoui.com/izr9nx86j0b</a></p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-  </entry>
-  <entry>
     <title>【Android】QDM—— 一款强大的音乐下载软件</title>
     <url>/2022/06/09/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Android/QDM%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6/</url>
     <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>QMD 是一款简洁、实用的<strong>音乐下载</strong> APP。</p>
@@ -1450,5 +1458,81 @@
       <tags>
         <tag>软件推荐</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>【Windows】AdGuard 的破解</title>
+    <url>/2022/03/29/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Windows/AdGuard%E7%9A%84%E7%A0%B4%E8%A7%A3/</url>
+    <content><![CDATA[<h2 id="什么是AdGuard？"><a href="#什么是AdGuard？" class="headerlink" title="什么是AdGuard？"></a>什么是 AdGuard？</h2><p>AdGuard 是一款强大的广告拦截工具，主打广告拦截、上网安全和隐私保护等功能，对于我们而已，最主要的就是它的广告拦截功能。AdGuard 有多个版本，支持多平台，分别为浏览器扩展版，桌面版，和移动版，桌面版支持 Windows 和 Mac 系统，移动版则是支持 Android 和 iOS。AdGuard 可以去除绝大部分的网页的烦人广告，给我们一个良好舒适的上网冲浪环境。</p>
+<span id="more"></span>
+
+<h2 id="使用AdGuard的前后对比"><a href="#使用AdGuard的前后对比" class="headerlink" title="使用AdGuard的前后对比"></a>使用 AdGuard 的前后对比</h2><h3 id="使用前"><a href="#使用前" class="headerlink" title="使用前"></a>使用前</h3><p><img src="https://s2.loli.net/2022/03/29/bCwY96c7EAKXiFa.png" alt="AdGuard的破解"></p>
+<h3 id="使用后"><a href="#使用后" class="headerlink" title="使用后"></a>使用后</h3><p><img src="https://s2.loli.net/2022/03/29/qCjYHItAPK9UB2v.png" alt="AdGuard的破解"></p>
+<p>可以通过使用的前后对比图发现，头部广告和页脚广告都被轻松的清理掉了（对不起了扩展迷！）</p>
+<h2 id="浏览器扩展不是免费嘛？为什么要安装应用？"><a href="#浏览器扩展不是免费嘛？为什么要安装应用？" class="headerlink" title="浏览器扩展不是免费嘛？为什么要安装应用？"></a>浏览器扩展不是免费嘛？为什么要安装应用？</h2><p>萝卜青菜各有所爱，安装一个应用，其他的应用和浏览器都可以实现广告拦截，所以还是安装个应用更香啦</p>
+<h2 id="怎么破解？"><a href="#怎么破解？" class="headerlink" title="怎么破解？"></a>怎么破解？</h2><p>首先，安装官方的应用，官方应用有试用期的，试用期可以享受全部的功能，到了试用期结束就需要付费了。</p>
+<p><img src="https://s2.loli.net/2022/03/29/8Wyr5cYLESUijte.png" alt="AdGuard的破解"></p>
+<p>此时，我们可以看到试用期是到 4 月 1 日就到期了的，而我们可以通过时间大法来实现破解</p>
+<p><img src="https://s2.loli.net/2022/03/29/N2MX5smRyZvl61W.png" alt="AdGuard的破解"></p>
+<p><img src="https://s2.loli.net/2022/03/29/WGMkfIAKq6dmZ1n.png" alt="AdGuard的破解"></p>
+<p>此时再输入一个邮箱即可实现延期 180 天的操作，如果 180 天都试用过了，就需要使用本次的工具了</p>
+<p><img src="https://s2.loli.net/2022/03/29/7IQHBeaOi5Vhw2R.png" alt="AdGuard的破解"></p>
+<p>它可以让 AdGuard 恢复到最开始的状态，已实现在此试用 180 天的效果</p>
+<p>链接：</p>
+<p><a href="https://asuna773.lanzoul.com/iZsmG028ei9c">https://asuna773.lanzoul.com/iZsmG028ei9c</a></p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【Windows】Typora 的免费测试版本备份</title>
+    <url>/2021/12/04/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Windows/Typora%E7%9A%84%E5%85%8D%E8%B4%B9%E6%B5%8B%E8%AF%95%E7%89%88%E6%9C%AC%E5%A4%87%E4%BB%BD/</url>
+    <content><![CDATA[<h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><p>Typora，一个我个人一直在用的 Markdown 编辑器，它的界面简洁，没有过于复杂的操作界面，左边是分级文件查看和大纲查看，多个文档的切换和大纲展示对于写长篇文章很有帮助，这一点能给用户相当舒适的使用体验。其次是它功能完善，可以配合 PicGo+GitHub+jsdelivr 实现完美的上传图片体验，只需要简单的设置，便可以插图图片即上传到图床，这样做的好处是不管我写的笔记文章是放在博客也好，本地也罢，换另一台设备也行，都可以打开 Markdown 就能读取到云端的图片（没有网除外），节省了磁盘空间是次要，最重要的是可以让我们的文章可以跨设备阅读时不需要考虑图片的问题。而且 Typora 是所见即所得的编辑体验，不需要想 jupyter notebook 那样需要运行才可渲染，或者 vscode 那样分栏展示，毕竟 Typora 是专攻这方面的，所以在 Markdown 编写上比其他软件专业也是正常。</p>
+<span id="more"></span>
+
+<h3 id="收费"><a href="#收费" class="headerlink" title="收费"></a>收费</h3><p>其实 Markdown 编辑器不止 Typora 一个，但是我还是习惯了这个软件。最近 Typora 迎来了 1.0 正式版，正式版开始收费了</p>
+<p><img src="https://s2.loli.net/2022/06/09/G1gzduEC5xbqYvp.png"></p>
+<pre><code>    虽然89元的价格不算贵，但是嘛，据说正式版相对于之前的测试版并没有什么大的区别，由于之前的版本免费，所以我肯定选择免费啊，更何况……
+</code></pre>
+<p><img src="https://s2.loli.net/2022/06/09/37GS8HPNyDxzutT.png"></p>
+<p>算了算了。还是白嫖算了，我的财力暂时无法支撑我入正啊</p>
+<h3 id="备份链接"><a href="#备份链接" class="headerlink" title="备份链接"></a>备份链接</h3><p>官方并没有把之前的测试版下架，还是提供了下载链接的，不清楚接下来的版本是否还有免费的测试版本，所以现在还是把文件备份一下把，说不定某一天用得上呢</p>
+<p><a href="https://www.kzwr.com/kzwrfs?fid=573eedf9ef1211mwao.exe">直接下载 —— 酷族网软</a></p>
+<p><a href="https://pan.bilnn.cn/api/v3/file/sourcejump/vkAggysq/x9gzI8D5Y_ZElTwKljauaQAbUJhZownDqLbWe9RjmXI*">直接下载 —— 比邻云盘</a></p>
+<p>百度云： <a href="https://pan.baidu.com/s/1Bud-659H4Xg3W2hFZ7TIRg">https://pan.baidu.com/s/1Bud-659H4Xg3W2hFZ7TIRg</a> 提取码: skx5 </p>
+<p>坚果云：<a href="https://www.jianguoyun.com/p/DWsz9ocQ35ngCRjy8Z4E">https://www.jianguoyun.com/p/DWsz9ocQ35ngCRjy8Z4E</a></p>
+<p>蓝奏云：<a href="https://asuna773.lanzouo.com/izr9nx86j0b">https://asuna773.lanzouo.com/izr9nx86j0b</a>			<a href="https://asuna773.lanzoui.com/izr9nx86j0b">https://asuna773.lanzoui.com/izr9nx86j0b</a></p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【Windows】Jetbrains 系列软件的破解补丁</title>
+    <url>/2021/12/04/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Windows/Jetbrains%E7%B3%BB%E5%88%97%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E8%A1%A5%E4%B8%81/</url>
+    <content><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Jetbrains 系列的的软件是真的好用，但是也是真的贵，对于一个学生党来说确实是支持不起这个费用啊。当然，官方也有基础的免费版本，可是专业版的对于学习来说太方便了，所以上个 “学习版” 是有必要的。当然，有财力的还是建议支持正版，毕竟只有收费才可以让开发的公司有动力持续地更新产品，我们才能用到更好的产品。废话不多说，妹子图开局。</p>
+<span id="more"></span>
+
+<p><img src="https://s2.loli.net/2022/06/09/sbyJzeRjhXad32Z.png"></p>
+<h3 id="IDE-Eval-Reset插件（已停更）"><a href="#IDE-Eval-Reset插件（已停更）" class="headerlink" title="IDE Eval Reset插件（已停更）"></a><code>IDE Eval Reset</code> 插件（已停更）</h3><p>这是一款用起来比较简单的插件，可以通过重置 30 天试用来实现破解，但这个只可以在 2021.3 之前的版本可用，但比较稳定，相对于一些用老版本或者激活码我更倾向于使用这个插件。</p>
+<h3 id="如何下载2021-3之前的版本？"><a href="#如何下载2021-3之前的版本？" class="headerlink" title="如何下载2021.3之前的版本？"></a>如何下载 2021.3 之前的版本？</h3><p>此处我已 PyCharm 为例，我们访问官方的下载页面，选择其他版本，就可以挑选老版本了</p>
+<p><img src="https://s2.loli.net/2022/06/09/aoXJbPOQ59legwH.png"></p>
+<p><img src="https://s2.loli.net/2022/06/09/fp7xDwrXoiBZ5Vu.png"></p>
+<p>当然，可能过段时间官方会下线这些版本，所以我就给我备份了 PyCharm 和 IDEA 以及 WebStorm 的 2021.2 的安装包，说不定什么时候需要到呢？大概率是用不上得啦。</p>
+<p>软件链接：<a href="https://pan.baidu.com/s/1S7lrn9mQ5aXU-Hcpi_eaWg">https://pan.baidu.com/s/1S7lrn9mQ5aXU-Hcpi_eaWg</a> 提取码: qxja </p>
+<p>补丁链接：<a href="https://pan.baidu.com/s/1UQpHQKAmcgeE-dO-xBummg">https://pan.baidu.com/s/1UQpHQKAmcgeE-dO-xBummg</a> 提取码: 6ngd </p>
+<p>补丁作者的博客：<a href="https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html">Jetbrains 系列产品重置试用方法 | 知了 (zhile.io)</a></p>
+<h3 id="如何使用？"><a href="#如何使用？" class="headerlink" title="如何使用？"></a>如何使用？</h3><p>其实很简单，保证自己可以打开相关的软件，如果进入需要激活的情况建议使用下面说到的激活码激活一次后再进行安装插件。</p>
+<p>如果是第一次安装，那就点击使用 30 天（2021.3 后需要登录，貌似这个插件也不支持后面的版本激活）即可进入软件。</p>
+<p>在打开软件后随便创建一个项目，然后把补丁直接拖动到这里</p>
+<p><img src="https://s2.loli.net/2022/06/09/D8XzCtnGxBPueIc.png"></p>
+<p>点击 Help，然后选择这个</p>
+<p><img src="https://s2.loli.net/2022/06/09/pdqOJeG1r2yiP78.png"></p>
+<p>这般设置一下便可</p>
+<p><img src="https://s2.loli.net/2022/06/09/gotUsxLAXWYD4rd.png"></p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
   </entry>
 </search>

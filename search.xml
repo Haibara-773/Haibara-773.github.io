@@ -1,41 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>【Java】Java 多线程的实现方式 —— 持续更新中</title>
-    <url>/2022/06/09/%E7%BC%96%E7%A8%8B/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/</url>
-    <content><![CDATA[<h1 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承 Thread 类</h1><p>基础 Thread 类的方法需要从四部去执行</p>
-<ol>
-<li>基础 Thread 类</li>
-<li>重写 Thread 类的 run 方法</li>
-<li>创建 Thread 类的子类对象</li>
-<li>通过子类对象执行 start 方法 </li>
-</ol>
-<span id="more"></span>
-
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadLearn_Ex_Thread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"我多线程看书的第"</span>+i+<span class="string">"分钟"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">ThreadLearn_Ex_Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadLearn_Ex_Thread</span>();</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"我主线程打游戏的第"</span>+i+<span class="string">"分钟"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Thread的常用方法</span></span><br><span class="line"><span class="comment"> * start()执行当前线程</span></span><br><span class="line"><span class="comment"> * run()重新Thread的run方法，在此方法中写需要线程执行的内容</span></span><br><span class="line"><span class="comment"> * currentThread()，静态方法，返回当前线程</span></span><br><span class="line"><span class="comment"> * getName()获取线程名称</span></span><br><span class="line"><span class="comment"> * setName()设置线程名称</span></span><br><span class="line"><span class="comment"> * yield释放当前CPU执行权</span></span><br><span class="line"><span class="comment"> * join()线程进入阻塞状态，需要等其他线程执行完才继续执行</span></span><br><span class="line"><span class="comment"> * sleep()线程休眠，单位毫秒</span></span><br><span class="line"><span class="comment"> * isAlive()判断线程是否存活</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadMethodTest</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            <span class="keyword">try</span> {</span><br><span class="line">                sleep(<span class="number">50</span>);</span><br><span class="line">            } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            }</span><br><span class="line">            System.out.println(<span class="string">"线程"</span>+currentThread().getName()+<span class="string">"第"</span>+i+<span class="string">"次调用"</span>);</span><br><span class="line">            <span class="keyword">if</span> (i==<span class="number">80</span>){</span><br><span class="line">                Thread.yield();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">ThreadMethodTest</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadMethodTest</span>();</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="type">ThreadMethodTest</span> <span class="variable">test</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadMethodTest</span>();</span><br><span class="line">        test.start();</span><br><span class="line">        Thread.currentThread().setName(<span class="string">"主线程"</span>);</span><br><span class="line">        System.out.println(test.isAlive());</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"线程"</span>+currentThread().getName()+<span class="string">"第"</span>+i+<span class="string">"次调用"</span>);</span><br><span class="line">            <span class="keyword">if</span> (i==<span class="number">50</span>){</span><br><span class="line">                <span class="keyword">try</span> {</span><br><span class="line">                    thread.join();</span><br><span class="line">                } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        System.out.println(test.isAlive());</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>Thread 的常用方法</li>
-<li> start () 执行当前线程</li>
-<li> run () 重新 Thread 的 run 方法，在此方法中写需要线程执行的内容</li>
-<li> currentThread ()，静态方法，返回当前线程</li>
-<li> getName () 获取线程名称</li>
-<li> setName () 设置线程名称</li>
-<li> yield 释放当前 CPU 执行权</li>
-<li> join () 线程进入阻塞状态，需要等其他线程执行完才继续执行</li>
-<li> sleep () 线程休眠，单位毫秒</li>
-<li> isAlive () 判断线程是否存活<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2></li>
-</ul>
-<ol>
-<li>不能在主线程调用 run 方法启动，必须调用 start 方法，否则无法实现多线程</li>
-<li>不能在已 start 的线程再次 start</li>
-</ol>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-  </entry>
-  <entry>
     <title>【Java】Java Web 之 Servlet</title>
     <url>/2022/06/15/%E7%BC%96%E7%A8%8B/Java/Java%20Web%E4%B9%8BServlet/</url>
     <content><![CDATA[<h3 id="什么是Servlet"><a href="#什么是Servlet" class="headerlink" title="什么是Servlet"></a>什么是 Servlet</h3><ol>
@@ -132,6 +97,41 @@
 
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/servlet/RequestTest</span><br><span class="line">http://localhost:8080/servlet/RequestTest</span><br><span class="line">0:0:0:0:0:0:0:1</span><br><span class="line">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36</span><br><span class="line">POST</span><br><span class="line">我是用户名</span><br><span class="line">[cpp, java, python, js, c]</span><br><span class="line">域设置前null</span><br><span class="line">域设置后这是在设置域</span><br></pre></td></tr></tbody></table></figure>
 
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【Java】Java 多线程的实现方式 —— 持续更新中</title>
+    <url>/2022/06/09/%E7%BC%96%E7%A8%8B/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/</url>
+    <content><![CDATA[<h1 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承 Thread 类</h1><p>基础 Thread 类的方法需要从四部去执行</p>
+<ol>
+<li>基础 Thread 类</li>
+<li>重写 Thread 类的 run 方法</li>
+<li>创建 Thread 类的子类对象</li>
+<li>通过子类对象执行 start 方法 </li>
+</ol>
+<span id="more"></span>
+
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadLearn_Ex_Thread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"我多线程看书的第"</span>+i+<span class="string">"分钟"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">ThreadLearn_Ex_Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadLearn_Ex_Thread</span>();</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"我主线程打游戏的第"</span>+i+<span class="string">"分钟"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Thread的常用方法</span></span><br><span class="line"><span class="comment"> * start()执行当前线程</span></span><br><span class="line"><span class="comment"> * run()重新Thread的run方法，在此方法中写需要线程执行的内容</span></span><br><span class="line"><span class="comment"> * currentThread()，静态方法，返回当前线程</span></span><br><span class="line"><span class="comment"> * getName()获取线程名称</span></span><br><span class="line"><span class="comment"> * setName()设置线程名称</span></span><br><span class="line"><span class="comment"> * yield释放当前CPU执行权</span></span><br><span class="line"><span class="comment"> * join()线程进入阻塞状态，需要等其他线程执行完才继续执行</span></span><br><span class="line"><span class="comment"> * sleep()线程休眠，单位毫秒</span></span><br><span class="line"><span class="comment"> * isAlive()判断线程是否存活</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadMethodTest</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            <span class="keyword">try</span> {</span><br><span class="line">                sleep(<span class="number">50</span>);</span><br><span class="line">            } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            }</span><br><span class="line">            System.out.println(<span class="string">"线程"</span>+currentThread().getName()+<span class="string">"第"</span>+i+<span class="string">"次调用"</span>);</span><br><span class="line">            <span class="keyword">if</span> (i==<span class="number">80</span>){</span><br><span class="line">                Thread.yield();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">ThreadMethodTest</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadMethodTest</span>();</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="type">ThreadMethodTest</span> <span class="variable">test</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadMethodTest</span>();</span><br><span class="line">        test.start();</span><br><span class="line">        Thread.currentThread().setName(<span class="string">"主线程"</span>);</span><br><span class="line">        System.out.println(test.isAlive());</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {</span><br><span class="line">            System.out.println(<span class="string">"线程"</span>+currentThread().getName()+<span class="string">"第"</span>+i+<span class="string">"次调用"</span>);</span><br><span class="line">            <span class="keyword">if</span> (i==<span class="number">50</span>){</span><br><span class="line">                <span class="keyword">try</span> {</span><br><span class="line">                    thread.join();</span><br><span class="line">                } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        System.out.println(test.isAlive());</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>Thread 的常用方法</li>
+<li> start () 执行当前线程</li>
+<li> run () 重新 Thread 的 run 方法，在此方法中写需要线程执行的内容</li>
+<li> currentThread ()，静态方法，返回当前线程</li>
+<li> getName () 获取线程名称</li>
+<li> setName () 设置线程名称</li>
+<li> yield 释放当前 CPU 执行权</li>
+<li> join () 线程进入阻塞状态，需要等其他线程执行完才继续执行</li>
+<li> sleep () 线程休眠，单位毫秒</li>
+<li> isAlive () 判断线程是否存活<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2></li>
+</ul>
+<ol>
+<li>不能在主线程调用 run 方法启动，必须调用 start 方法，否则无法实现多线程</li>
+<li>不能在已 start 的线程再次 start</li>
+</ol>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -773,6 +773,193 @@
 <h4 id="toArray"><a href="#toArray" class="headerlink" title="toArray()"></a>toArray()</h4><p>以正确的顺序（从第一个到最后一个元素）返回一个包含此列表中所有元素的数组</p>
 <figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">ArrayList&lt;String&gt; games = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">games.add(<span class="string">"Counter-Strike: Global Offensive"</span>);</span><br><span class="line">games.add(<span class="string">"Dota 2"</span>);</span><br><span class="line">games.add(<span class="string">"PUBG: BATTLEGROUNDS"</span>);</span><br><span class="line">games.add(<span class="string">"Apex Legends"</span>);</span><br><span class="line">games.add(<span class="string">"Grand Theft Auto V"</span>);</span><br><span class="line">Object[] array = games.toArray();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; array.length; i++) {</span><br><span class="line">    System.out.println(array[i]);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
+<h3 id="LinkedList（链表）"><a href="#LinkedList（链表）" class="headerlink" title="LinkedList（链表）"></a>LinkedList（链表）</h3><h4 id="创建对象-2"><a href="#创建对象-2" class="headerlink" title="创建对象"></a>创建对象</h4><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">LinkedList</span> <span class="variable">linkedList</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">LinkedList</span>();</span><br><span class="line">LinkedList&lt;String&gt; strings = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="常用方法-10"><a href="#常用方法-10" class="headerlink" title="常用方法"></a>常用方法</h4><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"> add(E e)</td>
+<td align="left">Boolean</td>
+<td> 链表末尾添加元素，返回是否成功，成功为 true，失败为 false。</td>
+</tr>
+<tr>
+<td align="left">add(int index, E element)</td>
+<td align="left">void</td>
+<td> 向指定位置插入元素。</td>
+</tr>
+<tr>
+<td align="left">addFirst(E e)</td>
+<td align="left">void</td>
+<td> 元素添加到头部。</td>
+</tr>
+<tr>
+<td align="left">addLast(E e)</td>
+<td align="left">void</td>
+<td> 元素添加到尾部。</td>
+</tr>
+<tr>
+<td align="left">get(int index)</td>
+<td align="left">E</td>
+<td> 返回指定位置的元素。</td>
+</tr>
+<tr>
+<td align="left">getFirst()</td>
+<td align="left">E</td>
+<td> 返回第一个元素。</td>
+</tr>
+<tr>
+<td align="left">getLast()</td>
+<td align="left">E</td>
+<td> 返回最后一个元素。</td>
+</tr>
+<tr>
+<td align="left">set(int index, E element)</td>
+<td align="left">E</td>
+<td> 设置指定位置的元素。</td>
+</tr>
+<tr>
+<td align="left">removeFirst()</td>
+<td align="left">E</td>
+<td> 删除并返回第一个元素。</td>
+</tr>
+<tr>
+<td align="left">removeLast()</td>
+<td align="left">E</td>
+<td> 删除并返回最后一个元素。</td>
+</tr>
+<tr>
+<td align="left">remove(int index)</td>
+<td align="left">E</td>
+<td> 删除指定位置的元素。</td>
+</tr>
+<tr>
+<td align="left">clear()</td>
+<td align="left">void</td>
+<td> 清空链表。</td>
+</tr>
+<tr>
+<td align="left">contains(Object o)</td>
+<td align="left">boolean</td>
+<td> 判断是否含有某一元素。</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">LinkedList</span> <span class="variable">linkedList</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">LinkedList</span>();</span><br><span class="line">linkedList.add(<span class="string">"Counter-Strike: Global Offensive"</span>);</span><br><span class="line">linkedList.add(<span class="number">1</span>,<span class="string">"Dota 2"</span>);</span><br><span class="line">linkedList.add(<span class="string">"Apex Legends"</span>);</span><br><span class="line">linkedList.addFirst(<span class="string">"Grand Theft Auto V"</span>);</span><br><span class="line">System.out.println(linkedList);		<span class="comment">//[Grand Theft Auto V, Counter-Strike: Global Offensive, Dota 2, Apex Legends]</span></span><br><span class="line">System.out.println(linkedList.get(<span class="number">0</span>));      <span class="comment">//Grand Theft Auto V</span></span><br><span class="line">System.out.println(linkedList.getFirst());      <span class="comment">//Grand Theft Auto V</span></span><br><span class="line">System.out.println(linkedList.getLast());       <span class="comment">//Apex Legends</span></span><br><span class="line">linkedList.set(<span class="number">1</span>,<span class="string">"CSGO"</span>);</span><br><span class="line">System.out.println(linkedList);     <span class="comment">//[Grand Theft Auto V, CSGO, Dota 2, Apex Legends]</span></span><br><span class="line">linkedList.removeFirst();</span><br><span class="line">System.out.println(linkedList);     <span class="comment">//[CSGO, Dota 2, Apex Legends]</span></span><br><span class="line">linkedList.removeLast();</span><br><span class="line">System.out.println(linkedList);     <span class="comment">//[CSGO, Dota 2]</span></span><br><span class="line">linkedList.remove(<span class="string">"CSGO"</span>);</span><br><span class="line">System.out.println(linkedList);     <span class="comment">//[Dota 2]</span></span><br><span class="line">linkedList.clear();</span><br><span class="line">System.out.println(linkedList);     <span class="comment">//[]</span></span><br><span class="line">System.out.println(linkedList.contains(<span class="string">"CSGO"</span>));        <span class="comment">//false</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="遍历的三种方法"><a href="#遍历的三种方法" class="headerlink" title="遍历的三种方法"></a>遍历的三种方法</h4><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">LinkedList</span> <span class="variable">linkedList</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">LinkedList</span>();</span><br><span class="line">linkedList.add(<span class="string">"Counter-Strike: Global Offensive"</span>);</span><br><span class="line">linkedList.add(<span class="number">1</span>,<span class="string">"Dota 2"</span>);</span><br><span class="line">linkedList.add(<span class="string">"Apex Legends"</span>);</span><br><span class="line">linkedList.addFirst(<span class="string">"Grand Theft Auto V"</span>);</span><br><span class="line">System.out.println(<span class="string">"--------------方法一------------------------"</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; linkedList.size(); i++) {</span><br><span class="line">    System.out.println(linkedList.get(i));</span><br><span class="line">}</span><br><span class="line">System.out.println(<span class="string">"--------------方法二------------------------"</span>);</span><br><span class="line"><span class="type">Iterator</span> <span class="variable">iterator</span> <span class="operator">=</span> linkedList.iterator();</span><br><span class="line"><span class="keyword">while</span> (iterator.hasNext()){</span><br><span class="line">    System.out.println(iterator.next());</span><br><span class="line">}</span><br><span class="line">System.out.println(<span class="string">"--------------方法三------------------------"</span>);</span><br><span class="line"><span class="keyword">for</span> (Object o : linkedList) {</span><br><span class="line">    System.out.println(o);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="ArrayList和LinkedList的区别"><a href="#ArrayList和LinkedList的区别" class="headerlink" title="ArrayList和LinkedList的区别"></a>ArrayList 和 LinkedList 的区别</h3><p>都是实现了 List 接口，但底层存储数据的数据结构不同，ArrayList 底层是用数组来存储的，而 Linked 用的则是链表，所以各自的特点跟各自的数据结构特点一样。</p>
+<p><strong>ArrayList：查找快，增删慢</strong></p>
+<p><strong>LinkedList：增删快，查找慢</strong></p>
+<h2 id="常用set集合"><a href="#常用set集合" class="headerlink" title="常用set集合"></a>常用 set 集合</h2><h3 id="set集合的特点"><a href="#set集合的特点" class="headerlink" title="set集合的特点"></a>set 集合的特点</h3><ul>
+<li><p>不能存储重复数据</p>
+</li>
+<li><p>没有索引</p>
+</li>
+</ul>
+<h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><p>HashSet 的特点</p>
+<ul>
+<li>底层数据结构是哈希表</li>
+<li>存储元素的顺序和遍历的顺序可能是不一样的</li>
+<li>没有索引</li>
+<li>集合不能存储重复元素</li>
+<li>基于 HashMap 来实现</li>
+<li>允许 null 值</li>
+<li>线程是不安全的，多线程操作可能结果有问题</li>
+<li>实现了 Set 接口</li>
+</ul>
+<h4 id="创建对象-3"><a href="#创建对象-3" class="headerlink" title="创建对象"></a>创建对象</h4><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">HashSet</span> <span class="variable">hashSet</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashSet</span>();</span><br><span class="line">HashSet&lt;String&gt; strings = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="常用方法-11"><a href="#常用方法-11" class="headerlink" title="常用方法"></a>常用方法</h4><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"> add(E e)</td>
+<td align="left">boolean</td>
+<td> 添加元素，返回是否成功，成功为 true，失败为 false。</td>
+</tr>
+<tr>
+<td align="left">contains(E e)</td>
+<td align="left">boolean</td>
+<td> 判断元素是否存在于集合当中</td>
+</tr>
+<tr>
+<td align="left"> remove(E e)</td>
+<td align="left">boolean</td>
+<td> 删除集合中的元素 </td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">HashSet&lt;String&gt; strings = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">strings.add(<span class="string">"Counter-Strike: Global Offensive"</span>);</span><br><span class="line">strings.add(<span class="string">"Dota 2"</span>);</span><br><span class="line">strings.add(<span class="string">"PUBG: BATTLEGROUNDS"</span>);</span><br><span class="line">strings.add(<span class="string">"Lost Ark"</span>);</span><br><span class="line">strings.add(<span class="string">"Apex Legends"</span>);</span><br><span class="line">System.out.println(strings);</span><br><span class="line">strings.remove(<span class="string">"PUBG: BATTLEGROUNDS"</span>);</span><br><span class="line">System.out.println(strings);</span><br><span class="line"><span class="keyword">if</span> (!strings.contains(<span class="string">"PUBG"</span>)){</span><br><span class="line">    strings.add(<span class="string">"PUBG"</span>);</span><br><span class="line">}</span><br><span class="line">System.out.println(strings);</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><p>与 list 集合类似，由于没有索引，索引不能通过索引来查询，但都是有迭代器 iterator 的</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">HashSet&lt;String&gt; strings = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">strings.add(<span class="string">"Counter-Strike: Global Offensive"</span>);</span><br><span class="line">strings.add(<span class="string">"Dota 2"</span>);</span><br><span class="line">strings.add(<span class="string">"PUBG: BATTLEGROUNDS"</span>);</span><br><span class="line">strings.add(<span class="string">"Lost Ark"</span>);</span><br><span class="line">strings.add(<span class="string">"Apex Legends"</span>);</span><br><span class="line">System.out.println(<span class="string">"------方法一-------"</span>);</span><br><span class="line"><span class="keyword">for</span> (String s: strings){</span><br><span class="line">    System.out.println(s);</span><br><span class="line">}</span><br><span class="line">System.out.println(<span class="string">"------方法二-------"</span>);</span><br><span class="line">Iterator&lt;String&gt; stringIterator = strings.iterator();</span><br><span class="line"><span class="keyword">while</span> (stringIterator.hasNext()){</span><br><span class="line">    System.out.println(stringIterator.next());</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>虽然看着是两种方法，其实都是通过 iterator 迭代器来实现的。</p>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><h3 id="泛型类和泛型接口"><a href="#泛型类和泛型接口" class="headerlink" title="泛型类和泛型接口"></a>泛型类和泛型接口</h3><ul>
+<li><p>泛型类和泛型接口都一样</p>
+</li>
+<li><p>泛型类就是泛型定义在类上，在使用该类时，才会把类型定义下来</p>
+</li>
+</ul>
+<h3 id="泛型的定义"><a href="#泛型的定义" class="headerlink" title="泛型的定义"></a>泛型的定义</h3><p>在类名猴子加 &lt;&gt;，在 &lt;&gt; 中的内容相当于泛型的名字</p>
+<p><strong>java 中泛型标记符：</strong></p>
+<ul>
+<li><strong>E</strong> - Element (在集合中使用，因为集合中存放的是元素)</li>
+<li><strong>T</strong> - Type（Java 类）</li>
+<li><strong>K</strong> - Key（键）</li>
+<li><strong>V</strong> - Value（值）</li>
+<li><strong>N</strong> - Number（数值类型）</li>
+<li><strong>？</strong> - 表示不确定的 java 类型 </li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&lt;T&gt;{</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="使用泛型"><a href="#使用泛型" class="headerlink" title="使用泛型"></a>使用泛型</h3><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Box</span>&lt;E&gt; {</span><br><span class="line">    <span class="keyword">private</span> E e;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(E e)</span>{</span><br><span class="line">        <span class="built_in">this</span>.e = e;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在类中定义了泛型类，此时类型是没有确定的，只有在使用时才能确定</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Box&lt;String&gt; stringBox = <span class="keyword">new</span> <span class="title class_">Box</span>&lt;&gt;();</span><br><span class="line">stringBox.add(<span class="string">"Java"</span>);</span><br><span class="line">Box&lt;Integer&gt; integerBox = <span class="keyword">new</span> <span class="title class_">Box</span>&lt;&gt;();</span><br><span class="line">integerBox.add(<span class="number">1</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>泛型的确定并不是只有在使用时才确定，还有定义子类时可以确定</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DoubleBox</span> <span class="keyword">extends</span> <span class="title class_">Box</span>&lt;Double&gt;{</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Double 类继承了 Box 类，并且指定了类型为 Double</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">DoubleBox</span> <span class="variable">doubleBox</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DoubleBox</span>();</span><br><span class="line">doubleBox.add(<span class="number">10.0</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h3><p>首先定义一个泛型接口</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Test</span>&lt;T&gt; {</span><br><span class="line">    T <span class="title function_">test</span><span class="params">(T t)</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>第二步是在接口实现类确定具体的类型</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestImpl</span> <span class="keyword">implements</span> <span class="title class_">Test</span>&lt;String&gt;{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">test</span><span class="params">(String s)</span> {</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Test&lt;String&gt; stringTest = <span class="keyword">new</span> <span class="title class_">TestImpl</span>();</span><br><span class="line"><span class="type">String</span> <span class="variable">java</span> <span class="operator">=</span> stringTest.test(<span class="string">"Java"</span>);</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【Python】Python 执行 pip 安装下载慢？这里教你怎么解决</title>
+    <url>/2021/09/16/%E7%BC%96%E7%A8%8B/Python/Python%E6%89%A7%E8%A1%8Cpip%E5%AE%89%E8%A3%85%E4%B8%8B%E8%BD%BD%E6%85%A2%EF%BC%9F%E8%BF%99%E9%87%8C%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<p>Python 官方的 PIP 库安装需要连接的服务器在国外，所以在国内访问服务器下载第三方库时并不方便，所以需要将服务器指定到国内的服务器，已获得更加稳定的使用体验。</p>
+<span id="more"></span>
+
+<h3 id="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件"><a href="#首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件" class="headerlink" title="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip.ini文件"></a>首先在当前用户文件夹下新建一个 pip 文件夹，再在此文件夹下新建一个 pip.ini 文件</h3><p>此处以 Windows 为例，其他系统也是如此，在当前用户目录下新建相应的 pip 文件夹和 pip.ini</p>
+<p><img src="https://s2.loli.net/2022/06/09/mwGqlXyeiLIvd9E.png"></p>
+<h3 id="编辑该文件，在该文件中写入"><a href="#编辑该文件，在该文件中写入" class="headerlink" title="编辑该文件，在该文件中写入"></a>编辑该文件，在该文件中写入</h3><figure class="highlight ini"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"><span class="section">[install]</span></span><br><span class="line"><span class="attr">trusted-host</span> = https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<p>使用哪个源可以根据自己的实习需求进行修改，直接替换即可</p>
+<p>阿里云                <a href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学        <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>豆瓣 (douban)      <a href="https://pypi.douban.com/simple/">https://pypi.douban.com/simple/</a> （avact 报毒，不确定……）<br>清华大学             <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学  <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></p>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -1073,25 +1260,6 @@
       </categories>
   </entry>
   <entry>
-    <title>【Python】Python 执行 pip 安装下载慢？这里教你怎么解决</title>
-    <url>/2021/09/16/%E7%BC%96%E7%A8%8B/Python/Python%E6%89%A7%E8%A1%8Cpip%E5%AE%89%E8%A3%85%E4%B8%8B%E8%BD%BD%E6%85%A2%EF%BC%9F%E8%BF%99%E9%87%8C%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<p>Python 官方的 PIP 库安装需要连接的服务器在国外，所以在国内访问服务器下载第三方库时并不方便，所以需要将服务器指定到国内的服务器，已获得更加稳定的使用体验。</p>
-<span id="more"></span>
-
-<h3 id="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件"><a href="#首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件" class="headerlink" title="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip.ini文件"></a>首先在当前用户文件夹下新建一个 pip 文件夹，再在此文件夹下新建一个 pip.ini 文件</h3><p>此处以 Windows 为例，其他系统也是如此，在当前用户目录下新建相应的 pip 文件夹和 pip.ini</p>
-<p><img src="https://s2.loli.net/2022/06/09/mwGqlXyeiLIvd9E.png"></p>
-<h3 id="编辑该文件，在该文件中写入"><a href="#编辑该文件，在该文件中写入" class="headerlink" title="编辑该文件，在该文件中写入"></a>编辑该文件，在该文件中写入</h3><figure class="highlight ini"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"><span class="section">[install]</span></span><br><span class="line"><span class="attr">trusted-host</span> = https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<p>使用哪个源可以根据自己的实习需求进行修改，直接替换即可</p>
-<p>阿里云                <a href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学        <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>豆瓣 (douban)      <a href="https://pypi.douban.com/simple/">https://pypi.douban.com/simple/</a> （avact 报毒，不确定……）<br>清华大学             <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学  <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></p>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-  </entry>
-  <entry>
     <title>【Python】微信号推送不想用？为何不试试邮箱推送呢</title>
     <url>/2022/07/01/%E7%BC%96%E7%A8%8B/Python/%E5%BE%AE%E4%BF%A1%E5%8F%B7%E6%8E%A8%E9%80%81%E4%B8%8D%E6%83%B3%E7%94%A8%EF%BC%9F%E4%B8%BA%E4%BD%95%E4%B8%8D%E8%AF%95%E8%AF%95%E9%82%AE%E7%AE%B1%E6%8E%A8%E9%80%81%E5%91%A2/</url>
     <content><![CDATA[<h3 id="邮箱推送是什么？"><a href="#邮箱推送是什么？" class="headerlink" title="邮箱推送是什么？"></a>邮箱推送是什么？</h3><p>见名知意，就是通过邮箱来推送消息到另一个邮箱。因为微信公众号推送测试号的提醒貌似以及不再提醒了（不排除是手机系统问题），所以想着回归最淳朴的邮件推送。邮件推送主要用户发送定时执行的网络爬虫产生的数据，数据展示爬虫的运行情况，例如是否成功签到等等。</p>
@@ -1147,65 +1315,6 @@
       <categories>
         <category>编程</category>
       </categories>
-  </entry>
-  <entry>
-    <title>【Android】QDM—— 一款强大的音乐下载软件</title>
-    <url>/2022/06/09/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Android/QDM%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6/</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>QMD 是一款简洁、实用的<strong>音乐下载</strong> APP。</p>
-<p>支持系统版本：Android 5.0 及以上</p>
-<span id="more"></span>
-
-<h2 id="QMD-1-7-1-更新内容："><a href="#QMD-1-7-1-更新内容：" class="headerlink" title="QMD 1.7.1 更新内容："></a>QMD 1.7.1 更新内容：</h2><p><strong>1. 修复部分闪退和已知问题</strong></p>
-<p>数都数不清，修也修不完。</p>
-<p><strong>2. 重构歌单数据库</strong></p>
-<p>所有歌单会被清空，但其他数据不影响。最近已经把所有数据库都重构了一遍，以后不会再出现收藏歌曲或者歌单被清空的情况了。</p>
-<p><strong>3. 添加歌曲页面为空时的缺省页</strong></p>
-<p><img src="https://s2.loli.net/2022/06/09/fWARs53SyTdiNIp.png" alt="图片"></p>
-<p><strong>4. 修复收藏页面多选取消收藏的卡顿 bug</strong></p>
-<p><strong>！！！特别事项！！！</strong></p>
-<p>此版为重构版，数据无法与旧版 QMD（1.6.0 及以前的版本）兼容，如果你之前已经安装过 QMD，安装完这个版本之后你的手机会出现两个 QMD。</p>
-<hr>
-<p><strong>其他事项：</strong></p>
-<ol>
-<li><p>网络问题可能会导致资源获取失败。</p>
-</li>
-<li><p>播放不了可以尝试切换网络，或者降低试听音质。</p>
-</li>
-<li><p>QQ 音乐无版权的歌和数字专辑无法下载和试听！</p>
-</li>
-<li><p>1.5.4 及以下的版本由于服务器到期已经全部失效，不再维护。</p>
-</li>
-</ol>
-<p>\5. 下载链接在后面。</p>
-<p>\7. 也许根本不会有人看这段话。</p>
-<ol start="6">
-<li>也不会有多少人仔细看更新内容。</li>
-</ol>
-<p>\8. 更不会有人注意序号错了。</p>
-<ol start="9">
-<li>竟然被你发现了 Σ(っ °Д °;) っ</li>
-</ol>
-<p><strong>QMD 常见问题</strong></p>
-<p><strong>1. 找不到音乐文件。</strong><br>音乐文件默认在手机目录下 Music 文件夹。可以直接用音乐 app 扫描。在 QMD 已下载页面长按歌曲，点击歌曲信息也能查看歌曲位置。</p>
-<p><strong>2. 添加歌单里面提示 QQ 没有音乐。</strong><br>打开 QQ 音乐 APP，打开个人主页设置，在访问设置里面确保个人主页和歌单的访问权限已开启。</p>
-<p>如果你添加的是歌单码，请确保”qmd:/“这串文字也要添加进去。</p>
-<p><strong>3. 获取资源失败。</strong><br>获取资源失败请尝试下载安装最新版。数字专辑（付费歌曲）以及 QQ 音乐无版权的歌无法下载和试听！<br>一般的歌曲不能下载，那就是接口失效了，耐心等待修复。</p>
-<p><strong>4. 如何导入网易云或者其他音乐平台的歌单。</strong><br>在 QQ 音乐里面有导入外部歌单功能，可以将其他音乐平台的歌单转换到 QQ 音乐，再从 QMD 导入歌单。</p>
-<p><strong>5. 提示内部错误。</strong><br>打开设置页面，重置下载器。或者请尝试卸载重装或者清除数据。</p>
-<p><strong>6. 字体空白。</strong></p>
-<p>通常 MIUI 上使用第三方主题会出现这个问题，换个手机主题就能解决。</p>
-<p><strong>7. QMD 有没有 IOS 或者 PC 版？</strong></p>
-<p><strong>不会有 IOS 版。</strong>但 PC 版的话之前有过想法，但是暂时没有计划开发。</p>
-<hr>
-<p><strong>下载地址：</strong></p>
-<p><a href="https://www.kzwr.com/kzwrfs?fid=5f1ed494dc52n5eum5.apk">直接下载</a>				<a href="**https://c.ddot.top/api/v3/file/get/15/QMD%201.7.1.apk?sign=kJuU0zF7zoiJAaPU8jboGKHU1f9yWz7PnCaAFWRK0aY=:0**">直接下载</a>				<a href="https://jzen.lanzoum.com/iAaNe018qw4h">蓝奏云</a>					<a href="https://pan.baidu.com/s/1z2xDSlQ9zn9DElXf34i54g">百度网盘 提取码: <strong>uqwj</strong></a>				<pangu> </pangu><a href="https://share.weiyun.com/ZFAqXo8T">微云</a>				<pangu> </pangu><a href="https://github.com/OJZen/QMD_Android/releases/download/1.7.1/QMD.1.7.1.apk">GitHub</a></p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>软件推荐</tag>
-      </tags>
   </entry>
   <entry>
     <title>【Windows】AdGuard 的破解</title>
@@ -1282,5 +1391,64 @@
       <categories>
         <category>软件</category>
       </categories>
+  </entry>
+  <entry>
+    <title>【Android】QDM—— 一款强大的音乐下载软件</title>
+    <url>/2022/06/09/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/Android/QDM%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>QMD 是一款简洁、实用的<strong>音乐下载</strong> APP。</p>
+<p>支持系统版本：Android 5.0 及以上</p>
+<span id="more"></span>
+
+<h2 id="QMD-1-7-1-更新内容："><a href="#QMD-1-7-1-更新内容：" class="headerlink" title="QMD 1.7.1 更新内容："></a>QMD 1.7.1 更新内容：</h2><p><strong>1. 修复部分闪退和已知问题</strong></p>
+<p>数都数不清，修也修不完。</p>
+<p><strong>2. 重构歌单数据库</strong></p>
+<p>所有歌单会被清空，但其他数据不影响。最近已经把所有数据库都重构了一遍，以后不会再出现收藏歌曲或者歌单被清空的情况了。</p>
+<p><strong>3. 添加歌曲页面为空时的缺省页</strong></p>
+<p><img src="https://s2.loli.net/2022/06/09/fWARs53SyTdiNIp.png" alt="图片"></p>
+<p><strong>4. 修复收藏页面多选取消收藏的卡顿 bug</strong></p>
+<p><strong>！！！特别事项！！！</strong></p>
+<p>此版为重构版，数据无法与旧版 QMD（1.6.0 及以前的版本）兼容，如果你之前已经安装过 QMD，安装完这个版本之后你的手机会出现两个 QMD。</p>
+<hr>
+<p><strong>其他事项：</strong></p>
+<ol>
+<li><p>网络问题可能会导致资源获取失败。</p>
+</li>
+<li><p>播放不了可以尝试切换网络，或者降低试听音质。</p>
+</li>
+<li><p>QQ 音乐无版权的歌和数字专辑无法下载和试听！</p>
+</li>
+<li><p>1.5.4 及以下的版本由于服务器到期已经全部失效，不再维护。</p>
+</li>
+</ol>
+<p>\5. 下载链接在后面。</p>
+<p>\7. 也许根本不会有人看这段话。</p>
+<ol start="6">
+<li>也不会有多少人仔细看更新内容。</li>
+</ol>
+<p>\8. 更不会有人注意序号错了。</p>
+<ol start="9">
+<li>竟然被你发现了 Σ(っ °Д °;) っ</li>
+</ol>
+<p><strong>QMD 常见问题</strong></p>
+<p><strong>1. 找不到音乐文件。</strong><br>音乐文件默认在手机目录下 Music 文件夹。可以直接用音乐 app 扫描。在 QMD 已下载页面长按歌曲，点击歌曲信息也能查看歌曲位置。</p>
+<p><strong>2. 添加歌单里面提示 QQ 没有音乐。</strong><br>打开 QQ 音乐 APP，打开个人主页设置，在访问设置里面确保个人主页和歌单的访问权限已开启。</p>
+<p>如果你添加的是歌单码，请确保”qmd:/“这串文字也要添加进去。</p>
+<p><strong>3. 获取资源失败。</strong><br>获取资源失败请尝试下载安装最新版。数字专辑（付费歌曲）以及 QQ 音乐无版权的歌无法下载和试听！<br>一般的歌曲不能下载，那就是接口失效了，耐心等待修复。</p>
+<p><strong>4. 如何导入网易云或者其他音乐平台的歌单。</strong><br>在 QQ 音乐里面有导入外部歌单功能，可以将其他音乐平台的歌单转换到 QQ 音乐，再从 QMD 导入歌单。</p>
+<p><strong>5. 提示内部错误。</strong><br>打开设置页面，重置下载器。或者请尝试卸载重装或者清除数据。</p>
+<p><strong>6. 字体空白。</strong></p>
+<p>通常 MIUI 上使用第三方主题会出现这个问题，换个手机主题就能解决。</p>
+<p><strong>7. QMD 有没有 IOS 或者 PC 版？</strong></p>
+<p><strong>不会有 IOS 版。</strong>但 PC 版的话之前有过想法，但是暂时没有计划开发。</p>
+<hr>
+<p><strong>下载地址：</strong></p>
+<p><a href="https://www.kzwr.com/kzwrfs?fid=5f1ed494dc52n5eum5.apk">直接下载</a>				<a href="**https://c.ddot.top/api/v3/file/get/15/QMD%201.7.1.apk?sign=kJuU0zF7zoiJAaPU8jboGKHU1f9yWz7PnCaAFWRK0aY=:0**">直接下载</a>				<a href="https://jzen.lanzoum.com/iAaNe018qw4h">蓝奏云</a>					<a href="https://pan.baidu.com/s/1z2xDSlQ9zn9DElXf34i54g">百度网盘 提取码: <strong>uqwj</strong></a>				<pangu> </pangu><a href="https://share.weiyun.com/ZFAqXo8T">微云</a>				<pangu> </pangu><a href="https://github.com/OJZen/QMD_Android/releases/download/1.7.1/QMD.1.7.1.apk">GitHub</a></p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>软件推荐</tag>
+      </tags>
   </entry>
 </search>

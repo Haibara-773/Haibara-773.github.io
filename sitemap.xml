@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qfmy.vip/2022/07/12/%E7%BC%96%E7%A8%8B/Java/Java%E5%B8%B8%E7%94%A8%E7%B1%BB/</loc>
+    
+    <lastmod>2022-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://qfmy.vip/2021/10/16/%E7%BC%96%E7%A8%8B/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2022-07-13</lastmod>
@@ -101,15 +110,6 @@
   </url>
   
   <url>
-    <loc>https://qfmy.vip/2022/07/12/%E7%BC%96%E7%A8%8B/Java/Java%E5%B8%B8%E7%94%A8%E7%B1%BB/</loc>
-    
-    <lastmod>2022-07-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://qfmy.vip/2022/06/15/%E7%BC%96%E7%A8%8B/Java/Java%20Web%E4%B9%8BServlet/</loc>
     
     <lastmod>2022-07-13</lastmod>
@@ -148,7 +148,7 @@
 
   <url>
     <loc>https://qfmy.vip/</loc>
-    <lastmod>2022-07-13</lastmod>
+    <lastmod>2022-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -156,7 +156,7 @@
   
   <url>
     <loc>https://qfmy.vip/tags/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</loc>
-    <lastmod>2022-07-13</lastmod>
+    <lastmod>2022-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -165,14 +165,14 @@
   
   <url>
     <loc>https://qfmy.vip/categories/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2022-07-13</lastmod>
+    <lastmod>2022-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://qfmy.vip/categories/%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2022-07-13</lastmod>
+    <lastmod>2022-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

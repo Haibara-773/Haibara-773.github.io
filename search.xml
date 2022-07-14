@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【Hexo】Hexo 博客插件安装记录</title>
+    <url>/2022/07/14/%E7%BC%96%E7%A8%8B/Hexo%E5%8D%9A%E5%AE%A2/%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>主要是做个备忘录的作用</p>
+<span id="more"></span>
+
+<h3 id="如何查看已安装的插件"><a href="#如何查看已安装的插件" class="headerlink" title="如何查看已安装的插件"></a>如何查看已安装的插件</h3><figure class="highlight cmd"><table><tbody><tr><td class="code"><pre><span class="line">Npm ls -dept <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2022-07-14"><a href="#2022-07-14" class="headerlink" title="2022-07-14"></a>2022-07-14</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td> [hexo-deployer-git](<a href="https://github.com/hexojs/hexo-deployer-git">GitHub - hexojs/hexo-deployer-git： Git deployer plugin for Hexo.</a>)</td>
+<td> 推送到 git</td>
+<td>3.0.0</td>
+</tr>
+<tr>
+<td>[hexo-filter-emoji](<a href="https://github.com/next-theme/hexo-filter-emoji">GitHub - next-theme/hexo-filter-emoji: 🚀 GitHub emojis for Hexo!</a>)</td>
+<td> 渲染 emoji 表情</td>
+<td> 2.2.2</td>
+</tr>
+<tr>
+<td>[hexo-filter-mathjax](<a href="https://github.com/next-theme/hexo-filter-mathjax">GitHub - next-theme/hexo-filter-mathjax: 💯 Server side MathJax renderer plugin for Hexo.</a>)</td>
+<td> 数学公式的支持</td>
+<td> 0.8.1</td>
+</tr>
+<tr>
+<td>[hexo-next-exif](<a href="https://github.com/next-theme/hexo-next-exif">GitHub - next-theme/hexo-next-exif: 📷 Exif.js for NexT.</a>)</td>
+<td>next 插件</td>
+<td> 2.3.0</td>
+</tr>
+<tr>
+<td>[hexo-next-fireworks](<a href="https://github.com/next-theme/hexo-next-fireworks">GitHub - next-theme/hexo-next-fireworks: 💥 Fireworks animation for NexT.</a>)</td>
+<td>next 主题核心</td>
+<td> 1.0.2</td>
+</tr>
+<tr>
+<td><a href="">hexo-pangu</a></td>
+<td>next 主题需要安装</td>
+<td> 0.2.1</td>
+</tr>
+<tr>
+<td>[hexo-generator-searchdb](<a href="https://github.com/next-theme/hexo-generator-searchdb">GitHub - next-theme/hexo-generator-searchdb: 🔍 Seach data generator plugin for Hexo.</a>)</td>
+<td> 本地搜索，next 需要</td>
+<td> 1.4.0</td>
+</tr>
+<tr>
+<td>[hexo-word-counter](<a href="https://github.com/next-theme/hexo-word-counter">GitHub - next-theme/hexo-word-counter: ⏰ Symbols count and time to read of articles for Hexo.</a>)</td>
+<td> 字数统计，next 需要</td>
+<td> 0.0.3</td>
+</tr>
+<tr>
+<td>[hexo-next-three](<a href="https://github.com/next-theme/hexo-next-three">GitHub - next-theme/hexo-next-three: JavaScript 3D library for NexT.</a>)</td>
+<td>next 主题</td>
+<td> 8.12.1</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【Java】Java Web 之 Servlet</title>
     <url>/2022/06/15/%E7%BC%96%E7%A8%8B/Java/Java%20Web%E4%B9%8BServlet/</url>
     <content><![CDATA[<h3 id="什么是Servlet"><a href="#什么是Servlet" class="headerlink" title="什么是Servlet"></a>什么是 Servlet</h3><ol>
@@ -103,6 +170,42 @@
       </categories>
   </entry>
   <entry>
+    <title>【整活】KFC 疯狂星期四，V50，Java 版</title>
+    <url>/2022/07/14/%E7%BC%96%E7%A8%8B/Java/KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9BV50Java%E7%89%88/</url>
+    <content><![CDATA[<p>今天是星期四，也不是说多想吃 KFC，只是这氛围到……（嘘）</p>
+<p>那就整个 KFC 疯四异常吧，来小亮给他整个活，艹，走，忽略，ጿ ኈ ቼ ዽ ጿ</p>
+<span id="more"></span>
+
+<p>自定义异常其实很简单，新建一个类，继承 Exception，再对方法进行重新</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">KFCException</span> <span class="keyword">extends</span> <span class="title class_">Exception</span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">KFCException</span><span class="params">(String message)</span> {</span><br><span class="line">        <span class="built_in">super</span>(message);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>疯四购买 KFC 需要有购买的人，所以创建一个 Person 类，在里面定义一个字段存储余额。</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> balance;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(<span class="type">double</span> balance)</span> {</span><br><span class="line">        <span class="built_in">this</span>.balance = balance;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">()</span> {</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getBalance</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> balance;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setBalance</span><span class="params">(<span class="type">double</span> balance)</span> {</span><br><span class="line">        <span class="built_in">this</span>.balance = balance;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>再创建一个 KFC 类，并且写一个 pay 的成员方法和一个购买黄金鸡块的方法，在支付订单的方法中抛出 KFC 疯四异常</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">KFC</span> {</span><br><span class="line">    <span class="comment">//价格</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">KFC</span><span class="params">()</span> {</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">KFC</span><span class="params">(<span class="type">double</span> price)</span> {</span><br><span class="line">        <span class="built_in">this</span>.price = price;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 购买黄金鸡块</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> num 数量</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">payGoldenChickenNuggets</span><span class="params">(<span class="type">int</span> num)</span>{</span><br><span class="line">        <span class="built_in">this</span>.price += num * <span class="number">20</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 支付账单</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> kfc 购买的KFC订单</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> me  购买的人</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> KFCException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pay</span><span class="params">(KFC kfc, Person me)</span> <span class="keyword">throws</span> KFCException {</span><br><span class="line">        <span class="keyword">if</span> (me.getBalance()&lt;kfc.price){</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">KFCException</span>(<span class="string">"KFC Crazy Thursday,But balance is insufficient, So you need V me 50"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>准备工作都好了，买 KFC 去咯</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CrazyThursday</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">Person</span> <span class="variable">me</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="type">KFC</span> <span class="variable">kfc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">KFC</span>();</span><br><span class="line">        kfc.payGoldenChickenNuggets(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">try</span> {</span><br><span class="line">            kfc.pay(kfc,me);</span><br><span class="line">        } <span class="keyword">catch</span> (KFCException e) {</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在这里我们创建了一个 Person 类 me，通过全参构造设置 me 的余额是 0，me 去到 KFC 买了一份黄金鸡块后去 pay (付款)，但是 me 的余额为 0，小于订单的价格，所以异常就产生了。</p>
+<p><img src="https://s2.loli.net/2022/07/14/jhD7sn8MbkcT6fB.png" alt="image-20220714224606975"></p>
+<p>哭惹，我的 KFC 黄金鸡块</p>
+<p>忍一时，越想越气，退一步，越想越亏，到底怎么才能让 me 买到黄金鸡块呢？</p>
+<p>懂了，V 我 50！</p>
+<p>所以，需要在 Person 类中加一个方法 v50 获得 50 块</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">v50</span><span class="params">(Person me)</span> {</span><br><span class="line">    me.balance += <span class="number">50</span>;</span><br><span class="line">    <span class="built_in">this</span>.balance -= <span class="number">50</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CrazyThursday</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">Person</span> <span class="variable">me</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="type">Person</span> <span class="variable">you</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="number">88888888</span>);</span><br><span class="line">        you.v50(me);</span><br><span class="line">        <span class="type">KFC</span> <span class="variable">kfc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">KFC</span>();</span><br><span class="line">        kfc.payGoldenChickenNuggets(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">try</span> {</span><br><span class="line">            kfc.pay(kfc,me);</span><br><span class="line">        } <span class="keyword">catch</span> (KFCException e) {</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这次在去 KFC 前 me 先找到 you，让 you V 了我 50，你慷慨解囊，从 88888888 的余额中 V 了我 50，所以我的余额就从 0 变成了 50，在余额有 50 的情况下再去 KFC 点一份黄金鸡块，就可以成功支付了。</p>
+<p><img src="https://s2.loli.net/2022/07/14/HvbkMSojlnqGDtw.png" alt="image-20220714231444188"></p>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【Java】Java 多线程的实现方式 —— 持续更新中</title>
     <url>/2022/06/09/%E7%BC%96%E7%A8%8B/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/</url>
     <content><![CDATA[<h1 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承 Thread 类</h1><p>基础 Thread 类的方法需要从四部去执行</p>
@@ -133,6 +236,17 @@
 <li>不能在已 start 的线程再次 start</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【Java】int 数组的排序和倒叙以及 toString</title>
+    <url>/2022/06/09/%E7%BC%96%E7%A8%8B/Java/int%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F%E5%92%8C%E5%80%92%E5%8F%99%E4%BB%A5%E5%8F%8AtoString/</url>
+    <content><![CDATA[<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>顺序排序使用的是冒泡排序来实现的，而倒叙排序则是在排序前通过顺序排序将数组的顺序排好，在此基础上对数组进行元素调换来实现倒叙。</p>
+<span id="more"></span>
+
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArraySort</span> {</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 正序使用冒泡排序完成</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] sort(<span class="type">int</span>[] arr){</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; arr.length; i++) {</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length - i; j++) {</span><br><span class="line">                <span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>]){</span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[j];</span><br><span class="line">                    arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                    arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 倒叙排序直接将元素交换</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] reverse(<span class="type">int</span>[] arr){</span><br><span class="line">        arr = sort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">0</span>,e=arr.length-<span class="number">1</span>; s &lt; e; s++,e--){</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[s];</span><br><span class="line">            arr[s] = arr[e];</span><br><span class="line">            arr[e] = temp;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toString</span><span class="params">(<span class="type">int</span>[] arr)</span>{</span><br><span class="line">        <span class="keyword">if</span> (arr == <span class="literal">null</span>){</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"null"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="type">int</span> <span class="variable">iMax</span> <span class="operator">=</span> arr.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (iMax == -<span class="number">1</span>){</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"[]"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">buffer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        buffer.append(<span class="string">"["</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; ; i++) {</span><br><span class="line">            buffer.append(arr[i]);</span><br><span class="line">            <span class="keyword">if</span> (i==iMax){</span><br><span class="line">                <span class="keyword">return</span> buffer.append(<span class="string">']'</span>).toString();</span><br><span class="line">            }</span><br><span class="line">            buffer.append(<span class="string">","</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>]]></content>
       <categories>
         <category>编程</category>
       </categories>
@@ -956,44 +1070,6 @@
       </categories>
   </entry>
   <entry>
-    <title>【整活】KFC 疯狂星期四，V50，Java 版</title>
-    <url>/2022/07/14/%E7%BC%96%E7%A8%8B/Java/KFC%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9BV50Java%E7%89%88/</url>
-    <content><![CDATA[<p>今天是星期四，也不是说多想吃 KFC，只是这氛围到……（嘘）</p>
-<p>那就整个 KFC 疯四异常吧，来小亮给他整个活，艹，走，忽略，ጿ ኈ ቼ ዽ ጿ</p>
-<span id="more"></span>
-
-<p>自定义异常其实很简单，新建一个类，继承 Exception，再对方法进行重新</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">KFCException</span> <span class="keyword">extends</span> <span class="title class_">Exception</span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">KFCException</span><span class="params">(String message)</span> {</span><br><span class="line">        <span class="built_in">super</span>(message);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>疯四购买 KFC 需要有购买的人，所以创建一个 Person 类，在里面定义一个字段存储余额。</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> balance;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(<span class="type">double</span> balance)</span> {</span><br><span class="line">        <span class="built_in">this</span>.balance = balance;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">()</span> {</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getBalance</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> balance;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setBalance</span><span class="params">(<span class="type">double</span> balance)</span> {</span><br><span class="line">        <span class="built_in">this</span>.balance = balance;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>再创建一个 KFC 类，并且写一个 pay 的成员方法和一个购买黄金鸡块的方法，在支付订单的方法中抛出 KFC 疯四异常</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">KFC</span> {</span><br><span class="line">    <span class="comment">//价格</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">KFC</span><span class="params">()</span> {</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">KFC</span><span class="params">(<span class="type">double</span> price)</span> {</span><br><span class="line">        <span class="built_in">this</span>.price = price;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 购买黄金鸡块</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> num 数量</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">payGoldenChickenNuggets</span><span class="params">(<span class="type">int</span> num)</span>{</span><br><span class="line">        <span class="built_in">this</span>.price += num * <span class="number">20</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 支付账单</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> kfc 购买的KFC订单</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> me  购买的人</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> KFCException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pay</span><span class="params">(KFC kfc, Person me)</span> <span class="keyword">throws</span> KFCException {</span><br><span class="line">        <span class="keyword">if</span> (me.getBalance()&lt;kfc.price){</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">KFCException</span>(<span class="string">"KFC Crazy Thursday,But balance is insufficient, So you need V me 50"</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>准备工作都好了，买 KFC 去咯</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CrazyThursday</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">Person</span> <span class="variable">me</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="type">KFC</span> <span class="variable">kfc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">KFC</span>();</span><br><span class="line">        kfc.payGoldenChickenNuggets(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">try</span> {</span><br><span class="line">            kfc.pay(kfc,me);</span><br><span class="line">        } <span class="keyword">catch</span> (KFCException e) {</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>在这里我们创建了一个 Person 类 me，通过全参构造设置 me 的余额是 0，me 去到 KFC 买了一份黄金鸡块后去 pay (付款)，但是 me 的余额为 0，小于订单的价格，所以异常就产生了。</p>
-<p><img src="https://s2.loli.net/2022/07/14/jhD7sn8MbkcT6fB.png" alt="image-20220714224606975"></p>
-<p>哭惹，我的 KFC 黄金鸡块</p>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>【Java】int 数组的排序和倒叙以及 toString</title>
-    <url>/2022/06/09/%E7%BC%96%E7%A8%8B/Java/int%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F%E5%92%8C%E5%80%92%E5%8F%99%E4%BB%A5%E5%8F%8AtoString/</url>
-    <content><![CDATA[<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>顺序排序使用的是冒泡排序来实现的，而倒叙排序则是在排序前通过顺序排序将数组的顺序排好，在此基础上对数组进行元素调换来实现倒叙。</p>
-<span id="more"></span>
-
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArraySort</span> {</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 正序使用冒泡排序完成</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] sort(<span class="type">int</span>[] arr){</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; arr.length; i++) {</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; arr.length - i; j++) {</span><br><span class="line">                <span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>]){</span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[j];</span><br><span class="line">                    arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                    arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 倒叙排序直接将元素交换</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] reverse(<span class="type">int</span>[] arr){</span><br><span class="line">        arr = sort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">0</span>,e=arr.length-<span class="number">1</span>; s &lt; e; s++,e--){</span><br><span class="line">            <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[s];</span><br><span class="line">            arr[s] = arr[e];</span><br><span class="line">            arr[e] = temp;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toString</span><span class="params">(<span class="type">int</span>[] arr)</span>{</span><br><span class="line">        <span class="keyword">if</span> (arr == <span class="literal">null</span>){</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"null"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="type">int</span> <span class="variable">iMax</span> <span class="operator">=</span> arr.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (iMax == -<span class="number">1</span>){</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"[]"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">buffer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        buffer.append(<span class="string">"["</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; ; i++) {</span><br><span class="line">            buffer.append(arr[i]);</span><br><span class="line">            <span class="keyword">if</span> (i==iMax){</span><br><span class="line">                <span class="keyword">return</span> buffer.append(<span class="string">']'</span>).toString();</span><br><span class="line">            }</span><br><span class="line">            buffer.append(<span class="string">","</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-  </entry>
-  <entry>
     <title>【Java】网络编程笔记</title>
     <url>/2021/10/16/%E7%BC%96%E7%A8%8B/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><hr>
@@ -1135,73 +1211,6 @@
 ]]></content>
       <categories>
         <category>编程</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>【Hexo】Hexo 博客插件安装记录</title>
-    <url>/2022/07/14/%E7%BC%96%E7%A8%8B/Hexo%E5%8D%9A%E5%AE%A2/%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>主要是做个备忘录的作用</p>
-<span id="more"></span>
-
-<h3 id="如何查看已安装的插件"><a href="#如何查看已安装的插件" class="headerlink" title="如何查看已安装的插件"></a>如何查看已安装的插件</h3><figure class="highlight cmd"><table><tbody><tr><td class="code"><pre><span class="line">Npm ls -dept <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="2022-07-14"><a href="#2022-07-14" class="headerlink" title="2022-07-14"></a>2022-07-14</h3><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-<th>版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td> [hexo-deployer-git](<a href="https://github.com/hexojs/hexo-deployer-git">GitHub - hexojs/hexo-deployer-git： Git deployer plugin for Hexo.</a>)</td>
-<td> 推送到 git</td>
-<td>3.0.0</td>
-</tr>
-<tr>
-<td>[hexo-filter-emoji](<a href="https://github.com/next-theme/hexo-filter-emoji">GitHub - next-theme/hexo-filter-emoji: 🚀 GitHub emojis for Hexo!</a>)</td>
-<td> 渲染 emoji 表情</td>
-<td> 2.2.2</td>
-</tr>
-<tr>
-<td>[hexo-filter-mathjax](<a href="https://github.com/next-theme/hexo-filter-mathjax">GitHub - next-theme/hexo-filter-mathjax: 💯 Server side MathJax renderer plugin for Hexo.</a>)</td>
-<td> 数学公式的支持</td>
-<td> 0.8.1</td>
-</tr>
-<tr>
-<td>[hexo-next-exif](<a href="https://github.com/next-theme/hexo-next-exif">GitHub - next-theme/hexo-next-exif: 📷 Exif.js for NexT.</a>)</td>
-<td>next 插件</td>
-<td> 2.3.0</td>
-</tr>
-<tr>
-<td>[hexo-next-fireworks](<a href="https://github.com/next-theme/hexo-next-fireworks">GitHub - next-theme/hexo-next-fireworks: 💥 Fireworks animation for NexT.</a>)</td>
-<td>next 主题核心</td>
-<td> 1.0.2</td>
-</tr>
-<tr>
-<td><a href="">hexo-pangu</a></td>
-<td>next 主题需要安装</td>
-<td> 0.2.1</td>
-</tr>
-<tr>
-<td>[hexo-generator-searchdb](<a href="https://github.com/next-theme/hexo-generator-searchdb">GitHub - next-theme/hexo-generator-searchdb: 🔍 Seach data generator plugin for Hexo.</a>)</td>
-<td> 本地搜索，next 需要</td>
-<td> 1.4.0</td>
-</tr>
-<tr>
-<td>[hexo-word-counter](<a href="https://github.com/next-theme/hexo-word-counter">GitHub - next-theme/hexo-word-counter: ⏰ Symbols count and time to read of articles for Hexo.</a>)</td>
-<td> 字数统计，next 需要</td>
-<td> 0.0.3</td>
-</tr>
-<tr>
-<td>[hexo-next-three](<a href="https://github.com/next-theme/hexo-next-three">GitHub - next-theme/hexo-next-three: JavaScript 3D library for NexT.</a>)</td>
-<td>next 主题</td>
-<td> 8.12.1</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>博客</category>
       </categories>
   </entry>
   <entry>
@@ -1374,6 +1383,22 @@
       </categories>
   </entry>
   <entry>
+    <title>【Python】爬虫登录学校的教务系统</title>
+    <url>/2021/09/18/%E7%BC%96%E7%A8%8B/Python/%E7%88%AC%E8%99%AB%E7%99%BB%E5%BD%95%E5%AD%A6%E6%A0%A1%E7%9A%84%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>事情是这样的，在看到舍友在做课表爬虫的项目，于是乎想着自己也写一个吧，我便立马打开了 pycharm，开始了教务系统的爬虫。<br>其实这个博客应该分为上下部分，这次更新上部分吧，主要是也只写了这么一部分<br>老规矩，正事之前美女镇楼！GoGoGo！</p>
+<span id="more"></span>
+
+<p><img src="https://cdn.jsdelivr.net/gh/haibara-img-1/img/Image/20210918005325.jpg"></p>
+<hr>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><img src="https://cdn.jsdelivr.net/gh/haibara-img-1/img/Image/%E6%A8%A1%E6%8B%9F%E7%99%BB%E9%99%86%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%88%AC%E5%8F%96%E8%AF%BE%E8%A1%A8.png"></p>
+<h3 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h3><p>这个项目主要是实现登录教务系统，爬取课表并非本次主要内容。</p>
+<p>这里主要是使用了 easyocr 的第三方库，使用库识别本地图片进行模拟真人登录</p>
+<h3 id="实际代码展示"><a href="#实际代码展示" class="headerlink" title="实际代码展示"></a>实际代码展示</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> easyocr</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求头</span></span><br><span class="line">headers = {</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.47'</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接受课表页面数据进行解析</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parsing</span>(<span class="params">text</span>):</span><br><span class="line">    html = etree.HTML(text)</span><br><span class="line">    <span class="comment"># print(text)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> html.xpath(<span class="string">'//*[@class="datalist"]/tr'</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i.xpath(<span class="string">'./td/text()'</span>):</span><br><span class="line">            <span class="built_in">print</span>(j)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    table = <span class="string">''</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># 创建一个会话</span></span><br><span class="line">        s = requests.Session()</span><br><span class="line">        <span class="comment"># 会话请求一张验证码</span></span><br><span class="line">        image = s.get(<span class="string">f'http://jw.glutnn.cn/academic/getCaptcha.do?<span class="subst">{random.random()}</span>'</span>, headers=headers)</span><br><span class="line">        <span class="comment"># 保存验证码到本地</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'getCaptcha.png'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(image.content)</span><br><span class="line">        <span class="comment"># 使用OCR识别验证码</span></span><br><span class="line">        reader = easyocr.Reader([<span class="string">'ch_sim'</span>, <span class="string">'en'</span>])</span><br><span class="line">        result = reader.readtext(<span class="string">'getCaptcha.png'</span>)</span><br><span class="line">        <span class="comment"># 接受验证码变量</span></span><br><span class="line">        captcha = <span class="string">''</span></span><br><span class="line">        <span class="comment"># 读取验证码</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            word = i[<span class="number">1</span>]</span><br><span class="line">            captcha = word</span><br><span class="line">        <span class="comment"># 登录时需要提交的数据，为账号密码，以及动态地填充验证码</span></span><br><span class="line">        data = {</span><br><span class="line">            <span class="string">'j_username'</span>: <span class="string">'**********'</span>,</span><br><span class="line">            <span class="string">'j_password'</span>: <span class="string">'**********'</span>,</span><br><span class="line">            <span class="string">'j_captcha'</span>: <span class="string">f'<span class="subst">{captcha}</span>'</span></span><br><span class="line">        }</span><br><span class="line">        <span class="comment"># 在获取验证码后的会话进行验证OCR的结果</span></span><br><span class="line">        login = s.post(<span class="string">f'http://jw.glutnn.cn/academic/checkCaptcha.do?captchaCode=<span class="subst">{captcha}</span>'</span>, headers=headers)</span><br><span class="line">        <span class="keyword">if</span> login.text == <span class="string">'false'</span>:</span><br><span class="line">            <span class="comment"># 结果为假不进行操作</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 验证通过时执行登录操作</span></span><br><span class="line">            loging = s.post(<span class="string">'http://jw.glutnn.cn/academic/j_acegi_security_check'</span>, data=data)</span><br><span class="line">            <span class="comment"># 进入个人课表页面，没访问这个页面无法进入本周课表页面</span></span><br><span class="line">            cu = s.get(<span class="string">f'http://jw.glutnn.cn/academic/student/currcourse/currcourse.jsdo?randomString=202109171926436Qv6aK&amp;groupId=&amp;moduleId=2000'</span>, headers=headers)</span><br><span class="line">            <span class="comment"># 访问本周课表页面</span></span><br><span class="line">            kb = s.get(<span class="string">'http://jw.glutnn.cn/academic/manager/coursearrange/studentWeeklyTimetable.do?yearid=41&amp;termid=3'</span>,headers=headers,data=data)</span><br><span class="line">            parsing(kb.text)</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【Python】微信号推送不想用？为何不试试邮箱推送呢</title>
     <url>/2022/07/01/%E7%BC%96%E7%A8%8B/Python/%E5%BE%AE%E4%BF%A1%E5%8F%B7%E6%8E%A8%E9%80%81%E4%B8%8D%E6%83%B3%E7%94%A8%EF%BC%9F%E4%B8%BA%E4%BD%95%E4%B8%8D%E8%AF%95%E8%AF%95%E9%82%AE%E7%AE%B1%E6%8E%A8%E9%80%81%E5%91%A2/</url>
     <content><![CDATA[<h3 id="邮箱推送是什么？"><a href="#邮箱推送是什么？" class="headerlink" title="邮箱推送是什么？"></a>邮箱推送是什么？</h3><p>见名知意，就是通过邮箱来推送消息到另一个邮箱。因为微信公众号推送测试号的提醒貌似以及不再提醒了（不排除是手机系统问题），所以想着回归最淳朴的邮件推送。邮件推送主要用户发送定时执行的网络爬虫产生的数据，数据展示爬虫的运行情况，例如是否成功签到等等。</p>
@@ -1410,22 +1435,6 @@
 
 <h3 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h3><p><img src="https://s2.loli.net/2022/07/02/8rjYpZMb2qWylzd.png" alt="image-20220702153231717"></p>
 ]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>【Python】爬虫登录学校的教务系统</title>
-    <url>/2021/09/18/%E7%BC%96%E7%A8%8B/Python/%E7%88%AC%E8%99%AB%E7%99%BB%E5%BD%95%E5%AD%A6%E6%A0%A1%E7%9A%84%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>事情是这样的，在看到舍友在做课表爬虫的项目，于是乎想着自己也写一个吧，我便立马打开了 pycharm，开始了教务系统的爬虫。<br>其实这个博客应该分为上下部分，这次更新上部分吧，主要是也只写了这么一部分<br>老规矩，正事之前美女镇楼！GoGoGo！</p>
-<span id="more"></span>
-
-<p><img src="https://cdn.jsdelivr.net/gh/haibara-img-1/img/Image/20210918005325.jpg"></p>
-<hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><img src="https://cdn.jsdelivr.net/gh/haibara-img-1/img/Image/%E6%A8%A1%E6%8B%9F%E7%99%BB%E9%99%86%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%88%AC%E5%8F%96%E8%AF%BE%E8%A1%A8.png"></p>
-<h3 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h3><p>这个项目主要是实现登录教务系统，爬取课表并非本次主要内容。</p>
-<p>这里主要是使用了 easyocr 的第三方库，使用库识别本地图片进行模拟真人登录</p>
-<h3 id="实际代码展示"><a href="#实际代码展示" class="headerlink" title="实际代码展示"></a>实际代码展示</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> easyocr</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求头</span></span><br><span class="line">headers = {</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.47'</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接受课表页面数据进行解析</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parsing</span>(<span class="params">text</span>):</span><br><span class="line">    html = etree.HTML(text)</span><br><span class="line">    <span class="comment"># print(text)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> html.xpath(<span class="string">'//*[@class="datalist"]/tr'</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i.xpath(<span class="string">'./td/text()'</span>):</span><br><span class="line">            <span class="built_in">print</span>(j)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    table = <span class="string">''</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># 创建一个会话</span></span><br><span class="line">        s = requests.Session()</span><br><span class="line">        <span class="comment"># 会话请求一张验证码</span></span><br><span class="line">        image = s.get(<span class="string">f'http://jw.glutnn.cn/academic/getCaptcha.do?<span class="subst">{random.random()}</span>'</span>, headers=headers)</span><br><span class="line">        <span class="comment"># 保存验证码到本地</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'getCaptcha.png'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(image.content)</span><br><span class="line">        <span class="comment"># 使用OCR识别验证码</span></span><br><span class="line">        reader = easyocr.Reader([<span class="string">'ch_sim'</span>, <span class="string">'en'</span>])</span><br><span class="line">        result = reader.readtext(<span class="string">'getCaptcha.png'</span>)</span><br><span class="line">        <span class="comment"># 接受验证码变量</span></span><br><span class="line">        captcha = <span class="string">''</span></span><br><span class="line">        <span class="comment"># 读取验证码</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            word = i[<span class="number">1</span>]</span><br><span class="line">            captcha = word</span><br><span class="line">        <span class="comment"># 登录时需要提交的数据，为账号密码，以及动态地填充验证码</span></span><br><span class="line">        data = {</span><br><span class="line">            <span class="string">'j_username'</span>: <span class="string">'**********'</span>,</span><br><span class="line">            <span class="string">'j_password'</span>: <span class="string">'**********'</span>,</span><br><span class="line">            <span class="string">'j_captcha'</span>: <span class="string">f'<span class="subst">{captcha}</span>'</span></span><br><span class="line">        }</span><br><span class="line">        <span class="comment"># 在获取验证码后的会话进行验证OCR的结果</span></span><br><span class="line">        login = s.post(<span class="string">f'http://jw.glutnn.cn/academic/checkCaptcha.do?captchaCode=<span class="subst">{captcha}</span>'</span>, headers=headers)</span><br><span class="line">        <span class="keyword">if</span> login.text == <span class="string">'false'</span>:</span><br><span class="line">            <span class="comment"># 结果为假不进行操作</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 验证通过时执行登录操作</span></span><br><span class="line">            loging = s.post(<span class="string">'http://jw.glutnn.cn/academic/j_acegi_security_check'</span>, data=data)</span><br><span class="line">            <span class="comment"># 进入个人课表页面，没访问这个页面无法进入本周课表页面</span></span><br><span class="line">            cu = s.get(<span class="string">f'http://jw.glutnn.cn/academic/student/currcourse/currcourse.jsdo?randomString=202109171926436Qv6aK&amp;groupId=&amp;moduleId=2000'</span>, headers=headers)</span><br><span class="line">            <span class="comment"># 访问本周课表页面</span></span><br><span class="line">            kb = s.get(<span class="string">'http://jw.glutnn.cn/academic/manager/coursearrange/studentWeeklyTimetable.do?yearid=41&amp;termid=3'</span>,headers=headers,data=data)</span><br><span class="line">            parsing(kb.text)</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
       <categories>
         <category>编程</category>
       </categories>

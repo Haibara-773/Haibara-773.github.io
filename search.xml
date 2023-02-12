@@ -30,27 +30,6 @@
       </tags>
   </entry>
   <entry>
-    <title>爬虫登录学校的教务系统</title>
-    <url>/8b5897d3fa74/</url>
-    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>事情是这样的，在看到舍友在做课表爬虫的项目，于是乎想着自己也写一个吧，我便立马打开了 pycharm，开始了教务系统的爬虫。<br>其实这个博客应该分为上下部分，这次更新上部分吧，主要是也只写了这么一部分<br>老规矩，正事之前美女镇楼！GoGoGo！</p>
-<span id="more"></span>
-
-<p><img src="/./assets/C0613BA9155D39BD3CDCA069D2CABAFE.jpg" alt="C0613BA9155D39BD3CDCA069D2CABAFE"></p>
-<hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><img src="/./assets/1D648E86E887FF73D541C16724FE66D4.png" alt="1D648E86E887FF73D541C16724FE66D4"></p>
-<h3 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h3><p>这个项目主要是实现登录教务系统，爬取课表并非本次主要内容。</p>
-<p>这里主要是使用了 easyocr 的第三方库，使用库识别本地图片进行模拟真人登录</p>
-<h3 id="实际代码展示"><a href="#实际代码展示" class="headerlink" title="实际代码展示"></a>实际代码展示</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> easyocr</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求头</span></span><br><span class="line">headers = {</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.47'</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接受课表页面数据进行解析</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parsing</span>(<span class="params">text</span>):</span><br><span class="line">    html = etree.HTML(text)</span><br><span class="line">    <span class="comment"># print(text)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> html.xpath(<span class="string">'//*[@class="datalist"]/tr'</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i.xpath(<span class="string">'./td/text()'</span>):</span><br><span class="line">            <span class="built_in">print</span>(j)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    table = <span class="string">''</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># 创建一个会话</span></span><br><span class="line">        s = requests.Session()</span><br><span class="line">        <span class="comment"># 会话请求一张验证码</span></span><br><span class="line">        image = s.get(<span class="string">f'http://jw.glutnn.cn/academic/getCaptcha.do?<span class="subst">{random.random()}</span>'</span>, headers=headers)</span><br><span class="line">        <span class="comment"># 保存验证码到本地</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'getCaptcha.png'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(image.content)</span><br><span class="line">        <span class="comment"># 使用OCR识别验证码</span></span><br><span class="line">        reader = easyocr.Reader([<span class="string">'ch_sim'</span>, <span class="string">'en'</span>])</span><br><span class="line">        result = reader.readtext(<span class="string">'getCaptcha.png'</span>)</span><br><span class="line">        <span class="comment"># 接受验证码变量</span></span><br><span class="line">        captcha = <span class="string">''</span></span><br><span class="line">        <span class="comment"># 读取验证码</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            word = i[<span class="number">1</span>]</span><br><span class="line">            captcha = word</span><br><span class="line">        <span class="comment"># 登录时需要提交的数据，为账号密码，以及动态地填充验证码</span></span><br><span class="line">        data = {</span><br><span class="line">            <span class="string">'j_username'</span>: <span class="string">'**********'</span>,</span><br><span class="line">            <span class="string">'j_password'</span>: <span class="string">'**********'</span>,</span><br><span class="line">            <span class="string">'j_captcha'</span>: <span class="string">f'<span class="subst">{captcha}</span>'</span></span><br><span class="line">        }</span><br><span class="line">        <span class="comment"># 在获取验证码后的会话进行验证OCR的结果</span></span><br><span class="line">        login = s.post(<span class="string">f'http://jw.glutnn.cn/academic/checkCaptcha.do?captchaCode=<span class="subst">{captcha}</span>'</span>, headers=headers)</span><br><span class="line">        <span class="keyword">if</span> login.text == <span class="string">'false'</span>:</span><br><span class="line">            <span class="comment"># 结果为假不进行操作</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 验证通过时执行登录操作</span></span><br><span class="line">            loging = s.post(<span class="string">'http://jw.glutnn.cn/academic/j_acegi_security_check'</span>, data=data)</span><br><span class="line">            <span class="comment"># 进入个人课表页面，没访问这个页面无法进入本周课表页面</span></span><br><span class="line">            cu = s.get(<span class="string">f'http://jw.glutnn.cn/academic/student/currcourse/currcourse.jsdo?randomString=202109171926436Qv6aK&amp;groupId=&amp;moduleId=2000'</span>, headers=headers)</span><br><span class="line">            <span class="comment"># 访问本周课表页面</span></span><br><span class="line">            kb = s.get(<span class="string">'http://jw.glutnn.cn/academic/manager/coursearrange/studentWeeklyTimetable.do?yearid=41&amp;termid=3'</span>,headers=headers,data=data)</span><br><span class="line">            parsing(kb.text)</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-        <tag>模拟登陆</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>利用 Python 给微信发消息？怎么做的？</title>
     <url>/aeec0178dafd/</url>
     <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>上周做过一个爬虫爬取课表的，本应该尽快出下半部分的内容的，但是嘛，中间放了个中秋假，就开始鸽了。<br>其实下半部分内容就是把爬到的课表进行格式化再通知自己而已。<br>其中我最先考虑的是使用 server 酱的，虽然 server 酱服务很到位，但是我想白嫖啊，因为我的 server 每天推送的次数已经全部安排得明明白白了。<br>接下来便有了用邮件提醒的想法，这个确实有得搞的，但今天先不说。<br>在我折腾我的路由后台时发现了里面的自建微信推送功能，便看到了微信开放平台的这个接口<br>那就开搞，又免费又是推送到微信又不会产生过多的邮件，你就说香不香吧</p>
@@ -206,38 +185,24 @@
       </tags>
   </entry>
   <entry>
-    <title>【Windows】Jetbrains 系列软件的破解补丁</title>
-    <url>/23ec1e546bbd/</url>
-    <content><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Jetbrains 系列的的软件是真的好用，但是也是真的贵，对于一个学生党来说确实是支持不起这个费用啊。当然，官方也有基础的免费版本，可是专业版的对于学习来说太方便了，所以上个 “学习版” 是有必要的。当然，有财力的还是建议支持正版，毕竟只有收费才可以让开发的公司有动力持续地更新产品，我们才能用到更好的产品。废话不多说，妹子图开局。</p>
+    <title>爬虫登录学校的教务系统</title>
+    <url>/8b5897d3fa74/</url>
+    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>事情是这样的，在看到舍友在做课表爬虫的项目，于是乎想着自己也写一个吧，我便立马打开了 pycharm，开始了教务系统的爬虫。<br>其实这个博客应该分为上下部分，这次更新上部分吧，主要是也只写了这么一部分<br>老规矩，正事之前美女镇楼！GoGoGo！</p>
 <span id="more"></span>
 
-<p><img src="/./assets/0BB1BBABDDB1C8C667F37DC594ED546C.png" alt="0BB1BBABDDB1C8C667F37DC594ED546C"></p>
-<h3 id="IDE-Eval-Reset插件（已停更）"><a href="#IDE-Eval-Reset插件（已停更）" class="headerlink" title="IDE Eval Reset插件（已停更）"></a><code>IDE Eval Reset</code> 插件（已停更）</h3><p>这是一款用起来比较简单的插件，可以通过重置 30 天试用来实现破解，但这个只可以在 2021.3 之前的版本可用，但比较稳定，相对于一些用老版本或者激活码我更倾向于使用这个插件。</p>
-<h3 id="如何下载2021-3之前的版本？"><a href="#如何下载2021-3之前的版本？" class="headerlink" title="如何下载2021.3之前的版本？"></a>如何下载 2021.3 之前的版本？</h3><p>此处我已 PyCharm 为例，我们访问官方的下载页面，选择其他版本，就可以挑选老版本了</p>
-<p><img src="/./assets/25ECA199BF1CA2BB90AEF4776763BB63.png" alt="25ECA199BF1CA2BB90AEF4776763BB63"></p>
-<p><img src="/./assets/1A0731BAD84132CFAF5E8EE6BE34F7F8.png" alt="1A0731BAD84132CFAF5E8EE6BE34F7F8"></p>
-<p>当然，可能过段时间官方会下线这些版本，所以我就给我备份了 PyCharm 和 IDEA 以及 WebStorm 的 2021.2 的安装包，说不定什么时候需要到呢？大概率是用不上得啦。</p>
-<p>软件链接：<a href="https://pan.baidu.com/s/1S7lrn9mQ5aXU-Hcpi_eaWg">https://pan.baidu.com/s/1S7lrn9mQ5aXU-Hcpi_eaWg</a> 提取码: qxja </p>
-<p>补丁链接：<a href="https://pan.baidu.com/s/1UQpHQKAmcgeE-dO-xBummg">https://pan.baidu.com/s/1UQpHQKAmcgeE-dO-xBummg</a> 提取码: 6ngd </p>
-<p>补丁链接：<a href="https://asuna773.lanzoul.com/ita1t0cjp80f">https://asuna773.lanzoul.com/ita1t0cjp80f</a></p>
-<p>补丁作者的博客：<a href="https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html">Jetbrains 系列产品重置试用方法 | 知了 (zhile.io)</a></p>
-<h3 id="如何使用？"><a href="#如何使用？" class="headerlink" title="如何使用？"></a>如何使用？</h3><p>其实很简单，保证自己可以打开相关的软件，如果进入需要激活的情况建议使用下面说到的激活码激活一次后再进行安装插件。</p>
-<p>如果是第一次安装，那就点击使用 30 天（2021.3 后需要登录，貌似这个插件也不支持后面的版本激活）即可进入软件。</p>
-<p>在打开软件后随便创建一个项目，然后把补丁直接拖动到这里</p>
-<p><img src="/./assets/15255434748BE4E530F6AB504CE07476.png" alt="15255434748BE4E530F6AB504CE07476"></p>
-<p>点击 Help，然后选择这个</p>
-<p><img src="/./assets/2ECF7A514C3D7A4161AEE87AED4EEDED.png" alt="2ECF7A514C3D7A4161AEE87AED4EEDED"></p>
-<p>这般设置一下便可</p>
-<p><img src="/./assets/559ABAA9880DB204DBA6499FCD599532.png" alt="559ABAA9880DB204DBA6499FCD599532"></p>
-]]></content>
+<p><img src="/./assets/C0613BA9155D39BD3CDCA069D2CABAFE.jpg" alt="C0613BA9155D39BD3CDCA069D2CABAFE"></p>
+<hr>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><img src="/./assets/1D648E86E887FF73D541C16724FE66D4.png" alt="1D648E86E887FF73D541C16724FE66D4"></p>
+<h3 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h3><p>这个项目主要是实现登录教务系统，爬取课表并非本次主要内容。</p>
+<p>这里主要是使用了 easyocr 的第三方库，使用库识别本地图片进行模拟真人登录</p>
+<h3 id="实际代码展示"><a href="#实际代码展示" class="headerlink" title="实际代码展示"></a>实际代码展示</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> easyocr</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求头</span></span><br><span class="line">headers = {</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.47'</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接受课表页面数据进行解析</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parsing</span>(<span class="params">text</span>):</span><br><span class="line">    html = etree.HTML(text)</span><br><span class="line">    <span class="comment"># print(text)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> html.xpath(<span class="string">'//*[@class="datalist"]/tr'</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i.xpath(<span class="string">'./td/text()'</span>):</span><br><span class="line">            <span class="built_in">print</span>(j)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    table = <span class="string">''</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># 创建一个会话</span></span><br><span class="line">        s = requests.Session()</span><br><span class="line">        <span class="comment"># 会话请求一张验证码</span></span><br><span class="line">        image = s.get(<span class="string">f'http://jw.glutnn.cn/academic/getCaptcha.do?<span class="subst">{random.random()}</span>'</span>, headers=headers)</span><br><span class="line">        <span class="comment"># 保存验证码到本地</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'getCaptcha.png'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(image.content)</span><br><span class="line">        <span class="comment"># 使用OCR识别验证码</span></span><br><span class="line">        reader = easyocr.Reader([<span class="string">'ch_sim'</span>, <span class="string">'en'</span>])</span><br><span class="line">        result = reader.readtext(<span class="string">'getCaptcha.png'</span>)</span><br><span class="line">        <span class="comment"># 接受验证码变量</span></span><br><span class="line">        captcha = <span class="string">''</span></span><br><span class="line">        <span class="comment"># 读取验证码</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">            word = i[<span class="number">1</span>]</span><br><span class="line">            captcha = word</span><br><span class="line">        <span class="comment"># 登录时需要提交的数据，为账号密码，以及动态地填充验证码</span></span><br><span class="line">        data = {</span><br><span class="line">            <span class="string">'j_username'</span>: <span class="string">'**********'</span>,</span><br><span class="line">            <span class="string">'j_password'</span>: <span class="string">'**********'</span>,</span><br><span class="line">            <span class="string">'j_captcha'</span>: <span class="string">f'<span class="subst">{captcha}</span>'</span></span><br><span class="line">        }</span><br><span class="line">        <span class="comment"># 在获取验证码后的会话进行验证OCR的结果</span></span><br><span class="line">        login = s.post(<span class="string">f'http://jw.glutnn.cn/academic/checkCaptcha.do?captchaCode=<span class="subst">{captcha}</span>'</span>, headers=headers)</span><br><span class="line">        <span class="keyword">if</span> login.text == <span class="string">'false'</span>:</span><br><span class="line">            <span class="comment"># 结果为假不进行操作</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 验证通过时执行登录操作</span></span><br><span class="line">            loging = s.post(<span class="string">'http://jw.glutnn.cn/academic/j_acegi_security_check'</span>, data=data)</span><br><span class="line">            <span class="comment"># 进入个人课表页面，没访问这个页面无法进入本周课表页面</span></span><br><span class="line">            cu = s.get(<span class="string">f'http://jw.glutnn.cn/academic/student/currcourse/currcourse.jsdo?randomString=202109171926436Qv6aK&amp;groupId=&amp;moduleId=2000'</span>, headers=headers)</span><br><span class="line">            <span class="comment"># 访问本周课表页面</span></span><br><span class="line">            kb = s.get(<span class="string">'http://jw.glutnn.cn/academic/manager/coursearrange/studentWeeklyTimetable.do?yearid=41&amp;termid=3'</span>,headers=headers,data=data)</span><br><span class="line">            parsing(kb.text)</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
       <categories>
-        <category>软件</category>
+        <category>编程</category>
       </categories>
       <tags>
-        <tag>软件推荐</tag>
-        <tag>破解</tag>
-        <tag>idea</tag>
-        <tag>Windows</tag>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+        <tag>模拟登陆</tag>
       </tags>
   </entry>
   <entry>
@@ -389,6 +354,41 @@
       </tags>
   </entry>
   <entry>
+    <title>【Windows】Jetbrains 系列软件的破解补丁</title>
+    <url>/23ec1e546bbd/</url>
+    <content><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Jetbrains 系列的的软件是真的好用，但是也是真的贵，对于一个学生党来说确实是支持不起这个费用啊。当然，官方也有基础的免费版本，可是专业版的对于学习来说太方便了，所以上个 “学习版” 是有必要的。当然，有财力的还是建议支持正版，毕竟只有收费才可以让开发的公司有动力持续地更新产品，我们才能用到更好的产品。废话不多说，妹子图开局。</p>
+<span id="more"></span>
+
+<p><img src="/./assets/0BB1BBABDDB1C8C667F37DC594ED546C.png" alt="0BB1BBABDDB1C8C667F37DC594ED546C"></p>
+<h3 id="IDE-Eval-Reset插件（已停更）"><a href="#IDE-Eval-Reset插件（已停更）" class="headerlink" title="IDE Eval Reset插件（已停更）"></a><code>IDE Eval Reset</code> 插件（已停更）</h3><p>这是一款用起来比较简单的插件，可以通过重置 30 天试用来实现破解，但这个只可以在 2021.3 之前的版本可用，但比较稳定，相对于一些用老版本或者激活码我更倾向于使用这个插件。</p>
+<h3 id="如何下载2021-3之前的版本？"><a href="#如何下载2021-3之前的版本？" class="headerlink" title="如何下载2021.3之前的版本？"></a>如何下载 2021.3 之前的版本？</h3><p>此处我已 PyCharm 为例，我们访问官方的下载页面，选择其他版本，就可以挑选老版本了</p>
+<p><img src="/./assets/25ECA199BF1CA2BB90AEF4776763BB63.png" alt="25ECA199BF1CA2BB90AEF4776763BB63"></p>
+<p><img src="/./assets/1A0731BAD84132CFAF5E8EE6BE34F7F8.png" alt="1A0731BAD84132CFAF5E8EE6BE34F7F8"></p>
+<p>当然，可能过段时间官方会下线这些版本，所以我就给我备份了 PyCharm 和 IDEA 以及 WebStorm 的 2021.2 的安装包，说不定什么时候需要到呢？大概率是用不上得啦。</p>
+<p>软件链接：<a href="https://pan.baidu.com/s/1S7lrn9mQ5aXU-Hcpi_eaWg">https://pan.baidu.com/s/1S7lrn9mQ5aXU-Hcpi_eaWg</a> 提取码: qxja </p>
+<p>补丁链接：<a href="https://pan.baidu.com/s/1UQpHQKAmcgeE-dO-xBummg">https://pan.baidu.com/s/1UQpHQKAmcgeE-dO-xBummg</a> 提取码: 6ngd </p>
+<p>补丁链接：<a href="https://asuna773.lanzoul.com/ita1t0cjp80f">https://asuna773.lanzoul.com/ita1t0cjp80f</a></p>
+<p>补丁作者的博客：<a href="https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html">Jetbrains 系列产品重置试用方法 | 知了 (zhile.io)</a></p>
+<h3 id="如何使用？"><a href="#如何使用？" class="headerlink" title="如何使用？"></a>如何使用？</h3><p>其实很简单，保证自己可以打开相关的软件，如果进入需要激活的情况建议使用下面说到的激活码激活一次后再进行安装插件。</p>
+<p>如果是第一次安装，那就点击使用 30 天（2021.3 后需要登录，貌似这个插件也不支持后面的版本激活）即可进入软件。</p>
+<p>在打开软件后随便创建一个项目，然后把补丁直接拖动到这里</p>
+<p><img src="/./assets/15255434748BE4E530F6AB504CE07476.png" alt="15255434748BE4E530F6AB504CE07476"></p>
+<p>点击 Help，然后选择这个</p>
+<p><img src="/./assets/2ECF7A514C3D7A4161AEE87AED4EEDED.png" alt="2ECF7A514C3D7A4161AEE87AED4EEDED"></p>
+<p>这般设置一下便可</p>
+<p><img src="/./assets/559ABAA9880DB204DBA6499FCD599532.png" alt="559ABAA9880DB204DBA6499FCD599532"></p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>软件推荐</tag>
+        <tag>破解</tag>
+        <tag>idea</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Typora 的免费测试版本备份</title>
     <url>/1447fd963a25/</url>
     <content><![CDATA[<h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><h1 id="此版本已失效，有需求的可以在另一篇文章中找到学习版"><a href="#此版本已失效，有需求的可以在另一篇文章中找到学习版" class="headerlink" title="此版本已失效，有需求的可以在另一篇文章中找到学习版"></a>此版本已失效，有需求的可以在另一篇文章中找到学习版</h1><p>Typora，一个我个人一直在用的 Markdown 编辑器，它的界面简洁，没有过于复杂的操作界面，左边是分级文件查看和大纲查看，多个文档的切换和大纲展示对于写长篇文章很有帮助，这一点能给用户相当舒适的使用体验。其次是它功能完善，可以配合 PicGo+GitHub+jsdelivr 实现完美的上传图片体验，只需要简单的设置，便可以插图图片即上传到图床，这样做的好处是不管我写的笔记文章是放在博客也好，本地也罢，换另一台设备也行，都可以打开 Markdown 就能读取到云端的图片（没有网除外），节省了磁盘空间是次要，最重要的是可以让我们的文章可以跨设备阅读时不需要考虑图片的问题。而且 Typora 是所见即所得的编辑体验，不需要想 jupyter notebook 那样需要运行才可渲染，或者 vscode 那样分栏展示，毕竟 Typora 是专攻这方面的，所以在 Markdown 编写上比其他软件专业也是正常。</p>
@@ -413,6 +413,35 @@
         <tag>软件推荐</tag>
         <tag>Windows</tag>
         <tag>备份</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AdGuard 的破解</title>
+    <url>/da1ae99c95ab/</url>
+    <content><![CDATA[<h2 id="什么是AdGuard？"><a href="#什么是AdGuard？" class="headerlink" title="什么是AdGuard？"></a>什么是 AdGuard？</h2><p>AdGuard 是一款强大的广告拦截工具，主打广告拦截、上网安全和隐私保护等功能，对于我们而已，最主要的就是它的广告拦截功能。AdGuard 有多个版本，支持多平台，分别为浏览器扩展版，桌面版，和移动版，桌面版支持 Windows 和 Mac 系统，移动版则是支持 Android 和 iOS。AdGuard 可以去除绝大部分的网页的烦人广告，给我们一个良好舒适的上网冲浪环境。</p>
+<span id="more"></span>
+
+<h2 id="使用AdGuard的前后对比"><a href="#使用AdGuard的前后对比" class="headerlink" title="使用AdGuard的前后对比"></a>使用 AdGuard 的前后对比</h2><h3 id="使用前"><a href="#使用前" class="headerlink" title="使用前"></a>使用前</h3><p><img src="/./assets/6C060C82AC0D2CEF2311C7BB5DB146DE.png" alt="6C060C82AC0D2CEF2311C7BB5DB146DE"></p>
+<h3 id="使用后"><a href="#使用后" class="headerlink" title="使用后"></a>使用后</h3><p><img src="/./assets/5D55B65DD94A9428C3758933CFAF6D55.png" alt="5D55B65DD94A9428C3758933CFAF6D55"></p>
+<p>可以通过使用的前后对比图发现，头部广告和页脚广告都被轻松的清理掉了（对不起了扩展迷！）</p>
+<h2 id="浏览器扩展不是免费嘛？为什么要安装应用？"><a href="#浏览器扩展不是免费嘛？为什么要安装应用？" class="headerlink" title="浏览器扩展不是免费嘛？为什么要安装应用？"></a>浏览器扩展不是免费嘛？为什么要安装应用？</h2><p>萝卜青菜各有所爱，安装一个应用，其他的应用和浏览器都可以实现广告拦截，所以还是安装个应用更香啦</p>
+<h2 id="怎么破解？"><a href="#怎么破解？" class="headerlink" title="怎么破解？"></a>怎么破解？</h2><p>首先，安装官方的应用，官方应用有试用期的，试用期可以享受全部的功能，到了试用期结束就需要付费了。</p>
+<p><img src="/./assets/36E0C4113A2E76FC68BF54AA152A45DE.png" alt="36E0C4113A2E76FC68BF54AA152A45DE"></p>
+<p>此时，我们可以看到试用期是到 4 月 1 日就到期了的，而我们可以通过时间大法来实现破解</p>
+<p><img src="/./assets/FB42A5DDBCFCDEF4A3A11DACF2573CB4.png" alt="FB42A5DDBCFCDEF4A3A11DACF2573CB4"></p>
+<p><img src="/./assets/80DA7A793B385DCB671C972E87C3DD82.png" alt="80DA7A793B385DCB671C972E87C3DD82"></p>
+<p>此时再输入一个邮箱即可实现延期 180 天的操作，如果 180 天都试用过了，就需要使用本次的工具了</p>
+<p><img src="/./assets/F4EA46CF22AAD9D65F6445482FB58883.png" alt="F4EA46CF22AAD9D65F6445482FB58883"></p>
+<p>它可以让 AdGuard 恢复到最开始的状态，已实现在此试用 180 天的效果</p>
+<p>链接：</p>
+<p><a href="https://asuna773.lanzoul.com/iZsmG028ei9c">https://asuna773.lanzoul.com/iZsmG028ei9c</a></p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>软件推荐</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -654,35 +683,6 @@
       <tags>
         <tag>算法</tag>
         <tag>冒泡排序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AdGuard 的破解</title>
-    <url>/da1ae99c95ab/</url>
-    <content><![CDATA[<h2 id="什么是AdGuard？"><a href="#什么是AdGuard？" class="headerlink" title="什么是AdGuard？"></a>什么是 AdGuard？</h2><p>AdGuard 是一款强大的广告拦截工具，主打广告拦截、上网安全和隐私保护等功能，对于我们而已，最主要的就是它的广告拦截功能。AdGuard 有多个版本，支持多平台，分别为浏览器扩展版，桌面版，和移动版，桌面版支持 Windows 和 Mac 系统，移动版则是支持 Android 和 iOS。AdGuard 可以去除绝大部分的网页的烦人广告，给我们一个良好舒适的上网冲浪环境。</p>
-<span id="more"></span>
-
-<h2 id="使用AdGuard的前后对比"><a href="#使用AdGuard的前后对比" class="headerlink" title="使用AdGuard的前后对比"></a>使用 AdGuard 的前后对比</h2><h3 id="使用前"><a href="#使用前" class="headerlink" title="使用前"></a>使用前</h3><p><img src="/./assets/6C060C82AC0D2CEF2311C7BB5DB146DE.png" alt="6C060C82AC0D2CEF2311C7BB5DB146DE"></p>
-<h3 id="使用后"><a href="#使用后" class="headerlink" title="使用后"></a>使用后</h3><p><img src="/./assets/5D55B65DD94A9428C3758933CFAF6D55.png" alt="5D55B65DD94A9428C3758933CFAF6D55"></p>
-<p>可以通过使用的前后对比图发现，头部广告和页脚广告都被轻松的清理掉了（对不起了扩展迷！）</p>
-<h2 id="浏览器扩展不是免费嘛？为什么要安装应用？"><a href="#浏览器扩展不是免费嘛？为什么要安装应用？" class="headerlink" title="浏览器扩展不是免费嘛？为什么要安装应用？"></a>浏览器扩展不是免费嘛？为什么要安装应用？</h2><p>萝卜青菜各有所爱，安装一个应用，其他的应用和浏览器都可以实现广告拦截，所以还是安装个应用更香啦</p>
-<h2 id="怎么破解？"><a href="#怎么破解？" class="headerlink" title="怎么破解？"></a>怎么破解？</h2><p>首先，安装官方的应用，官方应用有试用期的，试用期可以享受全部的功能，到了试用期结束就需要付费了。</p>
-<p><img src="/./assets/36E0C4113A2E76FC68BF54AA152A45DE.png" alt="36E0C4113A2E76FC68BF54AA152A45DE"></p>
-<p>此时，我们可以看到试用期是到 4 月 1 日就到期了的，而我们可以通过时间大法来实现破解</p>
-<p><img src="/./assets/FB42A5DDBCFCDEF4A3A11DACF2573CB4.png" alt="FB42A5DDBCFCDEF4A3A11DACF2573CB4"></p>
-<p><img src="/./assets/80DA7A793B385DCB671C972E87C3DD82.png" alt="80DA7A793B385DCB671C972E87C3DD82"></p>
-<p>此时再输入一个邮箱即可实现延期 180 天的操作，如果 180 天都试用过了，就需要使用本次的工具了</p>
-<p><img src="/./assets/F4EA46CF22AAD9D65F6445482FB58883.png" alt="F4EA46CF22AAD9D65F6445482FB58883"></p>
-<p>它可以让 AdGuard 恢复到最开始的状态，已实现在此试用 180 天的效果</p>
-<p>链接：</p>
-<p><a href="https://asuna773.lanzoul.com/iZsmG028ei9c">https://asuna773.lanzoul.com/iZsmG028ei9c</a></p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>软件推荐</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -2182,36 +2182,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Typora 免费版本不能用了？那整个学习版看看？</title>
-    <url>/7d52198101c1/</url>
-    <content><![CDATA[<p>Typroa1.2.4 学习版，懂的都懂，附件在文章的最后链接</p>
-<span id="more"></span>
-
-<h3 id="1、安装软件"><a href="#1、安装软件" class="headerlink" title="1、安装软件"></a>1、安装软件</h3><p>安装压缩包中的 EXE 文件进行软件安装</p>
-<h3 id="2、对软件打补丁"><a href="#2、对软件打补丁" class="headerlink" title="2、对软件打补丁"></a>2、对软件打补丁</h3><p>在安装软件完成后，找到软件的安装目录，如果不知道如何进入软件的安装目录，可以在桌面的快捷方式处右键单击 -&gt; 点击” 打开文件所在的位置”</p>
-<p>在进入软件的安装目录时可以发现一个名为 resources 的文件夹，将压缩包中的 app.asar 放入此文件夹，此时会询问是否替换，这里选择替换</p>
-<h3 id="3、激活"><a href="#3、激活" class="headerlink" title="3、激活"></a>3、激活</h3><p>打开 Typora，此时会提示需要激活，此处点击输入序列号</p>
-<p><img src="/./assets/9D4A07C48ACD43282AC4DECA58F2A31B.png" alt="9D4A07C48ACD43282AC4DECA58F2A31B"></p>
-<p>此处填入邮箱，随便填一个即可，在最后填入激活码，点击激活</p>
-<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">E8Q9Y5-KXMTL5-7578SL-4S5XKS</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img src="/./assets/FF5FF5B9C73F9CED8EBD314B9964DB04.png" alt="FF5FF5B9C73F9CED8EBD314B9964DB04"></p>
-<p>到此处便大功告成了</p>
-<p><img src="/./assets/84979AEB494B96CBCA63CDA6B192AFAC.png" alt="84979AEB494B96CBCA63CDA6B192AFAC"></p>
-<h3 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h3><p>百度网盘：<a href="https://pan.baidu.com/s/1g8gBlNoceADN_Zm-kacZPQ?pwd=x8rq">点击跳转</a> 提取码: x8rq </p>
-<p>蓝奏云：<a href="https://asuna773.lanzoul.com/iXTGx0a53xkh">点击跳转</a></p>
-<p><a href="https://www.kzwr.com/kzwrfs?fid=e5bc7f54808d5jxtdy.zip">直接下载</a></p>
-]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>软件推荐</tag>
-        <tag>破解</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL 学习笔记</title>
     <url>/dbd3b6236ad0/</url>
     <content><![CDATA[<p>MySQL 是一个免费的关系型数据库，在同类产品中的占比较高。这是一篇在学习 MySQL 时的学习笔记</p>
@@ -2935,6 +2905,36 @@
       </categories>
       <tags>
         <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Typora 免费版本不能用了？那整个学习版看看？</title>
+    <url>/7d52198101c1/</url>
+    <content><![CDATA[<p>Typroa1.2.4 学习版，懂的都懂，附件在文章的最后链接</p>
+<span id="more"></span>
+
+<h3 id="1、安装软件"><a href="#1、安装软件" class="headerlink" title="1、安装软件"></a>1、安装软件</h3><p>安装压缩包中的 EXE 文件进行软件安装</p>
+<h3 id="2、对软件打补丁"><a href="#2、对软件打补丁" class="headerlink" title="2、对软件打补丁"></a>2、对软件打补丁</h3><p>在安装软件完成后，找到软件的安装目录，如果不知道如何进入软件的安装目录，可以在桌面的快捷方式处右键单击 -&gt; 点击” 打开文件所在的位置”</p>
+<p>在进入软件的安装目录时可以发现一个名为 resources 的文件夹，将压缩包中的 app.asar 放入此文件夹，此时会询问是否替换，这里选择替换</p>
+<h3 id="3、激活"><a href="#3、激活" class="headerlink" title="3、激活"></a>3、激活</h3><p>打开 Typora，此时会提示需要激活，此处点击输入序列号</p>
+<p><img src="/./assets/9D4A07C48ACD43282AC4DECA58F2A31B.png" alt="9D4A07C48ACD43282AC4DECA58F2A31B"></p>
+<p>此处填入邮箱，随便填一个即可，在最后填入激活码，点击激活</p>
+<figure class="highlight txt"><table><tbody><tr><td class="code"><pre><span class="line">E8Q9Y5-KXMTL5-7578SL-4S5XKS</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="/./assets/FF5FF5B9C73F9CED8EBD314B9964DB04.png" alt="FF5FF5B9C73F9CED8EBD314B9964DB04"></p>
+<p>到此处便大功告成了</p>
+<p><img src="/./assets/84979AEB494B96CBCA63CDA6B192AFAC.png" alt="84979AEB494B96CBCA63CDA6B192AFAC"></p>
+<h3 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h3><p>百度网盘：<a href="https://pan.baidu.com/s/1g8gBlNoceADN_Zm-kacZPQ?pwd=x8rq">点击跳转</a> 提取码: x8rq </p>
+<p>蓝奏云：<a href="https://asuna773.lanzoul.com/iXTGx0a53xkh">点击跳转</a></p>
+<p><a href="https://www.kzwr.com/kzwrfs?fid=e5bc7f54808d5jxtdy.zip">直接下载</a></p>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>软件推荐</tag>
+        <tag>破解</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>

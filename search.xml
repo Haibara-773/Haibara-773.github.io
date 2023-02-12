@@ -1,35 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Python 执行 pip 安装下载慢？这里教你怎么解决</title>
-    <url>/6e9decc2d8bd/</url>
-    <content><![CDATA[<p>Python 官方的 PIP 库安装需要连接的服务器在国外，所以在国内访问服务器下载第三方库时并不方便，所以需要将服务器指定到国内的服务器，已获得更加稳定的使用体验。</p>
-<span id="more"></span>
-
-<h3 id="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件"><a href="#首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件" class="headerlink" title="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip.ini文件"></a>首先在当前用户文件夹下新建一个 pip 文件夹，再在此文件夹下新建一个 pip.ini 文件</h3><p>此处以 Windows 为例，其他系统也是如此，在当前用户目录下新建相应的 pip 文件夹和 pip.ini</p>
-<p><img src="/./assets/2DBFE009A4A68A1C75907D0CFDC71C04.png" alt="2DBFE009A4A68A1C75907D0CFDC71C04"></p>
-<h3 id="编辑该文件，在该文件中写入"><a href="#编辑该文件，在该文件中写入" class="headerlink" title="编辑该文件，在该文件中写入"></a>编辑该文件，在该文件中写入</h3><figure class="highlight ini"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"><span class="section">[install]</span></span><br><span class="line"><span class="attr">trusted-host</span> = https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<p>使用哪个源可以根据自己的实际需求进行修改，直接替换即可</p>
-<ul>
-<li>阿里云                       <a href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a></li>
-<li> 中国科技大学           <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a> </li>
-<li> 豆瓣                          <a href="https://pypi.douban.com/simple/">https://pypi.douban.com/simple/</a> </li>
-<li> 清华大学                  <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a></li>
-<li> 中国科学技术大学  <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>pip</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>利用 Python 给微信发消息？怎么做的？</title>
     <url>/aeec0178dafd/</url>
     <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>上周做过一个爬虫爬取课表的，本应该尽快出下半部分的内容的，但是嘛，中间放了个中秋假，就开始鸽了。<br>其实下半部分内容就是把爬到的课表进行格式化再通知自己而已。<br>其中我最先考虑的是使用 server 酱的，虽然 server 酱服务很到位，但是我想白嫖啊，因为我的 server 每天推送的次数已经全部安排得明明白白了。<br>接下来便有了用邮件提醒的想法，这个确实有得搞的，但今天先不说。<br>在我折腾我的路由后台时发现了里面的自建微信推送功能，便看到了微信开放平台的这个接口<br>那就开搞，又免费又是推送到微信又不会产生过多的邮件，你就说香不香吧</p>
@@ -182,6 +153,35 @@
         <tag>Python</tag>
         <tag>微信推送</tag>
         <tag>推送</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 执行 pip 安装下载慢？这里教你怎么解决</title>
+    <url>/6e9decc2d8bd/</url>
+    <content><![CDATA[<p>Python 官方的 PIP 库安装需要连接的服务器在国外，所以在国内访问服务器下载第三方库时并不方便，所以需要将服务器指定到国内的服务器，已获得更加稳定的使用体验。</p>
+<span id="more"></span>
+
+<h3 id="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件"><a href="#首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip-ini文件" class="headerlink" title="首先在当前用户文件夹下新建一个pip文件夹，再在此文件夹下新建一个pip.ini文件"></a>首先在当前用户文件夹下新建一个 pip 文件夹，再在此文件夹下新建一个 pip.ini 文件</h3><p>此处以 Windows 为例，其他系统也是如此，在当前用户目录下新建相应的 pip 文件夹和 pip.ini</p>
+<p><img src="/./assets/2DBFE009A4A68A1C75907D0CFDC71C04.png" alt="2DBFE009A4A68A1C75907D0CFDC71C04"></p>
+<h3 id="编辑该文件，在该文件中写入"><a href="#编辑该文件，在该文件中写入" class="headerlink" title="编辑该文件，在该文件中写入"></a>编辑该文件，在该文件中写入</h3><figure class="highlight ini"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"><span class="section">[install]</span></span><br><span class="line"><span class="attr">trusted-host</span> = https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<p>使用哪个源可以根据自己的实际需求进行修改，直接替换即可</p>
+<ul>
+<li>阿里云                       <a href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a></li>
+<li> 中国科技大学           <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a> </li>
+<li> 豆瓣                          <a href="https://pypi.douban.com/simple/">https://pypi.douban.com/simple/</a> </li>
+<li> 清华大学                  <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a></li>
+<li> 中国科学技术大学  <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>pip</tag>
       </tags>
   </entry>
   <entry>
